@@ -1,0 +1,57 @@
+
+form {
+    display: flex;
+    flex-direction: column;
+    background: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px 25px;
+   
+    align-items: center;
+    
+    justify-content: center;
+}
+
+
+
+
+#hey{
+    background-color:#c24b27b6;
+}
+
+#cole{
+    background-color:rgba(163, 113, 93, 0.856);
+    text-align: center;
+    padding: 20px 25px;
+   
+    align-items: center;
+    
+    justify-content: center;
+}
+
+#contenedor{
+    display: flex;
+    flex-direction: column;
+    background-color: tra;
+
+    text-align: center;
+    padding: 20px 25px;
+   
+    align-items: center;
+    
+    justify-content: center;
+}
+
+#cuerpo{
+    background: #373B44;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, rgb(7, 51, 121), #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0d387e, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#tarjeta{
+    background-color: #064df5;
+
+
+}
+
+
