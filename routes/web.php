@@ -17,10 +17,18 @@ Route::get('/inicioo', function () {
     return view('inicioo');
 });
 
-Route::get('/usuarios', function () {
+Route::get('/Usuarios', function () {
     return view('Usuarios');
 });
 
-Route::get('/Registro_usuarios', function () {
-    return view('Registro_usu');
+Route::get('/Comics', function () {
+    return view('Comics');
+});
+
+Route::get('/Articulos', function () {
+    return view('Articulos');
+});
+
+Route::get('/Proveedores', function () {
+    return view('Proveedores');
 });

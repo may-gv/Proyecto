@@ -2,117 +2,45 @@
 
 
 @section('contenido')
-
- <h1>Inicio Administrador</h1>
-
-
-    <div class="row">
-        <div class="col-4 ">
-            <div class="card text-center mb-5 ml-5 fw-bold" style="width: 20rem; margin-left: 1rem">
-                
-        
-                <div class="card-header text-center">
-                    Administracion de Usuarios
-                </div>
-                <img src="css\images\descarga.png" class="card-img-top" alt="...">
-        
-                <div class="card-body">
-                    <p class="card-text"> Aqui se mandara al formulario y consulta para poder agregar, eliminar y editar usuarios del sistema. </p>
-        
-                </div>
-        
-        
-        
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-secondary" id="cuerpo"> Usuarios </button>
-                </div>
-        
-        
-            </div> 
+<div class="container mt-5 col-md-10">
+    <div id="carouselExampleCaptions" class="carousel slide mt-5" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-        <div class="col-4">
-            <div class="container col-md-12" > 
-
-                <div class="card text-center mb-5 fw-bold" style="width: 20rem; margin-left: 2rem">
-                    
-                    <div class="card-header text-center">
-                        Administracion de Comic's 
-                    </div>
-                    <img src="css\images\Comic.jpg" class="card-img-top" alt="...">
-            
-                    <div class="card-body">
-                        <p class="card-text">En este apartado se mandara al formulario para poder vender comics. </p>
-            
-                    </div>
-            
-            
-            
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-secondary" id="cuerpo"> Comics </button>
-                    </div>
-            
-            
-                </div> 
-                
-            
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="..." class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
             </div>
         </div>
-        <div class="col-4">
-            <div class="container col-md-12"  > 
-
-                <div class="card text-center mb-5 fw-bold" style="width: 20rem; margin-left: 4rem">
-                    
-                    <div class="card-header text-center">
-                        Administracion de Articulos
-                    </div>
-                    <img src="css\images\articulos.jpg" class="card-img-top" alt="...">
-            
-                    <div class="card-body">
-                        <p class="card-text">En este apartado se mandara al formulario para poder hacer la venta de articulos. </p>
-            
-                    </div>
-            
-            
-            
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-secondary" id="cuerpo"> Articulos </button>
-                    </div>
-            
-            
-                </div> 
-                
-            
+        <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+            <h5>Second slide label</h5>
+            <p>Some representative placeholder content for the second slide.</p>
             </div>
         </div>
-        <div class="col-4 ">
-            <div class="card text-center mb-5 ml-5 fw-bold" style="width: 20rem; margin-left: 36rem">
-        
-                <div class="card-header text-center">
-                    Administracion de Proveedores
-                </div>
-                <img src="css\images\proo.jpg" class="card-img-top" alt="...">
-        
-                <div class="card-body">
-                    <p class="card-text">En este apartado se mandara al formulario para poder visualisar, y poder agregar, eliminar o editar Proveedores </p>
-        
-                </div>
-        
-        
-        
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-secondary" id="cuerpo"> Proveedores </button>
-                </div>
-        
-        
-            </div> 
+        <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p>Some representative placeholder content for the third slide.</p>
+            </div>
         </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
     </div>
-
-  
-
-     
-    
-
 </div>
 
 @stop

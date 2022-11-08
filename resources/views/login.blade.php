@@ -27,19 +27,19 @@
                     <div class="mb-3 text-white">
                       
                         <label class="form-label"> Usuario </label>
-                        <input type="text" class="form-control" id="" name="" placeholder="Usuario">
+                        <input type="text" class="form-control" id="input" name="" placeholder="Usuario">
                     </div>
 
                     <div class="mb-3 text-white">
                         <label class="form-label"> Contraseña </label>
-                        <input type="password" class="form-control" name="password" placeholder="Contraseña">
+                        <input type="password" class="form-control" id="input"name="" placeholder="Contraseña">
                     </div>
                    
           
                     
             <div class="card-footer">
                 <a href="/inicio">
-                <button type="submit" class="btn btn-secondary" id="hey">Ingresar</button>
+                <button type="submit" class="btn btn-secondary" id="buton">Ingresar</button>
                 </a>
             </div>
         

@@ -7,16 +7,16 @@
 
      
 
-    <div class="container mt-4 col-md-4 " id="contenedor">
+    <div class="container mt-4 col-md-6" id="contenedor">
      
 
-        <form class="m-4 " id="hey">
-        <div class="card text-center mb-2 fw-bold" id="cole">
-        <div class="card-header fs-2 text-white">
+        <form class="m-4 col-md-9" id="hey" >
+        <div class="card text-center mb-2 fw-bold col-md-12" id="cole">
+        <div class="card-header fs-2 text-white  ">
             Registrar Usuario
           </div>
 
-        <div class="card-body">
+        <div class="card-body col-md-12">
 
                 <div class="mb-3 text-white">
                   
@@ -25,8 +25,8 @@
                 </div>
 
                 <div class="mb-3 text-white">
-                    <label class="form-label"> Telefono </label>
-                    <input type="number" class="form-control" id="input" name="txtTelefono" placeholder="Telefono">
+                    <label class="form-label"> Teléfono </label>
+                    <input type="number" class="form-control" id="input" name="txtTelefono" placeholder="Teléfono">
                 </div>
 
                 <div class="mb-3 text-white">
@@ -41,7 +41,12 @@
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Rol </label>
-                    <input type="text" class="form-control" id="input" name="txtRol" placeholder="Rol">
+                </div>
+                <div class="mb-3 " id="input">
+                    <select name="Rol" id="" class="form-control" style="background: #48608583">
+                        <option value="" style="background: #48608583">Super Usuario</option>
+                        <option value="" style="background: #48608583">Vendedor</option>
+                    </select>
                 </div>
 
                

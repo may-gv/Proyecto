@@ -35,7 +35,7 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link text-white" href="usuarios ">Usuarios</a>
+                <a class="nav-link text-white" href="Usuarios ">Usuarios</a>
               </li>
         
             </ul>
