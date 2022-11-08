@@ -12,7 +12,7 @@
 
 
 
-<body id="cuerpo">
+<body background="{{asset('css\images\Fondocomics.jpg')}}">
 
     <!--- Barra de navegacion --->
 
