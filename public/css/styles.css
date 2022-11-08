@@ -15,11 +15,11 @@ form {
 
 
 #hey{
-    background-color:#c24b27b6;
+    background-color:#044b51d6;
 }
 
 #cole{
-    background-color:rgba(163, 113, 93, 0.856);
+    background-color:#044b51b6;
     text-align: center;
     padding: 20px 25px;
    
@@ -38,13 +38,14 @@ form {
    
     align-items: center;
     
+    
     justify-content: center;
 }
 
 #cuerpo{
     background: #373B44;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, rgb(7, 51, 121), #373B44);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #0d387e, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to right, rgb(74, 100, 141), #575c69);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right,rgb(74, 100, 141), #575c69, #575c69); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
@@ -54,4 +55,20 @@ form {
 
 }
 
+#nav{
+    background: #111112e4;
+}
 
+#input{
+    background: #48608583;
+}
+#buton{
+    background-color:#082e31;
+}
+
+
+
+#icon{
+    height: 100px; ;
+    width: 100px;
+}
