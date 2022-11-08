@@ -13,6 +13,7 @@
                 <div class="card-header text-center">
                     Comics
                 </div>
+                <img src="css\images\Comic.jpg" class="card-img-top" alt="...">
         
                 <div class="card-body">
                     <p class="card-text">En este apartado se mandara al formulario para poder vender comics. </p>
@@ -36,6 +37,7 @@
                     <div class="card-header text-center">
                         Articulos 
                     </div>
+                    <img src="css\images\articulos.jpg" class="card-img-top" alt="...">
             
                     <div class="card-body">
                         
