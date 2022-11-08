@@ -47,3 +47,4 @@ Route::get('/MostrarArticulos', function () {
 Route::get('/MostrarProveedores', function () {
     return view('MostrarProveedores');
 });
+
