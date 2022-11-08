@@ -20,11 +20,6 @@ Route::get('/Usuarios', function () {
     return view('Usuarios');
 });
 
-<<<<<<< HEAD
-Route::get('/Formulario_Usu', function () {
-    return view('Formulario_Usu');
-});
-=======
 Route::get('/Comics', function () {
     return view('Comics');
 });
@@ -52,4 +47,4 @@ Route::get('/MostrarArticulos', function () {
 Route::get('/MostrarProveedores', function () {
     return view('MostrarProveedores');
 });
->>>>>>> main
+

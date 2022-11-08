@@ -6,11 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<<<<<<< HEAD
-    <title> Comics </title>
-=======
-    <title>Weidocs Comics</title>
->>>>>>> main
+    <title>Plantilla</title>
     
 </head>
 
@@ -54,12 +50,6 @@
           </div>
         </div>
       </nav>
-
-<<<<<<< HEAD
-=======
-
->>>>>>> main
-      
 
       <!--- Contenido --->
       @yield('contenido')
