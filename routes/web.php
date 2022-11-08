@@ -15,7 +15,7 @@ Route::get('/inicio', function () {
 Route::get('/inicioo', function () {
     return view('inicioo');
 });
-
+/* ---------Formularios------------*/
 Route::get('/Usuarios', function () {
     return view('Usuarios');
 });
@@ -31,7 +31,7 @@ Route::get('/Articulos', function () {
 Route::get('/Proveedores', function () {
     return view('Proveedores');
 });
-
+/*-------------Tablas--------------*/
 Route::get('/MostrarUsuarios', function () {
     return view('MostrarUsuarios');
 });
