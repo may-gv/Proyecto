@@ -15,11 +15,11 @@ form {
 
 
 #hey{
-    background-color:#756f6db6;
+    background-color:#044b51d6;
 }
 
 #cole{
-    background-color:rgba(105, 92, 87, 0.856);
+    background-color:#044b51b6;
     text-align: center;
     padding: 20px 25px;
    
@@ -38,6 +38,7 @@ form {
    
     align-items: center;
     
+    
     justify-content: center;
 }
 
@@ -55,11 +56,19 @@ form {
 }
 
 #nav{
-    background: #2e2f3183;
+    background: #111112e4;
 }
 
 #input{
-    background: #6b6d7083;
+    background: #48608583;
+}
+#buton{
+    background-color:#082e31;
 }
 
 
+
+#icon{
+    height: 100px; ;
+    width: 100px;
+}

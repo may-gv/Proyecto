@@ -8,7 +8,6 @@ Route::get('/', function () {
     return view('login');
 });
 
-
 Route::get('/inicio', function () {
     return view('inicio');
 });
@@ -16,11 +15,36 @@ Route::get('/inicio', function () {
 Route::get('/inicioo', function () {
     return view('inicioo');
 });
-
-Route::get('/usuarios', function () {
+/* ---------Formularios------------*/
+Route::get('/Usuarios', function () {
     return view('Usuarios');
 });
 
-Route::get('/Registro_usuarios', function () {
-    return view('Registro_usu');
+Route::get('/Comics', function () {
+    return view('Comics');
 });
+
+Route::get('/Articulos', function () {
+    return view('Articulos');
+});
+
+Route::get('/Proveedores', function () {
+    return view('Proveedores');
+});
+/*-------------Tablas--------------*/
+Route::get('/MostrarUsuarios', function () {
+    return view('MostrarUsuarios');
+});
+
+Route::get('/MostrarComics', function () {
+    return view('MostrarComics');
+});
+
+Route::get('/MostrarArticulos', function () {
+    return view('MostrarArticulos');
+});
+
+Route::get('/MostrarProveedores', function () {
+    return view('MostrarProveedores');
+});
+

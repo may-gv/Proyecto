@@ -12,12 +12,12 @@
 
 
 
-<body id="cuerpo">
+<body background="{{asset('css\images\Fondocomics.jpg')}}">
 
     <!--- Barra de navegacion --->
 
 
-    <nav class="navbar navbar-expand-lg mt-2" id="nav">
+    <nav class="navbar navbar-expand-lg " id="nav">
         <div class="container-fluid ">
           <a class="navbar-brand text-white" href="/"> Weidoc Comic's </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,20 +31,25 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link text-white" href="inicioo "> Inicioo </a>
+                <a class="nav-link text-white" href="MostrarUsuarios"> Usuarios </a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link text-white" href="usuarios ">Usuarios</a>
+                <a class="nav-link text-white" href="MostrarComics">Comics</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-white" href="MostrarArticulos">Articulos</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-white" href="MostrarProveedores">Proveedores</a>
               </li>
         
             </ul>
           </div>
         </div>
       </nav>
-
-
-      
 
       <!--- Contenido --->
       @yield('contenido')
@@ -53,6 +58,7 @@
 
     
     
-
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 </html>
