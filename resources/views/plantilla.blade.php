@@ -31,11 +31,19 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link text-white" href="inicioo "> Inicioo </a>
+                <a class="nav-link text-white" href="MostrarUsuarios"> Usuarios </a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link text-white" href="Usuarios ">Usuarios</a>
+                <a class="nav-link text-white" href="MostrarComics">Comics</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-white" href="MostrarArticulos">Aticulos</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-white" href="MostrarProveedores">Proveedores</a>
               </li>
         
             </ul>

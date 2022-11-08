@@ -8,7 +8,6 @@ Route::get('/', function () {
     return view('login');
 });
 
-
 Route::get('/inicio', function () {
     return view('inicio');
 });
@@ -31,4 +30,20 @@ Route::get('/Articulos', function () {
 
 Route::get('/Proveedores', function () {
     return view('Proveedores');
+});
+
+Route::get('/MostrarUsuarios', function () {
+    return view('MostrarUsuarios');
+});
+
+Route::get('/MostrarComics', function () {
+    return view('MostrarComics');
+});
+
+Route::get('/MostrarArticulos', function () {
+    return view('MostrarArticulos');
+});
+
+Route::get('/MostrarProveedores', function () {
+    return view('MostrarProveedores');
 });
