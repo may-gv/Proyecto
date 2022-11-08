@@ -8,7 +8,7 @@
 
     <div class="row">
         <div class="col-4 ">
-            <div class="card text-center mb-5 ml-5 fw-bold" style="width: 24rem; margin-left: 1rem">
+            <div class="card text-center mb-5 ml-5 fw-bold" style="width: 20rem; margin-left: 1rem">
                 
         
                 <div class="card-header text-center">
@@ -33,7 +33,7 @@
         <div class="col-4">
             <div class="container col-md-12" > 
 
-                <div class="card text-center mb-5 fw-bold" style="width: 24rem; margin-left: 2rem">
+                <div class="card text-center mb-5 fw-bold" style="width: 20rem; margin-left: 2rem">
                     
                     <div class="card-header text-center">
                         Administracion de Comic's 
@@ -60,7 +60,7 @@
         <div class="col-4">
             <div class="container col-md-12"  > 
 
-                <div class="card text-center mb-5 fw-bold" style="width: 24rem; margin-left: 4rem">
+                <div class="card text-center mb-5 fw-bold" style="width: 20rem; margin-left: 4rem">
                     
                     <div class="card-header text-center">
                         Administracion de Articulos
@@ -85,7 +85,7 @@
             </div>
         </div>
         <div class="col-4 ">
-            <div class="card text-center mb-5 ml-5 fw-bold" style="width: 24rem; margin-left: 36rem">
+            <div class="card text-center mb-5 ml-5 fw-bold" style="width: 20rem; margin-left: 36rem">
         
                 <div class="card-header text-center">
                     Administracion de Proveedores

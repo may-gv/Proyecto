@@ -18,29 +18,29 @@
         <form class="m-4 " id="hey">
         <div class="card text-center mb-2 fw-bold" id="cole">
 
-            <div class="card-header fs-2">
+            <div class="card-header fs-2 text-white">
                 Weirdo's Comics
               </div>
 
             <div class="card-body">
 
-                    <div class="mb-3 ">
+                    <div class="mb-3 text-white">
                       
                         <label class="form-label"> Usuario </label>
-                        <input type="text" class="form-control" id="" name="" placeholder="Usuario" required>
+                        <input type="text" class="form-control" id="" name="" placeholder="Usuario">
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-3 text-white">
                         <label class="form-label"> Contraseña </label>
-                        <input type="password" class="form-control" name="password" placeholder="Contraseña" required>
+                        <input type="password" class="form-control" name="password" placeholder="Contraseña">
                     </div>
                    
           
                     
             <div class="card-footer">
-                
+                <a href="/inicio">
                 <button type="submit" class="btn btn-secondary" id="hey">Ingresar</button>
-             
+                </a>
             </div>
         
             

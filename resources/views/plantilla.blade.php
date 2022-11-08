@@ -16,9 +16,10 @@
 
     <!--- Barra de navegacion --->
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/"> Weidoc Comic's </a>
+
+    <nav class="navbar navbar-expand-lg mt-2" id="nav">
+        <div class="container-fluid ">
+          <a class="navbar-brand text-white" href="/"> Weidoc Comic's </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -26,21 +27,24 @@
             <ul class="navbar-nav">
 
               <li class="nav-item">
-                <a class="nav-link"  href="inicio"> inicio </a>
+                <a class="nav-link text-white"  href="inicio"> inicio </a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="inicioo"> Inicioo </a>
+                <a class="nav-link text-white" href="inicioo "> Inicioo </a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="usuarios">Usuarios</a>
+                <a class="nav-link text-white" href="usuarios ">Usuarios</a>
               </li>
         
             </ul>
           </div>
         </div>
       </nav>
+
+
+      
 
       <!--- Contenido --->
       @yield('contenido')
