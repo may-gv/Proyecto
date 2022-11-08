@@ -15,7 +15,7 @@
         <div class="card-header fs-2 text-white">
             Registrar Comic
           </div>
-
+          <img src= "css\images\comic.png" id="icon">
         <div class="card-body col-md-12">
 
                 <div class="mb-3 text-white">

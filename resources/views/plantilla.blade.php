@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Plantilla</title>
+    <title>Weidocs Comics</title>
     
 </head>
 
@@ -17,7 +17,7 @@
     <!--- Barra de navegacion --->
 
 
-    <nav class="navbar navbar-expand-lg mt-2" id="nav">
+    <nav class="navbar navbar-expand-lg mt-1" id="nav">
         <div class="container-fluid ">
           <a class="navbar-brand text-white" href="/"> Weidoc Comic's </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +39,7 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link text-white" href="MostrarArticulos">Aticulos</a>
+                <a class="nav-link text-white" href="MostrarArticulos">Articulos</a>
               </li>
 
               <li class="nav-item">

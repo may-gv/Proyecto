@@ -15,6 +15,7 @@
         <div class="card-header fs-2 text-white">
             Registrar Proveedor
           </div>
+          <img src= "css\images\proveedor.png" id="icon">
 
         <div class="card-body col-md-12">
 

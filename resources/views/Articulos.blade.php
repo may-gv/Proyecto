@@ -12,6 +12,7 @@
         <div class="card-header fs-2 text-white">
             Registrar Articulo
           </div>
+          <img src= "css\images\libro.png" id="icon">
 
         <div class="card-body col-md-12">
 
@@ -74,3 +75,4 @@
 
 </div>
 </div>
+@stop
