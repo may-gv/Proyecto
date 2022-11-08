@@ -3,8 +3,9 @@
 
 @section('contenido')
 
-<h1 class=" mt-4 text-center text-white fw-bold">Usuarios</h1>
-<div class="container mt-5 col-md-10" id="contenedor">
+
+<div class="container mt-5 col-md-10 text-center" id="hey">
+  <h1 class=" mt-4 text-center text-white fw-bold">Usuarios</h1>
 <table class=" table text-center text-white" id="hey">
     <thead>
       <tr>
@@ -45,9 +46,8 @@
       </tr>
     </tbody>
   </table>
-</div>
 
-<div class="container col-md-10" id="contenedor">
+
     <a href="/Usuarios">
     <button type="submit" class="btn btn-secondary" id="buton">Registrar</button>
 </div>
