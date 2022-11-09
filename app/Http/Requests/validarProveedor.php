@@ -13,7 +13,7 @@ class validarProveedor extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,14 @@ class validarProveedor extends FormRequest
     public function rules()
     {
         return [
-            //
+            'txtEmpresa' => 'required',
+            'txtMercancia' => 'required',
+            'txtDireccion' => 'required',
+            'txtPais' => 'required',
+            'txtContacto' => 'required',
+            'txtNum_fijo' => 'required|numeric',
+            'txtNumero_cel' => 'required|numeric',
+            'txtCorreo' => 'required|email'
         ];
     }
 }

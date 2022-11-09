@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class validarComic extends FormRequest
+class validarArticulo extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,14 @@ class validarComic extends FormRequest
     public function rules()
     {
         return [
-            'txtNombre' => 'required|numeric|min:13',
-            'txtTelefono' => 'required',
-            'txtCompania' => 'required',
+            'txtTipo' => 'required',
+            'txtMarca' => 'required',
+            'txtDescripcion' => 'required',
+            'txtCantidad' => 'required|numeric',
             'txtPrecioCompra' => 'required|numeric',
-            'txtEditorial' => 'required',
-            'txtCorreo' => 'required|email'
+            'txtPrecioVenta' => 'required|numeric',
+            'txtFecha' => 'required',
+            'txtProveedor' => 'required'
         ];
     }
 }
