@@ -42,3 +42,4 @@ Route::get('MostrarArticulos',[controladorComic::class,'showmArt'])->name('mosAr
 Route::get('MostrarProveedores',[controladorComic::class,'showmPro'])->name('mosPro');
 
 
+

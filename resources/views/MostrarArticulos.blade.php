@@ -20,6 +20,10 @@
           <th scope="col">Precio venta</th>
           <th scope="col">Fecha ingreso</th>
           <th scope="col">Proveedor</th>
+          <th scope="col">Borrar</th>
+          <th scope="col">Editar</th>
+          <th scope="col">Vender</th>
+        
         </tr>
       </thead>
       <tbody>
@@ -32,6 +36,9 @@
           <td>Otto</td>
           <td>Mark</td>
           <td>Otto</td>
+          <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
+        <td><img src="css\images\editar.png" id="opciones" alt=""></td>
+        <td><img src="css\images\vendido.png" id="opciones" alt=""></td>
           
         </tr>
         <tr>
@@ -43,6 +50,9 @@
           <td>Thornton</td>
           <td>Jacob</td>
           <td>Thornton</td>
+          <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
+        <td><img src="css\images\editar.png" id="opciones" alt=""></td>
+        <td><img src="css\images\vendido.png" id="opciones" alt=""></td>
           
         </tr>
         <tr>
@@ -54,6 +64,9 @@
           <td>Thornton</td>
           <td>Jacob</td>
           <td>Thornton</td>
+          <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
+          <td><img src="css\images\editar.png" id="opciones" alt=""></td>
+          <td><img src="css\images\vendido.png" id="opciones" alt=""></td>
         </tr>
       </tbody>
     </table>
