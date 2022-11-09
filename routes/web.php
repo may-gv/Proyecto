@@ -2,12 +2,26 @@
 
 use Illuminate\Support\Facades\Route;
 
+/* Impostamos el Controlador */
+use App\Http\Controllers\controladorComic;
+
+/* Creamos las vistas */
+Route::get('/', [controladorComic::class, 'showLogin']) -> name('Log');
+
+Route::get('inicio', [controladorComic::class, 'showinicio']) -> name('in');
+
+Route::get('inicioo', [controladorComic::class, 'showinicioo']) -> name('ini');
+
+Route::get('Usuarios', [controladorComic::class, 'showUsuarios']) -> name('usu');
+
+Route::get('Comics', [controladorComic::class, 'showComics']) -> name('Com');
+
+Route::post('UsuarioGuardado', [controladorComic::class, 'procesarUsuario']) -> name('UsuGua');
 
 
 
 
-
-
+/* 
 Route::get('/', function () {
     return view('login');
 });
@@ -19,7 +33,7 @@ Route::get('/inicio', function () {
 Route::get('/inicioo', function () {
     return view('inicioo');
 });
-/* ---------Formularios  Valida Christian--------------*/
+
 Route::get('/Usuarios', function () {
     return view('Usuarios');
 });
@@ -27,6 +41,7 @@ Route::get('/Usuarios', function () {
 Route::get('/Comics', function () {
     return view('Comics');
 });
+---------Formularios  Valida Christian--------------*/
 
 /* ---------Formularios  Valida Angel--------------*/
 Route::get('/Articulos', function () {
