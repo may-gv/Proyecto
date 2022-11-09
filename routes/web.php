@@ -25,27 +25,20 @@ Route::get('/Comics', function () {
 });
 
 /* ---------Formularios  Valida Angel--------------*/
-Route::get('/Articulos', function () {
-    return view('Articulos');
-});
 
-Route::get('/Proveedores', function () {
-    return view('Proveedores');
-});
+Route::get('Articulos',[controladorComic::class,'showArticulos'])->name('Arti');
+
+Route::get('Proveedores',[controladorComic::class,'showProveedores'])->name('Provee');
+
+
 /*-------------Tablas--------------*/
-Route::get('/MostrarUsuarios', function () {
-    return view('MostrarUsuarios');
-});
 
-Route::get('/MostrarComics', function () {
-    return view('MostrarComics');
-});
+Route::get('MostrarUsuarios',[controladorComic::class,'showmUsuarios.'])->name('mosUsu');
 
-Route::get('/MostrarArticulos', function () {
-    return view('MostrarArticulos');
-});
+Route::get('MostrarComics',[controladorComic::class,'showmComics'])->name('mosCom');
 
-Route::get('/MostrarProveedores', function () {
-    return view('MostrarProveedores');
-});
+Route::get('MostrarArticulos',[controladorComic::class,'showmArt'])->name('mosArt');
+
+Route::get('MostrarProveedores',[controladorComic::class,'showmPro'])->name('mosPro');
+
 
