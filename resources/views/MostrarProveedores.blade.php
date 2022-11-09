@@ -17,6 +17,10 @@
         <th scope="col">No fijo</th>
         <th scope="col">No celular</th>
         <th scope="col">Correo</th>
+        <th scope="col">Borrar</th>
+          <th scope="col">Editar</th>
+          <th scope="col">Generar pedido</th>
+        
       </tr>
     </thead>
     <tbody>
@@ -30,6 +34,8 @@
         <td>Mark</td>
         <td>Otto</td>
         <td>Otto</td>
+        <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
+        <td><img src="css\images\editar.png" id="opciones" alt=""></td>
         
       </tr>
       <tr>
@@ -42,6 +48,8 @@
         <td>Jacob</td>
         <td>Thornton</td>
         <td>Otto</td>
+        <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
+        <td><img src="css\images\editar.png" id="opciones" alt=""></td>
         
       </tr>
       <tr>
@@ -54,6 +62,8 @@
         <td>Jacob</td>
         <td>Thornton</td>
         <td>Otto</td>
+        <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
+        <td><img src="css\images\editar.png" id="opciones" alt=""></td>
       </tr>
     </tbody>
   </table>

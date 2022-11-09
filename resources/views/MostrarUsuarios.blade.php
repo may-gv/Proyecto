@@ -15,16 +15,23 @@
         <th scope="col">Usuario</th>
         <th scope="col">Contraseña</th>
         <th scope="col">Rol</th>
+        <th scope="col">Borrar</th>
+        <th scope="col">Editar</th>
+          
+        
       </tr>
     </thead>
     <tbody>
       <tr>
         <th scope="row">1</th>
-        <td>Mark</td>
+        <td>Angel</td>
         <td>Otto</td>
         <td>@mdo</td>
         <td>Mark</td>
         <td>Otto</td>
+        <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
+        <td><img src="css\images\editar.png" id="opciones" alt=""></td>
+        
         
       </tr>
       <tr>
@@ -34,6 +41,8 @@
         <td>@fat</td>
         <td>Jacob</td>
         <td>Thornton</td>
+        <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
+        <td><img src="css\images\editar.png" id="opciones" alt=""></td>
         
       </tr>
       <tr>
@@ -43,6 +52,8 @@
         <td>@fat</td>
         <td>Jacob</td>
         <td>Thornton</td>
+        <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
+        <td><img src="css\images\editar.png" id="opciones" alt=""></td>
       </tr>
     </tbody>
   </table>
