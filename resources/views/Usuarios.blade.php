@@ -13,9 +13,6 @@
 @endif
 
 
-        
-
-
     <div class="container mt-4 col-md-6" id="contenedor">
         @if ($errors->any())
 
@@ -68,7 +65,7 @@
                     <label class="form-label" > Rol </label>
                 </div>
                 <div class="mb-3 " id="input">
-                    <select name="Rol" id="" class="form-control" style="background: #48608583">
+                    <select name="Rol" id="" class="form-control" style="background: #48608583" value=" {{ old('Rol')}}">
                         <option value="" style="background: #48608583">Super Usuario</option>
                         <option value="" style="background: #48608583">Vendedor</option>
                     </select>

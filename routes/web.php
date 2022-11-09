@@ -18,6 +18,8 @@ Route::get('Comics', [controladorComic::class, 'showComics']) -> name('Com');
 
 Route::post('UsuarioGuardado', [controladorComic::class, 'procesarUsuario']) -> name('UsuGua');
 
+Route::post('ComicGuardado', [controladorComic::class, 'procesarComic']) -> name('ComGua');
+
 
 
 

@@ -33,7 +33,10 @@ class controladorComic extends Controller
       public function procesarUsuario(ValidadorUsuario $req){
           
         return redirect('Usuarios')->with('confirmacion' , ' Usuario Registrado');
-
-
+      }
+    
+      public function procesarComic(ValidadorComic $req){
+          
+        return redirect('Comics')->with('confirmacion' , ' Comic Registrado');
       }
 }
