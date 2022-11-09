@@ -19,7 +19,7 @@ Route::get('/inicio', function () {
 Route::get('/inicioo', function () {
     return view('inicioo');
 });
-/* ---------Formularios------------*/
+/* ---------Formularios  Valida Christian--------------*/
 Route::get('/Usuarios', function () {
     return view('Usuarios');
 });
@@ -28,6 +28,7 @@ Route::get('/Comics', function () {
     return view('Comics');
 });
 
+/* ---------Formularios  Valida Angel--------------*/
 Route::get('/Articulos', function () {
     return view('Articulos');
 });
