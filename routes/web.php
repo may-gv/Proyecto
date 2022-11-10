@@ -24,13 +24,6 @@ Route::post('UsuarioGuardado', [controladorComic::class, 'procesarUsuario']) -> 
 Route::post('ComicGuardado', [controladorComic::class, 'procesarComic']) -> name('ComGua');
 
 
-Route::get('Articulos',[controladorComic::class,'showArticulos'])->name('Arti');
-
-Route::post('confirmarA', [controladorComic::class, 'GuardarA'])->name('saveA');
-
-Route::get('Proveedores',[controladorComic::class,'showProveedores'])->name('Provee');
-
-Route::post('confirmarP', [controladorComic::class, 'GuardarP'])->name('saveP');
 
 
 
