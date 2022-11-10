@@ -10,6 +10,13 @@
  'success'  ) </script> "!!}
 @endif
 
+@if(session()->has('Finalizadoo'))
+{!! " <script> Swal.fire(
+ 'Eso es todo!',
+ 'Articulo Vendido',
+ 'success'  ) </script> "!!}
+@endif
+
 @if($errors->any())
      @foreach($errors->all() as $error)
      

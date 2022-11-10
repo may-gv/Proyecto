@@ -23,44 +23,13 @@ Route::post('UsuarioGuardado', [controladorComic::class, 'procesarUsuario']) -> 
 
 Route::post('ComicGuardado', [controladorComic::class, 'procesarComic']) -> name('ComGua');
 
-<<<<<<< HEAD
-/*
 
-/* 
-Route::get('/', function () {
-    return view('login');
-});
 
-Route::get('/inicio', function () {
-    return view('inicio');
-});
 
-Route::get('/inicioo', function () {
-    return view('inicioo');
-});
-<<<<<<<<< Temporary merge branch 1
 
-=========
- ---------Formularios  Valida Christian--------------
->>>>>>>>> Temporary merge branch 2
-Route::get('/Usuarios', function () {
-    return view('Usuarios');
-});
+/* ---------Formularios  Validar--------------*/
 
-Route::get('/Comics', function () {
-    return view('Comics');
-});
-<<<<<<<<< Temporary merge branch 1
----------Formularios  Valida Christian--------------*/
-=========
-*/
 
->>>>>>>>> Temporary merge branch 2
-
-/* ---------Formularios  Valida Angel--------------*/
-=======
-
->>>>>>> main
 
 Route::get('Articulos',[controladorComic::class,'showArticulos'])->name('Arti');
 
@@ -89,10 +58,11 @@ Route::get('MostrarArticulos',[controladorComic::class,'showmArt'])->name('mosAr
 Route::get('MostrarProveedores',[controladorComic::class,'showmPro'])->name('mosPro');
 
 
-Route::get('/Ventas_comics', function () {
-    return view('Ventas_comics');
-});
 
-Route::get('/Ventas_articulos', function () {
-    return view('Ventas_articulos');
-});
+
+
+
+Route::get('Ventas_articulos',[controladorComic::class,'showvArticulos'])->name('mosvArt');
+
+Route::post('confirmarvA', [controladorComic::class, 'GuardarvA'])->name('savevA');
+
