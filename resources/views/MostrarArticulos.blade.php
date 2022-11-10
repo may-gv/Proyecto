@@ -4,10 +4,10 @@
 @section('contenido')
 
 @if(session()->has('Finalizado'))
-<div class="alert alert-info alert-dismissible fade show" role="alert">
-  <strong>Articulo Guardado!</strong> 
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
+{!! " <script> Swal.fire(
+ 'Eso es todo!',
+ 'Articulo Registrado',
+ 'success'  ) </script> "!!}
 @endif
 
 @if($errors->any())
@@ -19,9 +19,7 @@
 
 <div class="container mt-5 col-md-10" id="hey">
     <h1 class=" mt-4 text-center text-white fw-bold">Articulos</h1>
-    <a href="/Articulos">
-      <button type="submit" class="btn btn-secondary" id="buton">Registrar</button>
-  <table class=" table text-center mt-2 text-white" id="hey">
+  <table class=" table text-center text-white" id="hey">
     
       <thead>
         <tr>

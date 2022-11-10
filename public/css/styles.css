@@ -63,7 +63,7 @@ form {
     background: #48608583;
 }
 #buton{
-    background-color:#082e31;
+    background-color:#0c4d52;
 }
 
 
@@ -100,4 +100,8 @@ form {
     
     
     justify-content: center;
+}
+
+#in{
+    background-color: rgb(204, 203, 203);
 }

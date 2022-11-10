@@ -2,15 +2,13 @@
 
 
 @section('contenido')
-@if(session()->has('confirmacion'))
 
-
-  <div class="alert alert-info alert-dismissible fade show" role="alert">
-    <strong>Usuario Guardado!</strong> 
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
-
-    @endif
+@if(session()->has('confirmacion')) 
+{!! " <script> Swal.fire(
+ 'Eso es todo!',
+ 'Usuario Registrado',
+ 'success'  ) </script> "!!}
+@endif
 
     @if($errors->any())
         @foreach($errors->all() as $error)
@@ -21,7 +19,12 @@
 <div class="container mt-5 col-md-10" id="hey">
   <h1 class=" mt-4 text-left text-white text-center fw-bold">Usuarios</h1>
   <a href="/Usuarios">
-    <button type="submit" class="btn btn-secondary" id="buton">Registrar</button>
+    <button type="submit" class="btn btn-secondary" id="buton">Registrar Usuario</button></a>
+
+    <div class="input-group mb-3 col-md-3">
+      <input type="text" class="form-control text-center" placeholder="Buscar Usuario" aria-label="Recipient's username" aria-describedby="button-addon2" id="in">
+      <button class="btn btn-outline-secondary" type="button" id="buton">Buscar</button>
+    </div>
 
 <table class=" table text-center text-white mt-2" id="hey">
     <thead>
