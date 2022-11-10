@@ -17,9 +17,11 @@
       @endforeach
  @endif
 
-<div class="container mt-5 col-md-10 text-center" id="hey">
+<div class="container mt-5 col-md-10 " id="hey">
   <h1 class=" mt-4 text-center text-white fw-bold">Comics</h1>
-<table class=" table text-center text-white" id="hey">
+  <a href="/Comics">
+    <button type="submit" class="btn btn-secondary" id="buton">Registrar</button>
+<table class=" table text-center mt-2 text-white" id="hey">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -47,7 +49,9 @@
         <td>Otto</td>
         <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
         <td><img src="css\images\editar.png" id="opciones" alt=""></td>
-        <td><img src="css\images\vendido.png" id="opciones" alt=""></td>
+        <td>
+          <a href="/Ventas_comics">
+            <img src="css\images\vendido.png" id="opciones" alt=""></td>
         
       </tr>
       <tr>
@@ -61,7 +65,9 @@
         <td>Thornton</td>
         <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
         <td><img src="css\images\editar.png" id="opciones" alt=""></td>
-        <td><img src="css\images\vendido.png" id="opciones" alt=""></td>
+        <td>
+          <a href="/Ventas_comics">
+            <img src="css\images\vendido.png" id="opciones" alt=""></td>
         
       </tr>
       <tr>
@@ -75,14 +81,16 @@
         <td>Thornton</td>
         <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
         <td><img src="css\images\editar.png" id="opciones" alt=""></td>
-        <td><img src="css\images\vendido.png" id="opciones" alt=""></td>
+        <td>
+          <a href="/Ventas_comics">
+            <img src="css\images\vendido.png" id="opciones" alt=""></td>
+
       </tr>
     </tbody>
   </table>
 
 
-    <a href="/Comics">
-    <button type="submit" class="btn btn-secondary" id="buton">Registrar</button>
+    
 </div>
 
 @stop
