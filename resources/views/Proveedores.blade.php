@@ -1,18 +1,7 @@
 @extends('plantilla')
 @section('contenido')
 
-@if(session()->has('Finalizado'))
-<div class="alert alert-primary" role="alert">
-   Proveedor Guardado
-</div>
-@endif
 
-@if($errors->any())
-     @foreach($errors->all() as $error)
-     
-     @endforeach
-@endif
-     
 
     <div class="container mt-4 col-md-6" id="contenedor">
      
@@ -28,51 +17,59 @@
         <div class="card-body col-md-12">
 
                 <div class="mb-3 text-white">
-                    <p class="text-primary fst-italic">{{$errors->first('txtEmpresa')}}</p>
+                    
                     <label class="form-label"> Empresa </label>
-                    <input type="text" class="form-control" id="input" name="txtEmpresa" placeholder="Empresa">
+                    <input type="text" class="form-control" id="input" name="txtEmpresa" placeholder="Empresa" value=" {{ old('txtEmpresa')}}">
+                    <p class="text-primary fst-italic">{{$errors->first('txtEmpresa')}}</p>
                 </div>
 
                 <div class="mb-3 text-white">
-                    <p class="text-primary fst-italic">{{$errors->first('txtMercancia')}}</p>
+                    
                     <label class="form-label"> Tipo de mercancia </label>
-                    <input type="text" class="form-control" id="input" name="txtMercancia" placeholder="Tipo de mercancia">
+                    <input type="text" class="form-control" id="input" name="txtMercancia" placeholder="Tipo de mercancia" value=" {{ old('txtMercancia')}}">
+                    <p class="text-primary fst-italic">{{$errors->first('txtMercancia')}}</p>
                 </div>
 
                 <div class="mb-3 text-white">
-                    <p class="text-primary fst-italic">{{$errors->first('txtDireccion')}}</p>
+                    
                     <label class="form-label"> Dirección </label>
-                    <textarea type="text" class="form-control" id="input" name="txtDireccion" placeholder="Dirección"></textarea>
+                    <textarea type="text" class="form-control" id="input" name="txtDireccion" placeholder="Dirección" value=" {{ old('txtDireccion')}}"></textarea>
+                    <p class="text-primary fst-italic">{{$errors->first('txtDireccion')}}</p>
                 </div>
 
                 <div class="mb-3 text-white">
-                    <p class="text-primary fst-italic">{{$errors->first('txtPais')}}</p>
+                    
                     <label class="form-label"> País </label>
-                    <input type="text" step="any" class="form-control" id="input" name="txtPais" placeholder="País">
+                    <input type="text" step="any" class="form-control" id="input" name="txtPais" placeholder="País" value=" {{ old('txtPais')}}">
+                    <p class="text-primary fst-italic">{{$errors->first('txtPais')}}</p>
                 </div>
 
                 <div class="mb-3 text-white">
-                    <p class="text-primary fst-italic">{{$errors->first('txtContacto')}}</p>
+                    
                     <label class="form-label"> Contacto </label>
-                    <input type="text" step="any"  class="form-control" id="input" name="txtContacto" placeholder="Contacto" >
+                    <input type="text" step="any"  class="form-control" id="input" name="txtContacto" placeholder="Contacto" value=" {{ old('txtContacto')}}">
+                    <p class="text-primary fst-italic">{{$errors->first('txtContacto')}}</p>
                 </div>
 
                 <div class="mb-3 text-white">
-                    <p class="text-primary fst-italic">{{$errors->first('txtNum_fijo')}}</p>
+                    
                     <label class="form-label"> Número fijo </label>
-                    <input type="number" class="form-control" id="input" name="txtNum_fijo" placeholder=" Número fijo ">
+                    <input type="number" class="form-control" id="input" name="txtNum_fijo" placeholder=" Número fijo " value=" {{ old('txtNum_fijo')}}">
+                    <p class="text-primary fst-italic">{{$errors->first('txtNum_fijo')}}</p>
                 </div>
 
                 <div class="mb-3 text-white">
-                    <p class="text-primary fst-italic">{{$errors->first('txtNumero_cel')}}</p>
+                    
                     <label class="form-label"> Número celular </label>
-                    <input type="number" class="form-control" id="input" name="txtNumero_cel" placeholder="Número celular ">
+                    <input type="number" class="form-control" id="input" name="txtNumero_cel" placeholder="Número celular " value=" {{ old('txtNumero_cel')}}">
+                    <p class="text-primary fst-italic">{{$errors->first('txtNumero_cel')}}</p>
                 </div>
 
                 <div class="mb-3 text-white">
-                    <p class="text-primary fst-italic">{{$errors->first('txtCorreo')}}</p>
+                    
                     <label class="form-label"> Correo </label>
-                    <input type="email" class="form-control" id="input" name="txtCorreo" placeholder="Correo ">
+                    <input type="email" class="form-control" id="input" name="txtCorreo" placeholder="Correo " value=" {{ old('txtCorreo')}}">
+                    <p class="text-primary fst-italic">{{$errors->first('txtCorreo')}}</p>
                 </div>
 
 

@@ -1,13 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\controladorComic;
 
 /* Impostamos el Controlador */
 use App\Http\Controllers\controladorComic;
 
 
-/*
 
 /* Creamos las vistas */
 Route::get('/', [controladorComic::class, 'showLogin']) -> name('Log');
@@ -25,6 +23,7 @@ Route::post('UsuarioGuardado', [controladorComic::class, 'procesarUsuario']) -> 
 
 Route::post('ComicGuardado', [controladorComic::class, 'procesarComic']) -> name('ComGua');
 
+<<<<<<< HEAD
 /*
 
 /* 
@@ -59,6 +58,9 @@ Route::get('/Comics', function () {
 >>>>>>>>> Temporary merge branch 2
 
 /* ---------Formularios  Valida Angel--------------*/
+=======
+
+>>>>>>> main
 
 Route::get('Articulos',[controladorComic::class,'showArticulos'])->name('Arti');
 
@@ -68,10 +70,17 @@ Route::get('Proveedores',[controladorComic::class,'showProveedores'])->name('Pro
 
 Route::post('confirmarP', [controladorComic::class, 'GuardarP'])->name('saveP');
 
+Route::get('/', function () {
+    return view('prueba');
+});
 
-/*-------------Tablas--------------*/
+
 
 Route::get('MostrarUsuarios',[controladorComic::class,'showmUsuarios.'])->name('mosUsu');
+
+
+Route::get('MostrarUsuarios',[controladorComic::class,'showmUsuar'])->name('mosUsu');
+
 
 Route::get('MostrarComics',[controladorComic::class,'showmComics'])->name('mosCom');
 

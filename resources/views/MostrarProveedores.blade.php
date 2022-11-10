@@ -3,6 +3,20 @@
 
 @section('contenido')
 
+@if(session()->has('Finalizado'))
+
+<div class="alert alert-info alert-dismissible fade show" role="alert">
+  <strong>Proveedor Guardado!</strong> 
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
+
+@if($errors->any())
+     @foreach($errors->all() as $error)
+     
+     @endforeach
+@endif
+     
 <div class="container mt-5 col-md-10 text-center" id="hey">
   <h1 class=" mt-4 text-center text-white fw-bold">Proveedores</h1>
 <table class=" table text-center text-white" id="hey">

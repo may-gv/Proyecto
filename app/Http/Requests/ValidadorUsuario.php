@@ -25,7 +25,7 @@ class ValidadorUsuario extends FormRequest
     {
         return [
             'txtNombre'=> 'required', 
-            'txtTelefono'=>'required',
+            'txtTelefono'=>'required | numeric',
             'txtUsuario'=> 'required', 
             'txtContra'=>'required',
             'Rol'=> 'required', 
