@@ -11,6 +11,7 @@ use PhpParser\Node\Stmt\Return_;
 use App\Http\Requests\ValidadorComic;
 use App\Http\Requests\ValidadorUsuario;
 use App\Http\Requests\ValidadorVentaComic;
+use App\Http\Requests\ValidadorLogin;
 use App\Http\Requests\ValidadorPedido;
 use App\Http\Requests\ValidadorVentaArticulos;
 class controladorComic extends Controller
@@ -65,6 +66,11 @@ class controladorComic extends Controller
 
     public function showLogin(){ 
         return view ('login');
+
+    }
+    public function procesarLogin(ValidadorLogin $req){
+        
+      return redirect('inicio')->with('Acaboo' , 'Venta Registrada');
     }
       
       public function showinicio(){ 
@@ -122,7 +128,10 @@ class controladorComic extends Controller
     return redirect('MostrarArticulos')->with('Acaboo' , 'Venta Registrada');
   }
 
+  public function showmVentas(){
+    return view('VentasRealizadas');
 
+}
     
 
 }
