@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Http\Requests\validarArticulo;
 use App\Http\Requests\validarProveedor;
+use App\Http\Requests\ValidadorLogin;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;
 
@@ -12,7 +13,7 @@ use App\Http\Requests\ValidadorComic;
 use App\Http\Requests\ValidadorUsuario;
 use App\Http\Requests\ValidadorVentaComic;
 use App\Http\Requests\ValidadorPedido;
-
+use App\Http\Requests\ValidadorVentaArticulos;
 class controladorComic extends Controller
 {
 
@@ -88,6 +89,8 @@ class controladorComic extends Controller
       public function showComics(){ 
         return view ('Comics');
       }
+    
+
 
       public function procesarUsuario(ValidadorUsuario $req){
           
@@ -109,6 +112,15 @@ class controladorComic extends Controller
       return redirect('MostrarComics')->with('Acabo' , 'Venta Registrada');
     }
 
+    public function showVentasArt(){
+      return view('Ventas_articulos');
+
+  }
+    public function procesarVentaArticulo(ValidadorVentaArticulos $req){
+          
+      return redirect('MostrarArticulos')->with('Acabo' , 'Venta Registrada');
+    }
+
     public function showPedidos(){
       return view('Pedidos');
 
@@ -117,6 +129,11 @@ class controladorComic extends Controller
     public function procesarPedido(ValidadorPedido $req){
           
       return redirect('MostrarProveedores')->with('Acabo' , 'Venta Registrada');
+    }
+
+    public function procesarLogin(ValidadorLogin $req){
+          
+      return redirect('inicio')->with('confirmacion' , 'Welcome to the jungle');
     }
     
 

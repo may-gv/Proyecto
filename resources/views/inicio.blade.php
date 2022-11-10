@@ -3,6 +3,14 @@
 
 @section('contenido')
 
+@if(session()->has('confirmacion'))
+{!! " <script> Swal.fire(
+ 'Welcome To The Jungle',
+ 'Ya estas Dentro',
+ 'success'  ) </script> "!!}
+@endif
+
+
 
   <div class="container mt-5 col-md-4" id="car">
 

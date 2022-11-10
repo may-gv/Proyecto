@@ -11,7 +11,7 @@
   
 
     <div class="input-group mb-3 col-md-3">
-      <input type="text" class="form-control text-center" placeholder="Buscar Provedor" aria-label="Recipient's username" aria-describedby="button-addon2" id="in">
+      <input type="text" class="form-control text-center" placeholder="Buscar Venta " aria-label="Recipient's username" aria-describedby="button-addon2" id="in">
       <button class="btn btn-outline-secondary" type="button" id="buton">Buscar</button>
     </div>
 <table class=" table text-center text-white" id="hey">

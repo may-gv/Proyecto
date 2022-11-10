@@ -9,9 +9,12 @@ use App\Http\Controllers\controladorComic;
 
 /* Creamos las vistas */
 Route::get('/', [controladorComic::class, 'showLogin']) -> name('Log');
+Route::post('Ingresar', [controladorComic::class, 'procesarLogin']) -> name('inic');
+
 
 
 Route::get('inicio', [controladorComic::class, 'showinicio']) -> name('in');
+
 
 Route::get('inicioo', [controladorComic::class, 'showinicioo']) -> name('ini');
 
@@ -53,14 +56,17 @@ Route::post('Venta_com', [controladorComic::class, 'procesarVentaComic'])->name(
 
 
 
-Route::get('/Ventas_articulos', function () {
-    return view('Ventas_articulos');
-});
+
+
+Route::get('Ventas_articulos',[controladorComic::class,'showVentasArt'])->name('Venta');
+
+Route::post('Venta_art', [controladorComic::class, 'procesarVentaArticulo'])->name('Vent_ar');
 
 
 
 
 Route::get('Pedidos',[controladorComic::class,'showPedidos'])->name('Ped');
+
 Route::post('Genera_Pedido', [controladorComic::class, 'procesarPedido'])->name('Pedido');
 
 Route::get('VentasRealizadas',[controladorComic::class,'showVentasRealizadas'])->name('VentasReli');

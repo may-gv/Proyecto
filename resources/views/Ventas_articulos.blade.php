@@ -9,7 +9,7 @@
     <div class="container mt-4 col-md-6" id="contenedor">
 
 
-        <form class="m-4 col-md-9" id="hey" method="post" action ="">
+        <form class="m-4 col-md-9" id="hey" method="post" action ="Venta_art">
         @csrf
             
         <div class="card text-center mb-2 fw-bold col-md-12" id="cole">
@@ -84,7 +84,7 @@
                 
         <div class="card-footer">
             
-            <button type="submit" class="btn btn-secondary" id="buton">Registrar</button>
+            <button type="submit" class="btn btn-secondary" id="buton">Vender</button>
          
         </div>
     
