@@ -5,8 +5,11 @@ use Illuminate\Support\Facades\Route;
 /* Impostamos el Controlador */
 use App\Http\Controllers\controladorComic;
 
+
+
 /* Creamos las vistas */
 Route::get('/', [controladorComic::class, 'showLogin']) -> name('Log');
+
 
 Route::get('inicio', [controladorComic::class, 'showinicio']) -> name('in');
 
@@ -25,51 +28,28 @@ Route::get('/', function () {
 });
 
 
-/* 
-Route::get('/', function () {
-    return view('login');
-});
+Route::get('Articulos',[controladorComic::class,'showArticulos'])->name('Arti');
 
-Route::get('/inicio', function () {
-    return view('inicio');
-});
+Route::post('confirmarA', [controladorComic::class, 'GuardarA'])->name('saveA');
 
-Route::get('/inicioo', function () {
-    return view('inicioo');
-});
+Route::get('Proveedores',[controladorComic::class,'showProveedores'])->name('Provee');
 
-Route::get('/Usuarios', function () {
-    return view('Usuarios');
-});
+Route::post('confirmarP', [controladorComic::class, 'GuardarP'])->name('saveP');
 
-Route::get('/Comics', function () {
-    return view('Comics');
-});
----------Formularios  Valida Christian--------------*/
 
-/* ---------Formularios  Valida Angel--------------*/
-Route::get('/Articulos', function () {
-    return view('Articulos');
-});
 
-Route::get('/Proveedores', function () {
-    return view('Proveedores');
-});
-/*-------------Tablas--------------*/
-Route::get('/MostrarUsuarios', function () {
-    return view('MostrarUsuarios');
-});
 
-Route::get('/MostrarComics', function () {
-    return view('MostrarComics');
-});
+Route::get('MostrarUsuarios',[controladorComic::class,'showmUsuarios.'])->name('mosUsu');
 
-Route::get('/MostrarArticulos', function () {
-    return view('MostrarArticulos');
-});
 
-Route::get('/MostrarProveedores', function () {
-    return view('MostrarProveedores');
-});
+Route::get('MostrarUsuarios',[controladorComic::class,'showmUsuar'])->name('mosUsu');
+
+
+Route::get('MostrarComics',[controladorComic::class,'showmComics'])->name('mosCom');
+
+Route::get('MostrarArticulos',[controladorComic::class,'showmArt'])->name('mosArt');
+
+Route::get('MostrarProveedores',[controladorComic::class,'showmPro'])->name('mosPro');
+
 
 
