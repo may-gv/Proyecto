@@ -2,6 +2,13 @@
 
 
 @section('contenido')
+
+@if(session()->has('Acaboo')) 
+{!! " <script> Swal.fire(
+ 'Welcome to the Jungle!',
+ 'Ya estas Dentro',
+ 'success'  ) </script> "!!}
+@endif
     <div class="container mt-5 col-md-4" id="car">
 
         <div class="card text-center mb-2 fw-bold " id="lol">
