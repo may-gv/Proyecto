@@ -8,7 +8,7 @@
     <div class="container mt-4 col-md-6" id="contenedor">
         
 
-        <form class="m-4 col-md-9" id="hey" method="POST" action="">
+        <form class="m-4 col-md-9" id="hey" method="POST" action="Genera_Pedido">
             @csrf
 
         <div class="card text-center mb-2 fw-bold col-md-12" id="cole">

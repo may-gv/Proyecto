@@ -61,6 +61,10 @@ Route::get('/Ventas_articulos', function () {
     return view('Ventas_articulos');
 });
 
-Route::get('/Pedidos', function () {
-    return view('Pedidos');
-});
+
+
+
+Route::get('Pedidos',[controladorComic::class,'showPedidos'])->name('Ped');
+Route::post('Genera_Pedido', [controladorComic::class, 'procesarPedido'])->name('Pedido');
+
+Route::get('VentasRealizadas',[controladorComic::class,'showVentasRealizadas'])->name('VentasReli');

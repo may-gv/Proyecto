@@ -13,7 +13,7 @@ class ValidadorPedido extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -27,7 +27,7 @@ class ValidadorPedido extends FormRequest
             'txtTipo'=> 'required', 
             'txtMarca'=>'required',
             'txtDescripcion'=> 'required', 
-            'txtCantidad'=>'required | numeric', 
+            'txtCantidad'=>'required |', 
         ];
     }
 }

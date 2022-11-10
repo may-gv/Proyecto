@@ -16,6 +16,21 @@
      
      @endforeach
 @endif
+
+
+@if(session()->has('Acabo'))
+{!! " <script> Swal.fire(
+ 'Eso es todo!',
+ 'Pedido Generado',
+ 'success'  ) </script> "!!}
+@endif
+
+
+@if($errors->any())
+     @foreach($errors->all() as $error)
+     
+     @endforeach
+@endif
      
 <div class="container mt-5 col-md-10 " id="hey">
   <h1 class=" mt-4 text-center text-white fw-bold">Proveedores</h1>
