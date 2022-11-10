@@ -15,7 +15,7 @@
      <nav class="navbar navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
           <img class="izq" src="css\images\comi.png" width="50" height="50" alt="" id="logito" id="logi">
-          <a class="navbar-brand fs-2"  href="inicio" >Weidoc Comic's
+          <a class="navbar-brand fs-2 fw-bold"  href="inicio" id="letras" >Weidoc Comic's
             
           </a>
           
