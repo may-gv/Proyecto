@@ -5,21 +5,19 @@
 
 @if(session()->has('confirmacion')) 
 
-    <div class="alert alert-primary alert-dismissible fade show" role="alert">
-    <strong> Comic Registrado  </strong> 
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
-
-@endif
+<div class="alert alert-primary" role="alert">
+    Comic Guardado
+ </div>
+ @endif
+ 
+ @if($errors->any())
+      @foreach($errors->all() as $error)
+      
+      @endforeach
+ @endif
 
     <div class="container mt-4 col-md-6" id="contenedor">
-        @if ($errors->any())
-
-        @foreach ($errors->all() as $error)
- 
-       
-        @endforeach  
-      @endif
+        
 
         <form class="m-4 col-md-9" id="hey" method="POST" action="ComicGuardado">
             @csrf
@@ -74,35 +72,28 @@
                     <label class="form-label"> Proveedor </label>
                 </div>
                 <div class="mb-3 " id="input">
-                    <select name="txtRol" id="" class="form-control" style="background: #48608583" value=" {{ old('txtRol')}}">
+                    <select name="txtRol" id="" class="form-control" style="background: #48608583">
                         <option value="" style="background: #48608583">......</option>
-                        <p class="text-primary fst-Italic">{{ $errors->first('txtRol') }} </p>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
                         
                     </select>
+                <p class="text-primary fst-italic">{{$errors->first('txtRol')}}</p>
+
+                    
                 </div>
 
                 
         <div class="card-footer">
             
             <button type="submit" class="btn btn-secondary" id="buton">Registrar</button>
-        </form>
          
         </div>
+            </form>
+            </div>
+        </div>
     
-        
-    
-
-
-</div>
-</div>
-
-
-
-
-
-
-
-
 
 
 
