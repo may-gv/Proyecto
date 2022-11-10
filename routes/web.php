@@ -20,7 +20,9 @@ Route::post('UsuarioGuardado', [controladorComic::class, 'procesarUsuario']) -> 
 
 Route::post('ComicGuardado', [controladorComic::class, 'procesarComic']) -> name('ComGua');
 
-
+Route::get('/', function () {
+    return view('prueba');
+});
 
 
 /* 
