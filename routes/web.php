@@ -6,8 +6,12 @@ use App\Http\Controllers\controladorComic;
 /* Impostamos el Controlador */
 use App\Http\Controllers\controladorComic;
 
+
+/*
+
 /* Creamos las vistas */
 Route::get('/', [controladorComic::class, 'showLogin']) -> name('Log');
+
 
 Route::get('inicio', [controladorComic::class, 'showinicio']) -> name('in');
 
@@ -20,8 +24,6 @@ Route::get('Comics', [controladorComic::class, 'showComics']) -> name('Com');
 Route::post('UsuarioGuardado', [controladorComic::class, 'procesarUsuario']) -> name('UsuGua');
 
 Route::post('ComicGuardado', [controladorComic::class, 'procesarComic']) -> name('ComGua');
-
-
 
 /*
 
@@ -37,7 +39,11 @@ Route::get('/inicio', function () {
 Route::get('/inicioo', function () {
     return view('inicioo');
 });
-/* ---------Formularios  Valida Christian--------------*/
+<<<<<<<<< Temporary merge branch 1
+
+=========
+ ---------Formularios  Valida Christian--------------
+>>>>>>>>> Temporary merge branch 2
 Route::get('/Usuarios', function () {
     return view('Usuarios');
 });
@@ -45,6 +51,12 @@ Route::get('/Usuarios', function () {
 Route::get('/Comics', function () {
     return view('Comics');
 });
+<<<<<<<<< Temporary merge branch 1
+---------Formularios  Valida Christian--------------*/
+=========
+*/
+
+>>>>>>>>> Temporary merge branch 2
 
 /* ---------Formularios  Valida Angel--------------*/
 

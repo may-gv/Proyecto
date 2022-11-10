@@ -77,3 +77,27 @@ form {
     height: 35px; ;
     width: 35px;
 }
+#car{
+    
+    
+    height: 650px;
+    width: 1000px;
+    align-items: center;
+    
+    
+    justify-content: center;
+    
+    
+}
+
+#lol{
+    background-color:#8eb7bbe8;
+    
+    text-align: center;
+    padding: 20px 25px;
+   
+    align-items: center;
+    
+    
+    justify-content: center;
+}

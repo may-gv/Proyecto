@@ -36,6 +36,7 @@
         <td>Otto</td>
         <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
         <td><img src="css\images\editar.png" id="opciones" alt=""></td>
+        <td><img src="css\images\vendido.png" id="opciones" alt=""></td>
         
       </tr>
       <tr>
@@ -50,6 +51,7 @@
         <td>Otto</td>
         <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
         <td><img src="css\images\editar.png" id="opciones" alt=""></td>
+        <td><img src="css\images\vendido.png" id="opciones" alt=""></td>
         
       </tr>
       <tr>
@@ -64,6 +66,7 @@
         <td>Otto</td>
         <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
         <td><img src="css\images\editar.png" id="opciones" alt=""></td>
+        <td><img src="css\images\vendido.png" id="opciones" alt=""></td>
       </tr>
     </tbody>
   </table>
