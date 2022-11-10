@@ -1,13 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\controladorComic;
-
 /* Impostamos el Controlador */
 use App\Http\Controllers\controladorComic;
 
 
-/*
+
 
 /* Creamos las vistas */
 Route::get('/', [controladorComic::class, 'showLogin']) -> name('Log');
@@ -27,38 +25,6 @@ Route::post('ComicGuardado', [controladorComic::class, 'procesarComic']) -> name
 
 
 
-
-/* 
-Route::get('/', function () {
-    return view('login');
-});
-
-Route::get('/inicio', function () {
-    return view('inicio');
-});
-
-Route::get('/inicioo', function () {
-    return view('inicioo');
-});
-
- ---------Formularios  Valida Christian--------------
-
-Route::get('/Usuarios', function () {
-    return view('Usuarios');
-});
-
-Route::get('/Comics', function () {
-    return view('Comics');
-});
-
-*/
-
-
----------Formularios  Valida Christian--------------*/
-
-
-/* ---------Formularios  Valida Angel--------------*/
-
 Route::get('Articulos',[controladorComic::class,'showArticulos'])->name('Arti');
 
 Route::post('confirmarA', [controladorComic::class, 'GuardarA'])->name('saveA');
@@ -68,9 +34,8 @@ Route::get('Proveedores',[controladorComic::class,'showProveedores'])->name('Pro
 Route::post('confirmarP', [controladorComic::class, 'GuardarP'])->name('saveP');
 
 
-/*-------------Tablas--------------*/
 
-Route::get('MostrarUsuarios',[controladorComic::class,'showmUsuarios.'])->name('mosUsu');
+Route::get('MostrarUsuarios',[controladorComic::class,'showmUsuar'])->name('mosUsu');
 
 Route::get('MostrarComics',[controladorComic::class,'showmComics'])->name('mosCom');
 

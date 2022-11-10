@@ -82,19 +82,21 @@
                 </div>
 
                 
+                
         <div class="card-footer">
             
             <button type="submit" class="btn btn-secondary" id="buton">Registrar</button>
         </form>
+    </div>
+</div>
+</div>
+
          
         </div>
     
         
     
 
-
-</div>
-</div>
 
 
 
