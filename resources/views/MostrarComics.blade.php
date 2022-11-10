@@ -4,12 +4,11 @@
 @section('contenido')
 
 @if(session()->has('confirmacion')) 
-
-<div class="alert alert-info alert-dismissible fade show" role="alert">
-  <strong>Comic Guardado!</strong> 
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
- @endif
+{!! " <script> Swal.fire(
+ 'Eso es todo!',
+ 'Comic Guardado',
+ 'success'  ) </script> "!!}
+@endif
  
  @if($errors->any())
       @foreach($errors->all() as $error)
@@ -17,9 +16,20 @@
       @endforeach
  @endif
 
-<div class="container mt-5 col-md-10 text-center" id="hey">
+<div class="container mt-5 col-md-10 " id="hey">
   <h1 class=" mt-4 text-center text-white fw-bold">Comics</h1>
+
+  <a href="/Comics">
+    <button type="submit" class="btn btn-secondary" id="buton">Registrar</button>
+<table class=" table text-center mt-2 text-white" id="hey">
+
+
+  <div class="input-group mb-3 col-md-3">
+    <input type="text" class="form-control text-center" placeholder="Buscar Comic" aria-label="Recipient's username" aria-describedby="button-addon2" id="in">
+    <button class="btn btn-outline-secondary" type="button" id="buton">Buscar</button>
+  </div>
 <table class=" table text-center text-white" id="hey">
+
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -47,7 +57,9 @@
         <td>Otto</td>
         <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
         <td><img src="css\images\editar.png" id="opciones" alt=""></td>
-        <td><img src="css\images\vendido.png" id="opciones" alt=""></td>
+        <td>
+          <a href="/Ventas_comics">
+            <img src="css\images\vendido.png" id="opciones" alt=""></td>
         
       </tr>
       <tr>
@@ -61,7 +73,9 @@
         <td>Thornton</td>
         <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
         <td><img src="css\images\editar.png" id="opciones" alt=""></td>
-        <td><img src="css\images\vendido.png" id="opciones" alt=""></td>
+        <td>
+          <a href="/Ventas_comics">
+            <img src="css\images\vendido.png" id="opciones" alt=""></td>
         
       </tr>
       <tr>
@@ -75,14 +89,16 @@
         <td>Thornton</td>
         <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
         <td><img src="css\images\editar.png" id="opciones" alt=""></td>
-        <td><img src="css\images\vendido.png" id="opciones" alt=""></td>
+        <td>
+          <a href="/Ventas_comics">
+            <img src="css\images\vendido.png" id="opciones" alt=""></td>
+
       </tr>
     </tbody>
   </table>
 
 
-    <a href="/Comics">
-    <button type="submit" class="btn btn-secondary" id="buton">Registrar</button>
+    
 </div>
 
 @stop

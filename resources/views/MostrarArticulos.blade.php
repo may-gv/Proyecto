@@ -4,10 +4,10 @@
 @section('contenido')
 
 @if(session()->has('Finalizado'))
-<div class="alert alert-info alert-dismissible fade show" role="alert">
-  <strong>Articulo Guardado!</strong> 
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
+{!! " <script> Swal.fire(
+ 'Eso es todo!',
+ 'Articulo Registrado',
+ 'success'  ) </script> "!!}
 @endif
 
 @if($errors->any())
@@ -17,7 +17,7 @@
 @endif
 
 
-<div class="container mt-5 col-md-10 text-center" id="hey">
+<div class="container mt-5 col-md-10" id="hey">
     <h1 class=" mt-4 text-center text-white fw-bold">Articulos</h1>
   <table class=" table text-center text-white" id="hey">
     
@@ -49,7 +49,9 @@
           <td>Otto</td>
           <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
         <td><img src="css\images\editar.png" id="opciones" alt=""></td>
-        <td><img src="css\images\vendido.png" id="opciones" alt=""></td>
+        <td>
+        <a href="/Ventas_articulos">
+        <img src="css\images\vendido.png" id="opciones" alt=""></td>
           
         </tr>
         <tr>
@@ -63,7 +65,9 @@
           <td>Thornton</td>
           <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
         <td><img src="css\images\editar.png" id="opciones" alt=""></td>
-        <td><img src="css\images\vendido.png" id="opciones" alt=""></td>
+        <td>
+        <a href="/Ventas_articulos">
+        <img src="css\images\vendido.png" id="opciones" alt=""></td>
           
         </tr>
         <tr>
@@ -77,13 +81,14 @@
           <td>Thornton</td>
           <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
           <td><img src="css\images\editar.png" id="opciones" alt=""></td>
-          <td><img src="css\images\vendido.png" id="opciones" alt=""></td>
+          <td>
+          <a href="/Ventas_articulos">
+          <img src="css\images\vendido.png" id="opciones" alt=""></td>
         </tr>
       </tbody>
     </table>
 
-<a href="/Articulos">
-  <button type="submit" class="btn btn-secondary" id="buton">Registrar</button>
+
 
 
 
