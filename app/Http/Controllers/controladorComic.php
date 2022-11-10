@@ -17,8 +17,6 @@ use App\Http\Requests\ValidadorVentaComic;
 class controladorComic extends Controller
 {
 
-    //
-
 
     public function showArticulos(){
         return view('Articulos');
