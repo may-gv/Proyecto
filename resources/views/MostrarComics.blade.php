@@ -9,6 +9,13 @@
  'Comic Guardado',
  'success'  ) </script> "!!}
 @endif
+
+@if(session()->has('Acabo')) 
+{!! " <script> Swal.fire(
+ 'Eso es todo!',
+ 'Venta Realizada',
+ 'success'  ) </script> "!!}
+@endif
  
  @if($errors->any())
       @foreach($errors->all() as $error)
