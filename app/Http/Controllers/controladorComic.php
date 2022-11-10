@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Requests\validarArticulo;
+use App\Http\Requests\validarProveedor;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Return_;
+
 
 //Importamos los validadodes
 use App\Http\Requests\ValidadorComic;
@@ -10,6 +13,7 @@ use App\Http\Requests\ValidadorUsuario;
 
 class controladorComic extends Controller
 {
+
     //Creamos las funciones
     public function showLogin(){ 
         return view ('login');
@@ -39,4 +43,51 @@ class controladorComic extends Controller
           
         return redirect('Comics')->with('confirmacion' , ' Comic Registrado');
       }
+
+    public function showArticulos(){
+        return view('Articulos');
+
+    }
+
+    public function showProveedores(){
+        return view('Proveedores');
+
+    }
+
+    public function GuardarA(validarArticulo $req){
+
+
+        return redirect('Articulos')->with('Finalizado', 'Articulo Guardado');
+    }
+
+
+    public function GuardarP(validarProveedor $req){
+
+        return redirect('Proveedores')->with('Finalizado', 'Proveedor Guardado');
+
+    }
+
+
+    /* ---------vistas  tablas--------------*/
+
+    public function showmUsuarios(){
+        return view('MostrarUsuarios');
+
+    }
+
+    public function showmComics(){
+        return view('MostrarComics');
+
+    }
+
+    public function showmArt(){
+        return view('MostrarArticulos');
+
+    }
+
+    public function showmPro(){
+        return view('MostrarProveedores');
+
+    }
+
 }
