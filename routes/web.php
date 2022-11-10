@@ -51,10 +51,11 @@ Route::get('MostrarArticulos',[controladorComic::class,'showmArt'])->name('mosAr
 
 Route::get('MostrarProveedores',[controladorComic::class,'showmPro'])->name('mosPro');
 
+Route::get('Ventas_comics',[controladorComic::class,'showVentasCom'])->name('Vent');
+Route::post('Venta_com', [controladorComic::class, 'procesarVentaComic'])->name('Ventasss');
 
-Route::get('/Ventas_comics', function () {
-    return view('Ventas_comics');
-});
+
+
 
 Route::get('/Ventas_articulos', function () {
     return view('Ventas_articulos');

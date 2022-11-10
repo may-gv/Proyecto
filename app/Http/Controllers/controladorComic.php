@@ -10,6 +10,7 @@ use PhpParser\Node\Stmt\Return_;
 //Importamos los validadodes
 use App\Http\Requests\ValidadorComic;
 use App\Http\Requests\ValidadorUsuario;
+use App\Http\Requests\ValidadorVentaComic;
 
 class controladorComic extends Controller
 {
@@ -91,5 +92,17 @@ class controladorComic extends Controller
           
         return redirect('MostrarComics')->with('confirmacion' , ' Comic Registrado');
       }
+
+      public function showVentasCom(){
+        return view('Ventas_comics');
+
+    }
+
+    public function procesarVentaComic(ValidadorVentaComic $req){
+          
+      return redirect('MostrarComics')->with('Acabo' , 'Venta Registrada');
+    }
+
+    
 
 }
