@@ -4,12 +4,11 @@
 @section('contenido')
 
 @if(session()->has('confirmacion')) 
-
-<div class="alert alert-info alert-dismissible fade show" role="alert">
-  <strong>Comic Guardado!</strong> 
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
- @endif
+{!! " <script> Swal.fire(
+ 'Eso es todo!',
+ 'Comic Guardado',
+ 'success'  ) </script> "!!}
+@endif
  
  @if($errors->any())
       @foreach($errors->all() as $error)

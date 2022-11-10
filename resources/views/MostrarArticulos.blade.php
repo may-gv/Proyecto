@@ -4,10 +4,10 @@
 @section('contenido')
 
 @if(session()->has('Finalizado'))
-<div class="alert alert-info alert-dismissible fade show" role="alert">
-  <strong>Articulo Guardado!</strong> 
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
+{!! " <script> Swal.fire(
+ 'Eso es todo!',
+ 'Articulo Registrado',
+ 'success'  ) </script> "!!}
 @endif
 
 @if($errors->any())

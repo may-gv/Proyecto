@@ -2,15 +2,13 @@
 
 
 @section('contenido')
-@if(session()->has('confirmacion'))
 
-
-  <div class="alert alert-info alert-dismissible fade show" role="alert">
-    <strong>Usuario Guardado!</strong> 
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
-
-    @endif
+@if(session()->has('confirmacion')) 
+{!! " <script> Swal.fire(
+ 'Eso es todo!',
+ 'Usuario Registrado',
+ 'success'  ) </script> "!!}
+@endif
 
     @if($errors->any())
         @foreach($errors->all() as $error)
