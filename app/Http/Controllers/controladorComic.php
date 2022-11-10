@@ -112,5 +112,17 @@ class controladorComic extends Controller
     }
 
     
+    public function showVentasArt(){
+      return view('Ventas_articulos');
+
+  }
+
+  public function procesarVentaArticulo(ValidadorVentaArticulos $req){
+        
+    return redirect('MostrarArticulos')->with('Acaboo' , 'Venta Registrada');
+  }
+
+
+    
 
 }

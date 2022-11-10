@@ -59,9 +59,5 @@ Route::get('MostrarProveedores',[controladorComic::class,'showmPro'])->name('mos
 Route::get('Ventas_comics',[controladorComic::class,'showVentasCom'])->name('Vent');
 Route::post('Venta_com', [controladorComic::class, 'procesarVentaComic'])->name('Ventasss');
 
-
-
-
-Route::get('/Ventas_articulos', function () {
-    return view('Ventas_articulos');
-});
+Route::get('Ventas_articulos',[controladorComic::class,'showVentasArt'])->name('Vent');
+Route::post('Venta_Art', [controladorComic::class, 'procesarVentaArticulo'])->name('Ventass');
