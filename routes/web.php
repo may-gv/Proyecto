@@ -23,7 +23,7 @@ Route::post('UsuarioGuardado', [controladorComic::class, 'procesarUsuario']) -> 
 
 Route::post('ComicGuardado', [controladorComic::class, 'procesarComic']) -> name('ComGua');
 
-<<<<<<<<< Temporary merge branch 1
+
 
 Route::get('Articulos',[controladorComic::class,'showArticulos'])->name('Arti');
 
@@ -32,11 +32,10 @@ Route::post('confirmarA', [controladorComic::class, 'GuardarA'])->name('saveA');
 Route::get('Proveedores',[controladorComic::class,'showProveedores'])->name('Provee');
 
 Route::post('confirmarP', [controladorComic::class, 'GuardarP'])->name('saveP');
-=========
+
 Route::get('/', function () {
     return view('prueba');
 });
->>>>>>>>> Temporary merge branch 2
 
 
 

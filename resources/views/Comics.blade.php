@@ -3,18 +3,7 @@
 
 @section('contenido')
 
-@if(session()->has('confirmacion')) 
 
-<div class="alert alert-primary" role="alert">
-    Comic Guardado
- </div>
- @endif
- 
- @if($errors->any())
-      @foreach($errors->all() as $error)
-      
-      @endforeach
- @endif
 
     <div class="container mt-4 col-md-6" id="contenedor">
         
