@@ -19,6 +19,13 @@
      
 <div class="container mt-5 col-md-10 " id="hey">
   <h1 class=" mt-4 text-center text-white fw-bold">Proveedores</h1>
+  <a href="/Proveedores">
+    <button type="submit" class="btn btn-secondary" id="buton">Registrar Provedor</button></a>
+
+    <div class="input-group mb-3 col-md-3">
+      <input type="text" class="form-control text-center" placeholder="Buscar Provedor" aria-label="Recipient's username" aria-describedby="button-addon2" id="in">
+      <button class="btn btn-outline-secondary" type="button" id="buton">Buscar</button>
+    </div>
 <table class=" table text-center text-white" id="hey">
     <thead>
       <tr>
