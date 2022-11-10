@@ -1,17 +1,7 @@
 @extends('plantilla')
 @section('contenido')
 
-@if(session()->has('Finalizado'))
-<div class="alert alert-primary" role="alert">
-   Articulo Guardado
-</div>
-@endif
 
-@if($errors->any())
-     @foreach($errors->all() as $error)
-     
-     @endforeach
-@endif
 
 
     <div class="container mt-4 col-md-6" id="contenedor">
@@ -30,7 +20,7 @@
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Tipo </label>
-                    <input type="text" class="form-control" id="input" name="txtTipo" placeholder="Tipo">
+                    <input type="text" class="form-control" id="input" name="txtTipo" placeholder="Tipo" value=" {{ old('txtTipo')}}">
                     <p class="text-primary fst-italic">{{$errors->first('txtTipo')}}</p>
 
 
@@ -38,7 +28,7 @@
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Marca </label>
-                    <input type="text" class="form-control" id="input" name="txtMarca" placeholder="Marca">
+                    <input type="text" class="form-control" id="input" name="txtMarca" placeholder="Marca" value=" {{ old('txtMarca')}}">
                     <p class="text-primary fst-italic">{{$errors->first('txtMarca')}}</p>
 
                     
@@ -47,7 +37,7 @@
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Descripción </label>
-                    <textarea type="text" class="form-control" id="input" name="txtDescripcion" placeholder="Descripción"></textarea>
+                    <textarea type="text" class="form-control" id="input" name="txtDescripcion" placeholder="Descripción" value=" {{ old('txtDescripcion')}}"></textarea>
                     <p class="text-primary fst-italic">{{$errors->first('txtDescripcion')}}</p>
 
 
@@ -55,7 +45,7 @@
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Cantidad </label>
-                    <input type="number" step="any" class="form-control" id="input" name="txtCantidad" placeholder="Cantidad">
+                    <input type="number" step="any" class="form-control" id="input" name="txtCantidad" placeholder="Cantidad" value=" {{ old('txtCantidad')}}">
                     <p class="text-primary fst-italic">{{$errors->first('txtCantidad')}}</p>
 
 
@@ -63,7 +53,7 @@
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Precio compra </label>
-                    <input type="number" step="any" class="form-control" id="input" name="txtPrecioCompra" placeholder="Precio compra">
+                    <input type="number" step="any" class="form-control" id="input" name="txtPrecioCompra" placeholder="Precio compra" value=" {{ old('txtPrecioCompra')}}">
                     <p class="text-primary fst-italic">{{$errors->first('txtPrecioCompra')}}</p>
 
 
@@ -71,14 +61,14 @@
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Precio Venta </label>
-                    <input type="number" step="any"  class="form-control" id="input" name="txtPrecioVenta" placeholder="Precio Venta" >
+                    <input type="number" step="any"  class="form-control" id="input" name="txtPrecioVenta" placeholder="Precio Venta" value=" {{ old('txtPrecioVenta')}}" >
                     <p class="text-primary fst-italic">{{$errors->first('txtPrecioVenta')}}</p>
 
                 </div>
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Fecha ingreso </label>
-                    <input type="date" class="form-control" id="input" name="txtFecha" placeholder="Fecha ingreso ">
+                    <input type="date" class="form-control" id="input" name="txtFecha" placeholder="Fecha ingreso " value=" {{ old('txtFecha')}}">
                     <p class="text-primary fst-italic">{{$errors->first('txtFecha')}}</p>
 
                 </div>
@@ -87,7 +77,7 @@
                     <label class="form-label"> Proveedor </label>
                 </div>
                 <div class="mb-3 " id="input">
-                    <select name="txtProveedor" id="" class="form-control" style="background: #48608583">
+                    <select name="txtProveedor" id="" class="form-control" style="background: #48608583" value=" {{ old('txtProveedor')}}">
                         <option value="" style="background: #48608583">......</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>

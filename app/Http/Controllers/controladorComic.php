@@ -27,13 +27,13 @@ class controladorComic extends Controller
     public function GuardarA(validarArticulo $req){
 
 
-        return redirect('Articulos')->with('Finalizado', 'Articulo Guardado');
+        return redirect('MostrarArticulos')->with('Finalizado', 'Articulo Guardado');
     }
 
 
     public function GuardarP(validarProveedor $req){
 
-        return redirect('Proveedores')->with('Finalizado', 'Proveedor Guardado');
+        return redirect('MostrarProveedores')->with('Finalizado', 'Proveedor Guardado');
 
     }
 
@@ -84,12 +84,12 @@ class controladorComic extends Controller
 
       public function procesarUsuario(ValidadorUsuario $req){
           
-        return redirect('Usuarios')->with('confirmacion' , ' Usuario Registrado');
+        return redirect('MostrarUsuarios')->with('confirmacion' , ' Usuario Registrado');
       }
     
       public function procesarComic(ValidadorComic $req){
           
-        return redirect('Comics')->with('confirmacion' , ' Comic Registrado');
+        return redirect('MostrarComics')->with('confirmacion' , ' Comic Registrado');
       }
 
 }
