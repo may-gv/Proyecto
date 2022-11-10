@@ -28,20 +28,20 @@
                 <div class="mb-3 text-white">
                   
                     <label class="form-label"> Nombre </label>
-                    <input type="text" class="form-control" id="input" name="txtNombre" placeholder="Nombre" value=" {{ old('txtNombre')}}">
-                    <p class="text-primary fst-italic">{{$errors->first('txtNombre')}}</p>
+                    <input type="text" class="form-control" id="input" name="txtNombre" placeholder="Nombre" value=" {{ old('txtNombre')}}"disabled>
+                    
                 </div>
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Edición </label>
-                    <input type="text" class="form-control" id="input" name="txtEdicion" placeholder="Teléfono" value=" {{ old('txtEdicion')}}">
-                    <p class="text-primary fst-italic">{{$errors->first('txtEdicion')}}</p>
+                    <input type="text" class="form-control" id="input" name="txtEdicion" placeholder="Teléfono" value=" {{ old('txtEdicion')}}" disabled>
+                    
                 </div>
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Compañia </label>
-                    <input type="text" class="form-control" id="input" name="txtCompania" placeholder="Compañia" value=" {{ old('txtCompania')}}">
-                    <p class="text-primary fst-italic">{{$errors->first('txtCompania')}}</p>
+                    <input type="text" class="form-control" id="input" name="txtCompania" placeholder="Compañia" value=" {{ old('txtCompania')}}" disabled>
+                    
                 </div>
 
                 
@@ -62,14 +62,14 @@
                 <div class="mb-3 text-white">
                     <label class="form-label"> Ingrese la cantidad a vender </label>
                     <input type="number" step="any" class="form-control" id="input" name="txtCantidad" placeholder="Cantidad" value=" {{ old('txtCantidad')}}">
-
+                    <p class="text-primary fst-italic">{{$errors->first('txtCantidad')}}</p>
 
                 </div>
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Total </label>
-                    <input type="number" step="any"  class="form-control" id="input" name="txtTotal" placeholder="Precio Venta" value=" {{ old('txtPrecioVenta')}}">
-                    <p class="text-primary fst-italic">{{$errors->first('txtTotal')}}</p>
+                    <input type="number" step="any"  class="form-control" id="input" name="txtTotal" placeholder="Precio Venta" value=" {{ old('txtPrecioVenta')}}" disabled>
+                    
   
                 </div>
                 
@@ -81,7 +81,7 @@
                 
         <div class="card-footer">
             
-            <button type="submit" class="btn btn-secondary" id="buton">Registrar</button>
+            <button type="submit" class="btn btn-secondary" id="buton">Vender</button>
 
        
     </div>
