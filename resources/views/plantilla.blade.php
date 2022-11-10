@@ -25,6 +25,9 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
+                  <a class="nav-link active fst-italic fs-3" aria-current="page" href="inicio">Inicio</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link active fst-italic fs-3" aria-current="page" href="MostrarUsuarios">Usuarios</a>
                 </li>
                 <li class="nav-item">
@@ -32,6 +35,9 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active fst-italic fs-3" href="MostrarArticulos">Articulos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active fst-italic fs-3" href="VentasRealizadas">Ventas</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active fst-italic fs-3" aria-current="page" href="MostrarProveedores">Provedores</a>

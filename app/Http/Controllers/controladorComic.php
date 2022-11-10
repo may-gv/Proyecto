@@ -26,6 +26,11 @@ class controladorComic extends Controller
 
     }
 
+    public function showventasrealizadas(){
+      return view('VentasRealizadas');
+
+  }
+
     public function GuardarA(validarArticulo $req){
 
 

@@ -37,7 +37,58 @@
     
   <br>
   <br>
+    <div class="card">
+      <div class="card-body text-center mb-2 fst-italic" >
+        <h1>Somos Weidoc Comic's</h1>
+        La mejor y más grande tienda de cómics en México.
+        <br>
+        Nuestra misión es satisfacer todas las necesidades de los coleccionistas del cómic mexicanos.
+      </div>
+    </div>
+<br>
+<br>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card">
+          <img src="https://m.media-amazon.com/images/I/51vtj0CYiGL.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Amazing Spider-man Epic Collect TP Great Power </h5>
+            <p class="card-text">Novela Grafica
+              Marvel Comics
+              Disponible
+              <br>
+              MXN $1035.00</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="https://previewsworld.com/SiteImage/MainImage/STL249104.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Fantastic Four 7th Series #1 Alex Ross B Var</h5>
+            <p class="card-text">Comic Nuevo
+              Marvel Comics
+              Disponible
+              <br>
+              MXN $115.00</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="https://cdn.shopify.com/s/files/1/1796/6731/products/STL244725.jpg?v=1664135685" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Ghost Rider 10th Series #8 Coccolo X-treme Marvel Var</h5>
+            <p class="card-text">Comic Nuevo
+              Marvel Comics
+              Disponible
+            <br>
+            MXN $92.00</p>
+          </div>
+        </div>
+      </div>
 
+    </div>
 
   
 
