@@ -60,3 +60,7 @@ Route::post('Venta_com', [controladorComic::class, 'procesarVentaComic'])->name(
 Route::get('/Ventas_articulos', function () {
     return view('Ventas_articulos');
 });
+
+Route::get('/Pedidos', function () {
+    return view('Pedidos');
+});
