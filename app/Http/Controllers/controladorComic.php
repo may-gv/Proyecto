@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 use App\Http\Requests\validarArticulo;
 use App\Http\Requests\validarProveedor;
-use App\Http\Requests\ValidadorLogin;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;
 
@@ -17,6 +16,7 @@ use App\Http\Requests\ValidadorVentaArticulos;
 class controladorComic extends Controller
 {
 
+
     public function showArticulos(){
         return view('Articulos');
 
@@ -26,11 +26,6 @@ class controladorComic extends Controller
         return view('Proveedores');
 
     }
-
-    public function showventasrealizadas(){
-      return view('VentasRealizadas');
-
-  }
 
     public function GuardarA(validarArticulo $req){
 
@@ -68,9 +63,6 @@ class controladorComic extends Controller
 
     }
 
-
-
-    //Creamos las funciones
     public function showLogin(){ 
         return view ('login');
     }
@@ -88,9 +80,16 @@ class controladorComic extends Controller
       }
       public function showComics(){ 
         return view ('Comics');
-      }
-    
 
+      }
+
+      public function showvArticulos(){ 
+        return view ('Ventas_articulos');
+      }
+
+      public function GuardarvA(validarvArticulo $req){
+        return redirect('MostrarArticulos')->with('Finalizadoo', 'Articulo Vendido');
+      }
 
       public function procesarUsuario(ValidadorUsuario $req){
           
@@ -112,29 +111,6 @@ class controladorComic extends Controller
       return redirect('MostrarComics')->with('Acabo' , 'Venta Registrada');
     }
 
-    public function showVentasArt(){
-      return view('Ventas_articulos');
-
-  }
-    public function procesarVentaArticulo(ValidadorVentaArticulos $req){
-          
-      return redirect('MostrarArticulos')->with('Acabo' , 'Venta Registrada');
-    }
-
-    public function showPedidos(){
-      return view('Pedidos');
-
-  }
-
-    public function procesarPedido(ValidadorPedido $req){
-          
-      return redirect('MostrarProveedores')->with('Acabo' , 'Venta Registrada');
-    }
-
-    public function procesarLogin(ValidadorLogin $req){
-          
-      return redirect('inicio')->with('confirmacion' , 'Welcome to the jungle');
-    }
     
 
 }

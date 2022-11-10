@@ -28,6 +28,12 @@ Route::post('ComicGuardado', [controladorComic::class, 'procesarComic']) -> name
 
 
 
+
+
+/* ---------Formularios  Validar--------------*/
+
+
+
 Route::get('Articulos',[controladorComic::class,'showArticulos'])->name('Arti');
 
 Route::post('confirmarA', [controladorComic::class, 'GuardarA'])->name('saveA');
@@ -56,17 +62,6 @@ Route::post('Venta_com', [controladorComic::class, 'procesarVentaComic'])->name(
 
 
 
-
-
-Route::get('Ventas_articulos',[controladorComic::class,'showVentasArt'])->name('Venta');
-
-Route::post('Venta_art', [controladorComic::class, 'procesarVentaArticulo'])->name('Vent_ar');
-
-
-
-
-Route::get('Pedidos',[controladorComic::class,'showPedidos'])->name('Ped');
-
-Route::post('Genera_Pedido', [controladorComic::class, 'procesarPedido'])->name('Pedido');
-
-Route::get('VentasRealizadas',[controladorComic::class,'showVentasRealizadas'])->name('VentasReli');
+Route::get('/Ventas_articulos', function () {
+    return view('Ventas_articulos');
+});

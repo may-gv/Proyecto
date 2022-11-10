@@ -4,12 +4,10 @@
 
 
 
-
-
     <div class="container mt-4 col-md-6" id="contenedor">
 
 
-        <form class="m-4 col-md-9" id="hey" method="post" action ="Venta_art">
+        <form class="m-4 col-md-9" id="hey" method="post" action ="">
         @csrf
             
         <div class="card text-center mb-2 fw-bold col-md-12" id="cole">
