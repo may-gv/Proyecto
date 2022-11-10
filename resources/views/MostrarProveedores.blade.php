@@ -17,9 +17,11 @@
      @endforeach
 @endif
      
-<div class="container mt-5 col-md-10 text-center" id="hey">
+<div class="container mt-5 col-md-10 " id="hey">
   <h1 class=" mt-4 text-center text-white fw-bold">Proveedores</h1>
-<table class=" table text-center text-white" id="hey">
+  <a href="/Proveedores">
+    <button type="submit" class="btn btn-secondary" id="buton">Registrar</button>
+<table class=" table text-center mt-2 text-white" id="hey">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -85,8 +87,7 @@
     </tbody>
   </table>
 
-    <a href="/Proveedores">
-    <button type="submit" class="btn btn-secondary" id="buton">Registrar</button>
+    
 </div>
 
 @stop
