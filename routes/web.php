@@ -10,6 +10,7 @@ use App\Http\Controllers\controladorComic;
 /* Creamos las vistas */
 Route::get('/', [controladorComic::class, 'showLogin']) -> name('Log');
 
+
 Route::get('inicio', [controladorComic::class, 'showinicio']) -> name('in');
 
 Route::get('inicioo', [controladorComic::class, 'showinicioo']) -> name('ini');
@@ -32,7 +33,12 @@ Route::get('Proveedores',[controladorComic::class,'showProveedores'])->name('Pro
 Route::post('confirmarP', [controladorComic::class, 'GuardarP'])->name('saveP');
 
 
+
 Route::get('MostrarUsuarios',[controladorComic::class,'showmUsuarios.'])->name('mosUsu');
+
+
+Route::get('MostrarUsuarios',[controladorComic::class,'showmUsuar'])->name('mosUsu');
+
 
 Route::get('MostrarComics',[controladorComic::class,'showmComics'])->name('mosCom');
 

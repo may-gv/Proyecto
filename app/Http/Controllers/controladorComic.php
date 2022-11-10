@@ -13,7 +13,57 @@ use App\Http\Requests\ValidadorUsuario;
 
 class controladorComic extends Controller
 {
+<<<<<<<<< Temporary merge branch 1
+    public function showArticulos(){
+        return view('Articulos');
 
+    }
+
+    public function showProveedores(){
+        return view('Proveedores');
+
+    }
+
+    public function GuardarA(validarArticulo $req){
+
+
+        return redirect('Articulos')->with('Finalizado', 'Articulo Guardado');
+    }
+
+
+    public function GuardarP(validarProveedor $req){
+
+        return redirect('Proveedores')->with('Finalizado', 'Proveedor Guardado');
+
+    }
+
+
+    /* ---------vistas  tablas--------------*/
+
+    public function showmUsuar(){
+        return view('MostrarUsuarios');
+
+    }
+
+    public function showmComics(){
+        return view('MostrarComics');
+
+    }
+
+    public function showmArt(){
+        return view('MostrarArticulos');
+
+    }
+
+    public function showmPro(){
+        return view('MostrarProveedores');
+
+    }
+
+
+
+    
+=========
     //Creamos las funciones
     public function showLogin(){ 
         return view ('login');
@@ -43,51 +93,5 @@ class controladorComic extends Controller
           
         return redirect('Comics')->with('confirmacion' , ' Comic Registrado');
       }
-
-    public function showArticulos(){
-        return view('Articulos');
-
-    }
-
-    public function showProveedores(){
-        return view('Proveedores');
-
-    }
-
-    public function GuardarA(validarArticulo $req){
-
-
-        return redirect('Articulos')->with('Finalizado', 'Articulo Guardado');
-    }
-
-
-    public function GuardarP(validarProveedor $req){
-
-        return redirect('Proveedores')->with('Finalizado', 'Proveedor Guardado');
-
-    }
-
-
-    /* ---------vistas  tablas--------------*/
-
-    public function showmUsuarios(){
-        return view('MostrarUsuarios');
-
-    }
-
-    public function showmComics(){
-        return view('MostrarComics');
-
-    }
-
-    public function showmArt(){
-        return view('MostrarArticulos');
-
-    }
-
-    public function showmPro(){
-        return view('MostrarProveedores');
-
-    }
-
+>>>>>>>>> Temporary merge branch 2
 }

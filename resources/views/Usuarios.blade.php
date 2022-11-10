@@ -77,12 +77,25 @@
         <div class="card-footer">
             
             <button type="submit" class="btn btn-secondary" id="hey">Registrar</button>
-            </form>
-        </div>
-    </div>
-</div>
+        </form>
          
+        </div>
     
         
     
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 @stop
