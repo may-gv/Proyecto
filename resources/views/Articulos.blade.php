@@ -44,7 +44,7 @@
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Cantidad </label>
-                    <input type="number" step="any" class="form-control" id="input" name="txtCantidad" placeholder="Cantidad" value=" {{ old('txtCantidad')}}">
+                    <input type="text" step="any" class="form-control" id="input" name="txtCantidad" placeholder="Cantidad" value=" {{ old('txtCantidad')}}">
                     <p class="text-primary fst-italic">{{$errors->first('txtCantidad')}}</p>
 
 
@@ -52,7 +52,7 @@
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Precio compra </label>
-                    <input type="number" step="any" class="form-control" id="input" name="txtPrecioCompra" placeholder="Precio compra" value=" {{ old('txtPrecioCompra')}}">
+                    <input type="text" step="any" class="form-control" id="input" name="txtPrecioCompra" placeholder="Precio compra" value=" {{ old('txtPrecioCompra')}}">
                     <p class="text-primary fst-italic">{{$errors->first('txtPrecioCompra')}}</p>
 
 
@@ -60,7 +60,7 @@
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Precio Venta </label>
-                    <input type="number" step="any"  class="form-control" id="input" name="txtPrecioVenta" placeholder="Precio Venta" value=" {{ old('txtPrecioVenta')}}" >
+                    <input type="text" step="any"  class="form-control" id="input" name="txtPrecioVenta" placeholder="Precio Venta" value=" {{ old('txtPrecioVenta')}}" >
                     <p class="text-primary fst-italic">{{$errors->first('txtPrecioVenta')}}</p>
 
                 </div>

@@ -40,13 +40,13 @@
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Precio compra </label>
-                    <input type="number" step="any" class="form-control" id="input" name="txtPrecioCompra" placeholder="Precio compra" value=" {{ old('txtPrecioCompra')}}">
+                    <input type="text" step="any" class="form-control" id="input" name="txtPrecioCompra" placeholder="Precio compra" value=" {{ old('txtPrecioCompra')}}">
                     <p class="text-primary fst-Italic">{{ $errors->first('txtPrecioCompra') }} </p>
                 </div>
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Precio Venta </label>
-                    <input type="number" step="any"  class="form-control" id="input" name="txtPrecioVenta" placeholder="Precio Venta" value=" {{ old('txtPrecioVenta')}}">
+                    <input type="text" step="any"  class="form-control" id="input" name="txtPrecioVenta" placeholder="Precio Venta" value=" {{ old('txtPrecioVenta')}}">
                     <p class="text-primary fst-Italic">{{ $errors->first('txtPrecioVenta') }} </p>
                 </div>
 
@@ -61,7 +61,7 @@
                 </div>
                 <div class="mb-3 " id="input">
                     <select name="txtRol" id="" class="form-control" style="background: #48608583">
-                        <option value="" style="background: #48608583">......</option>
+                        <option value="" style="background: #48608583">Selecciona</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>

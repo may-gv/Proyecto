@@ -105,3 +105,12 @@ form {
 #in{
     background-color: rgb(204, 203, 203);
 }
+
+#logi{
+    width: 60%;
+    padding: 5px;
+}
+#logito{
+    float: left;
+    margin-right: 10px;
+}

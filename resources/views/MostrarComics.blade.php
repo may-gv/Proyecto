@@ -22,6 +22,7 @@
       
       @endforeach
  @endif
+ 
 
 <div class="container mt-5 col-md-10 " id="hey">
   <h1 class=" mt-4 text-center text-white fw-bold">Comics</h1>

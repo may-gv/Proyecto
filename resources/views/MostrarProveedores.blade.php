@@ -16,6 +16,21 @@
      
      @endforeach
 @endif
+
+
+@if(session()->has('Acabo'))
+{!! " <script> Swal.fire(
+ 'Eso es todo!',
+ 'Pedido Generado',
+ 'success'  ) </script> "!!}
+@endif
+
+
+@if($errors->any())
+     @foreach($errors->all() as $error)
+     
+     @endforeach
+@endif
      
 <div class="container mt-5 col-md-10 " id="hey">
   <h1 class=" mt-4 text-center text-white fw-bold">Proveedores</h1>
@@ -57,7 +72,9 @@
         <td>Otto</td>
         <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
         <td><img src="css\images\editar.png" id="opciones" alt=""></td>
-        <td><img src="css\images\vendido.png" id="opciones" alt=""></td>
+        <td>
+          <a href="/Pedidos">
+          <img src="css\images\pedido.png" id="opciones" alt=""></td>
         
       </tr>
       <tr>
@@ -72,7 +89,9 @@
         <td>Otto</td>
         <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
         <td><img src="css\images\editar.png" id="opciones" alt=""></td>
-        <td><img src="css\images\vendido.png" id="opciones" alt=""></td>
+        <td>
+          <a href="/Pedidos">
+            <img src="css\images\pedido.png" id="opciones" alt=""></td>
         
       </tr>
       <tr>
@@ -87,7 +106,9 @@
         <td>Otto</td>
         <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
         <td><img src="css\images\editar.png" id="opciones" alt=""></td>
-        <td><img src="css\images\vendido.png" id="opciones" alt=""></td>
+        <td>
+          <a href="/Pedidos">
+            <img src="css\images\pedido.png" id="opciones" alt=""></td>
       </tr>
     </tbody>
   </table>
