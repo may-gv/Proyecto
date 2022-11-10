@@ -61,3 +61,5 @@ Route::post('Venta_com', [controladorComic::class, 'procesarVentaComic'])->name(
 
 Route::get('Ventas_articulos',[controladorComic::class,'showVentasArt'])->name('Vent');
 Route::post('Venta_Art', [controladorComic::class, 'procesarVentaArticulo'])->name('Ventass');
+
+Route::get('VentasRealizadas',[controladorComic::class,'showmVentas'])->name('mosVentas');

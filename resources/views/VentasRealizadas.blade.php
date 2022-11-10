@@ -3,7 +3,7 @@
 
 @section('contenido')
 
-@
+
 
      
 <div class="container mt-5 col-md-10 " id="hey">
