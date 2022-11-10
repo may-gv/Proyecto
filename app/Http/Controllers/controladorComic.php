@@ -40,7 +40,7 @@ class controladorComic extends Controller
 
     /* ---------vistas  tablas--------------*/
 
-    public function showmUsuarios(){
+    public function showmUsuar(){
         return view('MostrarUsuarios');
 
     }
