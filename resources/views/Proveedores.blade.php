@@ -56,14 +56,14 @@
                 <div class="mb-3 text-white">
                     
                     <label class="form-label"> Número fijo </label>
-                    <input type="number" class="form-control" id="input" name="txtNum_fijo" placeholder=" Número fijo " value=" {{ old('txtNum_fijo')}}">
+                    <input type="text" class="form-control" id="input" name="txtNum_fijo" placeholder=" Número fijo " value=" {{ old('txtNum_fijo')}}">
                     <p class="text-primary fst-italic">{{$errors->first('txtNum_fijo')}}</p>
                 </div>
 
                 <div class="mb-3 text-white">
                     
                     <label class="form-label"> Número celular </label>
-                    <input type="number" class="form-control" id="input" name="txtNumero_cel" placeholder="Número celular " value=" {{ old('txtNumero_cel')}}">
+                    <input type="text" class="form-control" id="input" name="txtNumero_cel" placeholder="Número celular " value=" {{ old('txtNumero_cel')}}">
                     <p class="text-primary fst-italic">{{$errors->first('txtNumero_cel')}}</p>
                 </div>
 
