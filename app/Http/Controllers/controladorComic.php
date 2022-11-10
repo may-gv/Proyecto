@@ -13,7 +13,7 @@ use App\Http\Requests\ValidadorUsuario;
 
 class controladorComic extends Controller
 {
-<<<<<<<<< Temporary merge branch 1
+
     public function showArticulos(){
         return view('Articulos');
 
@@ -62,8 +62,6 @@ class controladorComic extends Controller
 
 
 
-    
-=========
     //Creamos las funciones
     public function showLogin(){ 
         return view ('login');
@@ -93,5 +91,5 @@ class controladorComic extends Controller
           
         return redirect('Comics')->with('confirmacion' , ' Comic Registrado');
       }
->>>>>>>>> Temporary merge branch 2
+
 }
