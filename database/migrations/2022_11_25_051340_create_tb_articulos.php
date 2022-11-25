@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('Descripcion');
             $table->integer('Cantidad');
             $table->double('PrecioCompra');
-            $table->double('PrecioCompra');
+            $table->double('PrecioVenta');
             $table->date('FechaIngreso');
             $table->timestamps();
         });
