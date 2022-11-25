@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('Direccion');
             $table->string('Pais');
             $table->string('Contrato');
-            $table->int('Nofijo');
-            $table->int('Nocel');
+            $table->integer('Nofijo');
+            $table->integer('Nocel');
             $table->string('Correo');
             $table->timestamps();
         });
