@@ -14,7 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tb_pedidos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('idPed');
+            $table->string('Tipopedido');
+            $table->integer('Cantidadcomi');
+            $table->integer('Cantidadpedi');
             $table->timestamps();
         });
     }
