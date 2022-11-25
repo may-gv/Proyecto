@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tb_proveedores', function (Blueprint $table) {
-            $table->increments(id);
+            $table->increments('idProo');
             $table->string('Empresa');
             $table->string('Tipomercancia');
             $table->string('Direccion');
