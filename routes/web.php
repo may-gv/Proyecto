@@ -42,8 +42,6 @@ Route::get('Proveedores',[controladorComic::class,'showProveedores'])->name('Pro
 
 Route::post('confirmarP', [controladorComic::class, 'GuardarP'])->name('saveP');
 
-
-
 Route::get('MostrarUsuarios',[controladorComic::class,'showmUsuarios.'])->name('mosUsu');
 
 
