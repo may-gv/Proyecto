@@ -46,7 +46,7 @@
                   <a class="nav-link active fst-italic fs-3" href="VentasRealizadas">Ventas</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active fst-italic fs-3" aria-current="page" href="MostrarProveedores">Provedores</a>
+                  <a class="nav-link active fst-italic fs-3" aria-current="page" href="MostrarProveedores">Proveedores</a>
                 </li>
                 <li class="nav-item dropdown ">
                   <a class="nav-link dropdown-toggle fst-italic fs-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -63,6 +63,10 @@
               </ul>
               
             </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active fst-italic fs-3" aria-current="page" href="/" id="ss">Cerrar Sesion</a>
+          </li>
           </div>
         </div>
       </nav>

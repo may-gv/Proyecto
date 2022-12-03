@@ -63,6 +63,7 @@ Route::post('Venta_Art', [controladorComic::class, 'procesarVentaArticulo'])->na
 
 Route::get('VentasRealizadas',[controladorComic::class,'showmVentas'])->name('mosVentas');
 
+<<<<<<< Updated upstream
 //--------------------------Usuarios--------------------------------------
 //Create
 Route::get('usuario/create_usu', [Controladorbd::class,'create_usu'])->name('usuario.create');
@@ -79,3 +80,8 @@ Route::get('usuario/{id}/show_usu', [Controladorbd::class,'show_usu'])->name('us
 //Destroy
 Route::delete('usuario/{id}', [Controladorbd::class,'destroy_usu'])->name('usuario.destroy');
 
+=======
+Route::post('GenerarPedido', [controladorComic::class, 'procesarPedido'])->name('Pedido');
+
+Route::get('Pedidos',[controladorComic::class,'showPedidos'])->name('Genera');
+>>>>>>> Stashed changes

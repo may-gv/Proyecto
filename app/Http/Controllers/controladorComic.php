@@ -132,6 +132,16 @@ class controladorComic extends Controller
     return view('VentasRealizadas');
 
 }
+
+public function procesarPedido(ValidadorPedido $req){
+        
+  return redirect('MostrarProveedores')->with('Acabo' , 'Pedido Registrado');
+}
+
+public function showPedidos(){
+  return view('Pedidos');
+
+}
     
 
 }

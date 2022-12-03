@@ -52,7 +52,7 @@
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Fecha ingreso </label>
-                    <input type="date" class="form-control" id="input" name="txtFecha" placeholder="Fecha ingreso " value=" {{ old('txtFecha')}}">
+                    <input type="date" class="form-control" id="input" name="txtFecha" placeholder="Fecha ingreso " value="{{old('txtFecha')}}">
                     <p class="text-primary fst-Italic">{{ $errors->first('txtFecha') }} </p>
                 </div>
 
@@ -60,8 +60,8 @@
                     <label class="form-label"> Proveedor </label>
                 </div>
                 <div class="mb-3 " id="input">
-                    <select name="txtRol" id="" class="form-control" style="background: #48608583">
-                        <option value="" style="background: #48608583">Selecciona</option>
+                    <select name="txtRol" id="" class="form-control" style="background: #48608583" value=" {{ old('txtRol')}}" >
+                        <option value="" style="background: #48608583" value=" {{ old('txtRol')}}">Selecciona</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
