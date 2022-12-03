@@ -8,7 +8,7 @@
     <div class="container mt-4 col-md-6" id="contenedor">
      
 
-        <form class="m-4 col-md-9" id="hey" method="post"action ="UsuarioGuardado">
+        <form class="m-4 col-md-9" id="hey" method="post"action="{{route('usuario.store')}}">
         @csrf
         <div class="card text-center mb-2 fw-bold col-md-12" id="cole">
         <div class="card-header fs-2 text-white">
@@ -21,21 +21,21 @@
                 <div class="mb-3 text-white">
                     
                     <label class="form-label"> Nombre </label>
-                    <input type="text" class="form-control" id="input" name="txtNombre" placeholder="Nombre" value="{{ old('txtNombre')}}">
+                    <input type="text" class="form-control" id="input" name="txtNombre" placeholder="Nombre" value="{{old('txtNombre')}}">
                     <p class="text-primary fst-italic">{{$errors->first('txtNombre')}}</p>
                 </div>
 
                 <div class="mb-3 text-white">
                     
                     <label class="form-label"> Teléfono </label>
-                    <input type="text" class="form-control" id="input" name="txtTelefono" placeholder="Teléfono" value="{{ old('txtTelefono')}}">
+                    <input type="text" class="form-control" id="input" name="txtTelefono" placeholder="Teléfono" value="{{old('txtTelefono')}}">
                     <p class="text-primary fst-italic">{{$errors->first('txtTelefono')}}</p>
                 </div>
 
                 <div class="mb-3 text-white">
                     
                     <label class="form-label"> Usuario </label>
-                    <input type="text" class="form-control" id="input" name="txtUsuario" placeholder="Usuario" value="{{ old('txtUsuario')}}">
+                    <input type="text" class="form-control" id="input" name="txtUsuario" placeholder="Usuario" value="{{old('txtUsuario')}}">
                     <p class="text-primary fst-italic">{{$errors->first('txtUsuario')}}</p>
                 </div>
 
@@ -51,7 +51,7 @@
                 </div>
                 <div class="mb-3 " id="input">
                     <select name="Rol" id="" class="form-control" style="background: #48608583" value=" {{old('Rol')}}">
-                        <option value="" style="background: #48608583">Selecciona Rol:</option>
+                        <option selected disabled="disabled" style="background: #48608583">Selecciona Rol:</option>
                         <option value="1">Super Usuario</option>
                         <option value="2">Vendedor</option>
                         

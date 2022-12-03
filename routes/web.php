@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 /* Impostamos el Controlador */
 use App\Http\Controllers\controladorComic;
+use App\Http\Controllers\Controladorbd;
 
 
 
@@ -61,3 +62,20 @@ Route::get('Ventas_articulos',[controladorComic::class,'showVentasArt'])->name('
 Route::post('Venta_Art', [controladorComic::class, 'procesarVentaArticulo'])->name('Ventass');
 
 Route::get('VentasRealizadas',[controladorComic::class,'showmVentas'])->name('mosVentas');
+
+//--------------------------Usuarios--------------------------------------
+//Create
+Route::get('usuario/create_usu', [Controladorbd::class,'create_usu'])->name('usuario.create');
+//Store
+Route::post('usuario', [Controladorbd::class,'store_usu'])->name('usuario.store');
+//index
+Route::get('usuario', [Controladorbd::class,'index_usu'])->name('usuario.index');
+//Edit
+Route::get('usuario/{id}/edit_usu', [Controladorbd::class,'edit_usu'])->name('usuario.edit');
+//Update
+Route::put('usuario/{id}', [Controladorbd::class,'update_usu'])->name('usuario.update');
+//show
+Route::get('usuario/{id}/show_usu', [Controladorbd::class,'show_usu'])->name('usuario.show');
+//Destroy
+Route::delete('usuario/{id}', [Controladorbd::class,'destroy_usu'])->name('usuario.destroy');
+
