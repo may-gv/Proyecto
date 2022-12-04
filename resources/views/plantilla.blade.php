@@ -34,7 +34,7 @@
                   <a class="nav-link active fst-italic fs-3" aria-current="page" href="inicio">Inicio</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active fst-italic fs-3" aria-current="page" href="MostrarUsuarios">Usuarios</a>
+                  <a class="nav-link active fst-italic fs-3" aria-current="page" href={{route('usuario.index')}}>Usuarios</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active fst-italic fs-3" href="MostrarComics">Comics</a>

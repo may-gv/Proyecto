@@ -4,9 +4,14 @@
 @section('contenido')
 
 @if(session()->has('confirmacion')) 
+<?php
+
+        $nom = session()->get('txtNombre');
+            
+        ?>
 {!! " <script> Swal.fire(
  'Eso es todo!',
- 'Usuario Registrado',
+ 'Usuario {$nom} Registrado',
  'success'  ) </script> "!!}
 @endif
 

@@ -24,9 +24,9 @@ class Controladorbd extends Controller
 
     public function create_usu()
     {
-        $ConsultaUsuarios = DB::table('tb__autores')->get();
         
-        return view('Usuarios',compact('ConsultaUsuarios'));
+        
+        return view('Usuarios');
     }
 
     
@@ -45,7 +45,7 @@ class Controladorbd extends Controller
         ]);
         $nom = $request->input('txtNombre');
 
-        return redirect('usuario/create_usu ')->with('Confirmacion','abc')->with('txtNombre', $tit);
+        return redirect('usuario')->with('confirmacion','abc')->with('txtNombre', $nom);
     }
 
     public function show_usu($id_usu)
@@ -56,7 +56,7 @@ class Controladorbd extends Controller
 
     public function edit_usu($id_usu)
     {
-        $consultaId= DB::table('v')->where('idusu',$id_usu)->first();
+        $consultaId= DB::table('tb_usuarios')->where('idusu',$id_usu)->first();
         return view('EditarUsuarios', compact('consultaId'));
     }
 
