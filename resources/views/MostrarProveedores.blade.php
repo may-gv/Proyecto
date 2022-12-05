@@ -3,10 +3,15 @@
 
 @section('contenido')
 
-@if(session()->has('Finalizado'))
+@if(session()->has('confirmacion'))
+<?php
+
+        $nom = session()->get('txtNombre');
+            
+        ?>
 {!! " <script> Swal.fire(
  'Eso es todo!',
- 'Proveedor Registrado',
+ 'Proveedor {$nom} Registrado',
  'success'  ) </script> "!!}
 @endif
 
@@ -60,16 +65,18 @@
       </tr>
     </thead>
     <tbody>
+     
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>Otto</td>
+        @foreach($ConsultaProveedores as $proveedor)
+        <th scope="row">{{$proveedor->idProo}}</th>
+        <td>{{$proveedor->Empresa}}</td>
+        <td>{{$proveedor->Tipomercancia}}</td>
+        <td>{{$proveedor->Direccion}}</td>
+        <td>{{$proveedor->Pais}}</td>
+        <td>{{$proveedor->Contrato}}</td>
+        <td>{{$proveedor->Nofijo}}</td>
+        <td>{{$proveedor->Nocel}}</td>
+        <td>{{$proveedor->Correo}}</td>
         <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
         <td><img src="css\images\editar.png" id="opciones" alt=""></td>
         <td>
@@ -77,39 +84,8 @@
           <img src="css\images\pedido.png" id="opciones" alt=""></td>
         
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>Otto</td>
-        <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
-        <td><img src="css\images\editar.png" id="opciones" alt=""></td>
-        <td>
-          <a href="/Pedidos">
-            <img src="css\images\pedido.png" id="opciones" alt=""></td>
-        
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>Otto</td>
-        <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
-        <td><img src="css\images\editar.png" id="opciones" alt=""></td>
-        <td>
-          <a href="/Pedidos">
-            <img src="css\images\pedido.png" id="opciones" alt=""></td>
-      </tr>
+
+      @endforeach
     </tbody>
   </table>
 

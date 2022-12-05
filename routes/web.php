@@ -62,6 +62,9 @@ Route::get('Ventas_articulos',[controladorComic::class,'showVentasArt'])->name('
 Route::post('Venta_Art', [controladorComic::class, 'procesarVentaArticulo'])->name('Ventass');
 
 Route::get('VentasRealizadas',[controladorComic::class,'showmVentas'])->name('mosVentas');
+Route::post('GenerarPedido', [controladorComic::class, 'procesarPedido'])->name('Pedido');
+
+Route::get('Pedidos',[controladorComic::class,'showPedidos'])->name('Genera');
 
 
 //--------------------------Usuarios--------------------------------------
@@ -81,6 +84,22 @@ Route::get('usuario/{id}/show_usu', [Controladorbd::class,'show_usu'])->name('us
 Route::delete('usuario/{id}', [Controladorbd::class,'destroy_usu'])->name('usuario.destroy');
 
 
-Route::post('GenerarPedido', [controladorComic::class, 'procesarPedido'])->name('Pedido');
+//----------------------Proveedores--------------------------------------------
+//Create
+Route::get('proveedor/create_pro', [Controladorbd::class,'create_pro'])->name('proveedor.create');
+//Store
+Route::post('proveedor', [Controladorbd::class,'store_pro'])->name('proveedor.store');
+//index
+Route::get('proveedor', [Controladorbd::class,'index_pro'])->name('proveedor.index');
+//Edit
+Route::get('proveedor/{id}/edit_pro', [Controladorbd::class,'edit_pro'])->name('proveedor.edit');
+//Update
+Route::put('proveedor/{id}', [Controladorbd::class,'update_pro'])->name('proveedor.update');
+//show
+Route::get('proveedor/{id}/show_pro', [Controladorbd::class,'show_pro'])->name('proveedor.show');
+//Destroy
+Route::delete('proveedor/{id}', [Controladorbd::class,'destroy_pro'])->name('proveedor.destroy');
 
-Route::get('Pedidos',[controladorComic::class,'showPedidos'])->name('Genera');
+
+
+
