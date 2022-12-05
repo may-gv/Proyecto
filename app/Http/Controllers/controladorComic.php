@@ -9,7 +9,7 @@ use PhpParser\Node\Stmt\Return_;
 
 //Importamos los validadodes
 use App\Http\Requests\ValidadorComic;
-use App\Http\Requests\ValidadorUsuario;
+
 use App\Http\Requests\ValidadorVentaComic;
 use App\Http\Requests\ValidadorLogin;
 use App\Http\Requests\ValidadorPedido;

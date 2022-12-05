@@ -4,9 +4,14 @@
 @section('contenido')
 
 @if(session()->has('confirmacion')) 
+<?php
+
+        $nom = session()->get('txtNombre');
+            
+        ?>
 {!! " <script> Swal.fire(
  'Eso es todo!',
- 'Usuario Registrado',
+ 'Usuario {$nom} Registrado',
  'success'  ) </script> "!!}
 @endif
 
@@ -42,39 +47,26 @@
       </tr>
     </thead>
     <tbody>
+      @foreach($ConsultaUsuarios as $consulta)
       <tr>
-        <th scope="row">1</th>
-        <td>Angel</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
-        <td><img src="css\images\editar.png" id="opciones" alt=""></td>
+       
+        <th scope="row">{{$consulta->idusu}}</th>
+        <td>{{$consulta->Nombre}}</td>
+        <td>{{$consulta->Telefono}}</td>
+        <td>{{$consulta->Usuario}}</td>
+        <td>{{$consulta->Contraseña}}</td>
+        <td>{{$consulta->Rol}}</td>
+        <td><a href="{{route('usuario.edit',$consulta->idusu)}}">
+          <img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
+        <td>
+          <a href="{{route('usuario.edit',$consulta->idusu)}}">
+          <img src="css\images\editar.png" id="opciones" alt=""></td>
         
         
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
-        <td><img src="css\images\editar.png" id="opciones" alt=""></td>
-        
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
-        <td><img src="css\images\editar.png" id="opciones" alt=""></td>
-      </tr>
+      @endforeach
+
+
     </tbody>
   </table>
 

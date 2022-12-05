@@ -3,11 +3,16 @@
 @section('contenido')
 
 
-
+<div class="container text-left" id="conte">
+    <a href={{route('usuario.index')}}> 
+        <img src="css\images\deshacer.png" id="bu"alt=""></td>
+    </a>
+</div>
 
     <div class="container mt-4 col-md-6" id="contenedor">
      
-
+        
+            
         <form class="m-4 col-md-9" id="hey" method="post"action="{{route('usuario.store')}}">
         @csrf
         <div class="card text-center mb-2 fw-bold col-md-12" id="cole">
@@ -39,6 +44,8 @@
                     <p class="text-primary fst-italic">{{$errors->first('txtUsuario')}}</p>
                 </div>
 
+                
+
                 <div class="mb-3 text-white">
                     
                     <label class="form-label"> Contraseña </label>
@@ -47,13 +54,21 @@
                 </div>
 
                 <div class="mb-3 text-white">
+                    
+                    <label class="form-label"> Confirma Contraseña </label>
+                    <input type="password" class="form-control" id="input" name="txtConfirma" placeholder="Confirma Contraseña" value="{{old('txtConfirma')}}">
+                    <p class="text-primary fst-italic">{{$errors->first('txtConfirma')}}</p>
+                </div>
+
+
+                <div class="mb-3 text-white">
                     <label class="form-label"> Rol </label>
                 </div>
                 <div class="mb-3 " id="input">
                     <select name="Rol" id="" class="form-control" style="background: #48608583" value=" {{old('Rol')}}">
                         <option selected disabled="disabled" style="background: #48608583">Selecciona Rol:</option>
-                        <option value="1">Super Usuario</option>
-                        <option value="2">Vendedor</option>
+                        <option value="Super Usuario">Super Usuario</option>
+                        <option value="Vendedor">Vendedor</option>
                         
                         
                     </select>

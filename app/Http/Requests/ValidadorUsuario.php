@@ -6,11 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class ValidadorUsuario extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
+    
     public function authorize()
     {
         return true;
@@ -22,12 +18,17 @@ class ValidadorUsuario extends FormRequest
      * @return array<string, mixed>
      */
     public function rules()
+    
+    
+
     {
+        
         return [
             'txtNombre'=> 'required', 
             'txtTelefono'=>'required|numeric|min:9',
             'txtUsuario'=> 'required', 
             'txtContra'=>'required',
+            'txtConfirma'=>'required|same:txtContra',
             'Rol'=> 'required', 
         ];
     }
