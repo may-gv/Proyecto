@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tb_ventas', function (Blueprint $table) {
-            $table->increments('idVenta');
+            $table->id('idVenta');
             $table->string('Tipoventa');
             $table->integer('Cantidad');
             $table->date('Fecha');

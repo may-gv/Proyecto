@@ -8,7 +8,7 @@
     <div class="container mt-4 col-md-6" id="contenedor">
         
 
-        <form class="m-4 col-md-9" id="hey" method="POST" action="Genera_Pedido">
+        <form class="m-4 col-md-9" id="hey" method="POST" action="GenerarPedido">
             @csrf
 
         <div class="card text-center mb-2 fw-bold col-md-12" id="cole">
@@ -47,7 +47,7 @@
 
             <div class="mb-3 text-white">
                 <label class="form-label"> Cantidad </label>
-                <input type="number" step="any" class="form-control" id="input" name="txtCantidad" placeholder="Cantidad" value=" {{ old('txtCantidad')}}">
+                <input type="text" step="any" class="form-control" id="input" name="txtCantidad" placeholder="Cantidad" value=" {{ old('txtCantidad')}}">
                 <p class="text-primary fst-italic">{{$errors->first('txtCantidad')}}</p>
 
 

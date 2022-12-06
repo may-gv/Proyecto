@@ -14,14 +14,20 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tb_articulos', function (Blueprint $table) {
-            $table->increments('idArticulo');
+            $table->id('idArticulo');
             $table->string('Tipo');
+            
+            $table->unsignedBigInteger('id_prov');
             $table->string('Marca');
             $table->string('Descripcion');
             $table->integer('Cantidad');
             $table->double('PrecioCompra');
             $table->double('PrecioVenta');
             $table->date('FechaIngreso');
+            $table->foreign('id_prov')->references('idProo')->on('tb_proveedores')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+            
             $table->timestamps();
         });
     }

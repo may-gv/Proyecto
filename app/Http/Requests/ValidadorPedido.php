@@ -27,7 +27,7 @@ class ValidadorPedido extends FormRequest
             'txtTipo'=> 'required', 
             'txtMarca'=>'required',
             'txtDescripcion'=> 'required', 
-            'txtCantidad'=>'required |', 
+            'txtCantidad'=>'required | numeric', 
         ];
     }
 }

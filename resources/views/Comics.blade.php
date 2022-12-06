@@ -2,12 +2,17 @@
 
 
 @section('contenido')
+<div class="container text-left" id="conte">
+    <a href={{route('comic.index')}}> 
+        <img src="css\images\deshacer.png" id="bu"alt=""></td>
+    </a>
+</div>
 
 
     <div class="container mt-4 col-md-6" id="contenedor">
         
 
-        <form class="m-4 col-md-9" id="hey" method="POST" action="ComicGuardado">
+    <form class="m-4 col-md-9" id="hey" method="POST" action="{{route('comic.store')}}">
             @csrf
 
         <div class="card text-center mb-2 fw-bold col-md-12" id="cole">
@@ -52,22 +57,29 @@
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Fecha ingreso </label>
-                    <input type="date" class="form-control" id="input" name="txtFecha" placeholder="Fecha ingreso " value=" {{ old('txtFecha')}}">
+                    <input type="date" class="form-control" id="input" name="txtFecha" placeholder="Fecha ingreso " value="{{old('txtFecha')}}">
                     <p class="text-primary fst-Italic">{{ $errors->first('txtFecha') }} </p>
                 </div>
+
+                <div class="mb-3 text-white">
+                    <label class="form-label"> Cantidad </label>
+                    <input type="text" class="form-control" id="input" name="txtCantidad" placeholder="Cantidad " value="{{old('txtCantidad')}}">
+                    <p class="text-primary fst-Italic">{{ $errors->first('txtCantidad') }} </p>
+                </div>
+
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Proveedor </label>
                 </div>
                 <div class="mb-3 " id="input">
-                    <select name="txtRol" id="" class="form-control" style="background: #48608583">
-                        <option value="" style="background: #48608583">Selecciona</option>
+                    <select name="txtProveedor" id="" class="form-control" style="background: #48608583" value=" {{ old('txtRol')}}" >
+                        <option value="" style="background: #48608583" value=" {{ old('txtRol')}}">Selecciona</option>
                         <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="1">Two</option>
+                        <option value="1">Three</option>
                         
                     </select>
-                <p class="text-primary fst-italic">{{$errors->first('txtRol')}}</p>
+                <p class="text-primary fst-italic">{{$errors->first('txtProveedor')}}</p>
 
                     
                 </div>
@@ -78,18 +90,10 @@
             
             <button type="submit" class="btn btn-secondary" id="buton">Registrar</button>
 
-        </form>
+        
     </div>
+</form>
+
 </div>
 </div>
-
-
-         
-        </div>
-            </form>
-            </div>
-        </div>
-    
-
-
 @stop

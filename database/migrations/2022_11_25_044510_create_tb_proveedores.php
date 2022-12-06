@@ -14,14 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tb_proveedores', function (Blueprint $table) {
-            $table->increments('idProo');
+            $table->id('idProo');
             $table->string('Empresa');
             $table->string('Tipomercancia');
             $table->string('Direccion');
             $table->string('Pais');
             $table->string('Contrato');
-            $table->integer('Nofijo');
-            $table->integer('Nocel');
+            $table->string('Nofijo');
+            $table->string('Nocel');
             $table->string('Correo');
             $table->timestamps();
         });

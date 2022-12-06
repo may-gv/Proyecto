@@ -14,7 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tb_comics', function (Blueprint $table) {
-            $table->increments('idComic');
+            $table->id('idComic');
+           
+            $table->unsignedBigInteger('id_prov');
             $table->string('Nombre');
             $table->string('Edicion');
             $table->string('Compania');
@@ -22,6 +24,10 @@ return new class extends Migration
             $table->double('PrecioCompra');
             $table->double('PrecioVenta');
             $table->date('FechaIngreso');
+            $table->foreign('id_prov')->references('idProo')->on('tb_proveedores')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+            
             $table->timestamps();
         });
     }

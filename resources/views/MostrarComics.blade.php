@@ -3,10 +3,15 @@
 
 @section('contenido')
 
-@if(session()->has('confirmacion')) 
+@if(session()->has('confirmacion'))
+<?php
+
+        $nom = session()->get('txtNombre');
+            
+        ?>
 {!! " <script> Swal.fire(
  'Eso es todo!',
- 'Comic Guardado',
+ 'Comic {$nom} Guardado',
  'success'  ) </script> "!!}
 @endif
 
@@ -29,6 +34,7 @@
 
   <a href="/Comics">
     <button type="submit" class="btn btn-secondary" id="buton">Registrar</button>
+    </a>
 <table class=" table text-center mt-2 text-white" id="hey">
 
 
@@ -67,7 +73,8 @@
         <td><img src="css\images\editar.png" id="opciones" alt=""></td>
         <td>
           <a href="/Ventas_comics">
-            <img src="css\images\vendido.png" id="opciones" alt=""></td>
+            <img src="css\images\vendido.png" id="opciones" alt=""></a>
+          </td>
         
       </tr>
       <tr>

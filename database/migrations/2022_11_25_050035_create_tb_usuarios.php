@@ -14,15 +14,17 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tb_usuarios', function (Blueprint $table) {
-            $table->increments('idusu');
+            $table->id('idusu');
             $table->string('Nombre');
-            $table->integer('Telefono');
+            $table->string('Telefono');
             $table->string('Usuario');
             $table->string('Contraseña');
             $table->string('Rol');
             $table->timestamps();
         });
     }
+    
+    
 
     /**
      * Reverse the migrations.

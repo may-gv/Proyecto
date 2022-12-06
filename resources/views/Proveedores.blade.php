@@ -8,7 +8,7 @@
     <div class="container mt-4 col-md-6" id="contenedor">
      
 
-        <form class="m-4 col-md-9" id="hey" method="post"action ="confirmarP">
+        <form class="m-4 col-md-9" id="hey" method="post" action="{{route('proveedor.store')}}">
         @csrf
         <div class="card text-center mb-2 fw-bold col-md-12" id="cole">
         <div class="card-header fs-2 text-white">

@@ -31,7 +31,7 @@ form {
 #contenedor{
     display: flex;
     flex-direction: column;
-    background-color: tra;
+    background-color:;
 
     text-align: center;
     padding: 20px 25px;
@@ -41,7 +41,21 @@ form {
     
     justify-content: center;
 }
+#conte{
+    position:fixed;
+    bottom: 400px;
+    right: 0px;
+  
+    
+   
+    
+    
+}
 
+#bu{
+    height: 80px; ;
+    width: 80px;
+}
 #cuerpo{
     background: #373B44;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, rgb(74, 100, 141), #575c69);  /* Chrome 10-25, Safari 5.1-6 */
@@ -119,3 +133,7 @@ form {
     color: #eeb0b9;
 
 }
+#ss{
+    color: red;
+}
+

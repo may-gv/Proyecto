@@ -67,7 +67,7 @@
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Fecha ingreso </label>
-                    <input type="date" class="form-control" id="input" name="txtFecha" placeholder="Fecha ingreso " value=" {{ old('txtFecha')}}">
+                    <input type="date" class="form-control" id="input" name="txtFecha" placeholder="Fecha ingreso " value="{{old('txtFecha')}}">
                     <p class="text-primary fst-italic">{{$errors->first('txtFecha')}}</p>
 
                 </div>
