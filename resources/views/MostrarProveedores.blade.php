@@ -15,6 +15,15 @@
  'success'  ) </script> "!!}
 @endif
 
+@if(session()->has('Actualizado'))
+
+{!! " <script> Swal.fire(
+ 'Eso es todo!',
+ 'Proveedor Actualizado',
+ 'success'  ) </script> "!!}
+@endif
+
+
 
 @if($errors->any())
      @foreach($errors->all() as $error)

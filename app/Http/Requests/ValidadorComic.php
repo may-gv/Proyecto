@@ -30,6 +30,7 @@ class ValidadorComic extends FormRequest
             'txtPrecioCompra'=>'required|numeric',
             'txtPrecioVenta'=> 'required|numeric', 
             'txtFecha'=> 'required', 
+            'txtCantidad'=> 'required|numeric', 
             'txtRol'=>'required',
 
         ];

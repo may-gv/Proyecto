@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tb_pedidos', function (Blueprint $table) {
-            $table->increments('idPed');
+            $table->id('idPed');
             $table->string('Tipopedido');
             $table->integer('Cantidadcomi');
             $table->integer('Cantidadpedi');

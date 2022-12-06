@@ -3,10 +3,15 @@
 
 @section('contenido')
 
-@if(session()->has('confirmacion')) 
+@if(session()->has('confirmacion'))
+<?php
+
+        $nom = session()->get('txtNombre');
+            
+        ?>
 {!! " <script> Swal.fire(
  'Eso es todo!',
- 'Comic Guardado',
+ 'Comic {$nom} Guardado',
  'success'  ) </script> "!!}
 @endif
 

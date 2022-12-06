@@ -15,14 +15,14 @@
 
     <div class="container text-left" id="conte">
         <a href={{route('usuario.index')}}> 
-            <img src="css\images\deshacer.png" id="bu"alt=""></td>
+            <
         </a>
 
     </div>
 
     <div class="container col-md-6" id="contenedor">
        
-       
+    
 
         <form class="m-4 col-md-9" id="hey" method="post"action="{{route('usuario.update',$consultaId->idusu)}}">
            
@@ -31,7 +31,8 @@
             {!!method_field('PUT')!!}
             
         <div class="card text-center mb-2 fw-bold col-md-12" id="cole">
-            
+          
+        
         <div class="card-header fs-2 text-white">
             
             Editar Usuario
