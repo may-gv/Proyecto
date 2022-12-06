@@ -15,11 +15,6 @@
  'success'  ) </script> "!!}
 @endif
 
-    @if($errors->any())
-        @foreach($errors->all() as $error)
-        
-        @endforeach
-    @endif
 
 <div class="container mt-5 col-md-10" id="hey">
   <h1 class=" mt-4 text-left text-white text-center fw-bold">Usuarios</h1>
@@ -56,7 +51,7 @@
         <td>{{$consulta->Usuario}}</td>
         <td>{{$consulta->Contraseña}}</td>
         <td>{{$consulta->Rol}}</td>
-        <td><a href="{{route('usuario.edit',$consulta->idusu)}}">
+        <td><a href="#">
           <img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
         <td>
           <a href="{{route('usuario.edit',$consulta->idusu)}}">
