@@ -1,23 +1,30 @@
 @extends('plantilla')
+
 @section('contenido')
 
 
+<div class="container text-left" id="conte">
+    <a href={{route('articulo.index')}}> 
+        <img src="css\images\deshacer.png" id="bu"alt=""></td>
+    </a>
+</div>
 
     <div class="container mt-4 col-md-6" id="contenedor">
      
-
-        <form class="m-4 col-md-9" id="hey" method="post"action ="confirmarA">
-        @csrf
+        
             
+        <form class="m-4 col-md-9" id="hey" method="post"action="{{route('articulo.store')}}">
+        @csrf
         <div class="card text-center mb-2 fw-bold col-md-12" id="cole">
         <div class="card-header fs-2 text-white">
-            Registrar Articulo
+            Registrar Articulos
           </div>
           <img src= "css\images\libro.png" id="icon">
 
         <div class="card-body col-md-12">
 
                 <div class="mb-3 text-white">
+                    
                     <label class="form-label"> Tipo </label>
                     <input type="text" class="form-control" id="input" name="txtTipo" placeholder="Tipo" value=" {{ old('txtTipo')}}">
                     <p class="text-primary fst-italic">{{$errors->first('txtTipo')}}</p>
@@ -36,7 +43,7 @@
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Descripción </label>
-                    <textarea type="text" class="form-control" id="input" name="txtDescripcion" placeholder="Descripción" value=" {{ old('txtDescripcion')}}"></textarea>
+                    <textarea type="text" class="form-control" id="input" name="txtDescripcion" placeholder="Descripción" >{{ old('txtDescripcion')}}</textarea>
                     <p class="text-primary fst-italic">{{$errors->first('txtDescripcion')}}</p>
 
 
@@ -74,20 +81,22 @@
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Proveedor </label>
-                </div>
-                <div class="mb-3 " id="input">
                     <select name="txtProveedor" id="" class="form-control" style="background: #48608583" value=" {{ old('txtProveedor')}}">
-                        <option value="" style="background: #48608583">......</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        
+                        
+                        <option selected disabled="disabled" value="" style="background: #48608583">Selecciona Proveedor:</option>
+                        @foreach($ConsultaProvee as $prove)
+                        
+                            <option value="{{$prove->idProo}}">{{$prove->Empresa}}</option>
+                        
+                        @endforeach
                         
                     </select>
-                <p class="text-primary fst-italic">{{$errors->first('txtProveedor')}}</p>
+                    
+                    <p class="text-primary fst-italic">{{$errors->first('txtProveedor')}}</p>
 
                     
                 </div>
-
                 
         <div class="card-footer">
             

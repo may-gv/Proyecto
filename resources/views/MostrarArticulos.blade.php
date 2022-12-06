@@ -3,7 +3,7 @@
 
 @section('contenido')
 
-@if(session()->has('Finalizado'))
+@if(session()->has('confirmacion'))
 {!! " <script> Swal.fire(
  'Eso es todo!',
  'Articulo Registrado',
@@ -26,7 +26,7 @@
 
 <div class="container mt-5 col-md-10" id="hey">
     <h1 class=" mt-4 text-center text-white fw-bold">Articulos</h1>
-    <a href="/Articulos">
+    <a href={{route('articulo.create')}}>
       <button type="submit" class="btn btn-secondary" id="buton">Registrar Articulo</button></a>
   
       <div class="input-group mb-3 col-md-3">
@@ -42,6 +42,7 @@
           <th scope="col">Marca</th>
           <th scope="col">Descripción</th>
           <th scope="col">Cantidad</th>
+          <th scope="col">Precio compra</th>
           <th scope="col">Precio venta</th>
           <th scope="col">Fecha ingreso</th>
           <th scope="col">Proveedor</th>
@@ -52,15 +53,17 @@
         </tr>
       </thead>
       <tbody>
+        
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>Mark</td>
-          <td>Otto</td>
+          @foreach($ConsultaArticulos as $articulos)
+          <th scope="row">{{$articulos->idArticulo}}</th>
+          <td>{{$articulos->Tipo}}</td>
+          <td>{{$articulos->Marca}}</td>
+          <td>{{$articulos->Descripcion}}</td>
+          <td>{{$articulos->Cantidad}}</td>
+          <td>{{$articulos->PrecioCompra}}</td>
+          <td>{{$articulos->PrecioVenta}}</td>
+          <td>{{$articulos->FechaIngreso}}</td>
           <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
         <td><img src="css\images\editar.png" id="opciones" alt=""></td>
         <td>
@@ -68,37 +71,7 @@
         <img src="css\images\vendido.png" id="opciones" alt=""></td>
           
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
-        <td><img src="css\images\editar.png" id="opciones" alt=""></td>
-        <td>
-        <a href="/Ventas_articulos">
-        <img src="css\images\vendido.png" id="opciones" alt=""></td>
-          
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
-          <td><img src="css\images\editar.png" id="opciones" alt=""></td>
-          <td>
-          <a href="/Ventas_articulos">
-          <img src="css\images\vendido.png" id="opciones" alt=""></td>
-        </tr>
+        @endforeach
       </tbody>
     </table>
 
