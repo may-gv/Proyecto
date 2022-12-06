@@ -28,8 +28,6 @@ Route::post('ComicGuardado', [controladorComic::class, 'procesarComic']) -> name
 
 
 
-
-
 /* ---------Formularios  Validar--------------*/
 
 
