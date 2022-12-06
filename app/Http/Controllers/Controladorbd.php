@@ -10,17 +10,19 @@ use App\Http\Requests\ValidadorComic;
 use App\Http\Requests\ValidadorVentaArticulos;
 use App\Http\Requests\validarArticulo;
 
+
 use DB;
 use Carbon\Carbon;
 
 class Controladorbd extends Controller
 {
     //---------------Usuarios-------------------------
-    public function index_usu()
+    public function index_usu(Request $request)
     {
-        $ConsultaUsuarios= DB::table('tb_usuarios')->get();
+        $busqueda=$request->busqueda;
+        $ConsultaUsuarios= DB::table('tb_usuarios')->where('nombre','LIKE','%'.$busqueda.'%')->get();
         
-        return view('MostrarUsuarios',compact('ConsultaUsuarios'));
+        return view('MostrarUsuarios',compact('ConsultaUsuarios','busqueda'));
     }
 
     public function create_usu()
@@ -84,11 +86,12 @@ class Controladorbd extends Controller
 
     //----------------Proveedores------------
 
-    public function index_pro()
+    public function index_pro(Request $request)
     {
-        $ConsultaProveedores= DB::table('tb_proveedores')->get();
+        $busqueda=$request->busqueda;
+        $ConsultaProveedores= DB::table('tb_proveedores')->where('Empresa','LIKE','%'.$busqueda.'%')->get();
         
-        return view('MostrarProveedores',compact('ConsultaProveedores'));
+        return view('MostrarProveedores',compact('ConsultaProveedores','busqueda'));
     }
 
     public function create_pro()
@@ -232,13 +235,13 @@ class Controladorbd extends Controller
 
     //----------------Articulos------------
 
-    public function index_art()
+    public function index_art(Request $request)
     {
-
-        $ConsultaArticulos= DB::table('tb_articulos')->get();
+        $busqueda=$request->busqueda;
+        $ConsultaArticulos= DB::table('tb_articulos')->where('Tipo','LIKE','%'.$busqueda.'%')->get();
         
         
-        return view('MostrarArticulos',compact('ConsultaArticulos'));
+        return view('MostrarArticulos',compact('ConsultaArticulos','busqueda'));
     }
 
     public function create_art()
