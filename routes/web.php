@@ -27,8 +27,6 @@ Route::get('Comics', [controladorComic::class, 'showComics']) -> name('Com');
 
 
 
-
-
 /* ---------Formularios  Validar--------------*/
 
 
