@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests\ValidadorUsuario;
-use App\Http\Requests\ValidarProveedor;
+use App\Http\Requests\validarProveedor;
+use App\Http\Requests\ValidadorComic;
 
 use DB;
 use Carbon\Carbon;
@@ -150,6 +151,82 @@ class Controladorbd extends Controller
     public function destroy_pro($id_pro)
     {
         DB::table('tb_proveedores')->where('idusu', $id_usu)->delete();
+        return redirect('proveedor')->with('Eliminado','abc');
+    }
+
+    //----------------Comics------------
+
+    public function index_com()
+    {
+        $ConsultaComics= DB::table('tb_comics')->get();
+        
+        return view('MostrarComics',compact('ConsultaComics'));
+    }
+
+    public function create_com()
+    {
+        return view('Comics');
+    }
+
+    
+    public function store_com(ValidadorComic $request)
+    {
+        
+        DB::table('tb_comics')->insert([
+            "Nombre"=> $request->input('txtNombre'),
+            "Edicion"=> $request->input('txtEdicion'),
+            "Compania"=> $request->input('txtCompania'),
+            "Cantidad"=> $request->input('txtCantidad'),
+            "PrecioCompra"=> $request->input('txtPrecioCompra'),
+            "PrecioVenta"=> $request->input('txtPrecioVenta'),
+            "FechaIngreso"=> $request->input('txtFecha'),
+            "id_prov"=> $request->input('txtProveedor'),
+            
+            
+            
+            "created_at"=> Carbon::now(),
+            "updated_at"=> Carbon::now()
+        ]);
+        $nom = $request->input('txtNombre');
+
+        return redirect('comic')->with('confirmacion','abc')->with('txtNombre', $nom);
+    }
+
+    public function show_com($id_com)
+    {
+        $consultaId= DB::table('tb_comics')->where('idProo',$id_com)->first();
+        return view('', compact('consultaId'));
+    }
+
+    public function edit_com($id_com)
+    {
+        $consultaId= DB::table('tb_comics')->where('idProo',$id_com)->first();
+        return view('EditarComic', compact('consultaId'));
+    }
+
+   
+    public function update_com(ValidadorComic $request, $id_com)
+    {
+        DB::table('tb_proveedores')->where('idProo', $id_com)->update([
+            "Empresa"=> $request->input('txtEmpresa'),
+            "Tipomercancia"=> $request->input('txtMercancia'),
+            "Direccion"=> $request->input('txtDireccion'),
+            "Pais"=> $request->input('txtPais'),
+            "Contrato"=> $request->input('txtContacto'),
+            "Nofijo"=> $request->input('txtNum_fijo'),
+            "Nocel"=> $request->input('txtNumero_cel'),
+            "Correo"=> $request->input('txtCorreo'),
+
+            "updated_at"=> Carbon::now()
+        ]);
+        
+        return redirect('proveedor')->with('Actualizado','abc',);
+    }
+
+    
+    public function destroy_com($id_com)
+    {
+        DB::table('tb_proveedores')->where('idusu', $id_com)->delete();
         return redirect('proveedor')->with('Eliminado','abc');
     }
 }
