@@ -15,18 +15,6 @@
  'success'  ) </script> "!!}
 @endif
 
-@if(session()->has('Actualizado')) 
-<?php
-
-        $nom = session()->get('txtNombre');
-            
-        ?>
-{!! " <script> Swal.fire(
- 'Eso es todo!',
- 'Usuario {$nom} Actualizado',
- 'success'  ) </script> "!!}
-@endif
-
     @if($errors->any())
         @foreach($errors->all() as $error)
         
@@ -69,7 +57,7 @@
         <td>{{$consulta->Usuario}}</td>
         <td>{{$consulta->Contraseña}}</td>
         <td>{{$consulta->Rol}}</td>
-        <td><a >
+        <td><a href="{{route('usuario.edit',$consulta->idusu)}}">
           <img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
         <td>
           <a href={{route('usuario.edit',$consulta->idusu)}}>
