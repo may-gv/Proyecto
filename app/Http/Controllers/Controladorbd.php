@@ -124,7 +124,7 @@ class Controladorbd extends Controller
     public function show_pro($id_pro)
     {
         $consultaId= DB::table('tb_proveedores')->where('idProo',$id_pro)->first();
-        return view('', compact('consultaId'));
+        return view('EliminarProo', compact('consultaId'));
     }
 
     public function edit_pro($id_pro)
@@ -155,7 +155,7 @@ class Controladorbd extends Controller
     
     public function destroy_pro($id_pro)
     {
-        DB::table('tb_proveedores')->where('idusu', $id_pro)->delete();
+        DB::table('tb_proveedores')->where('idProo', $id_pro)->delete();
         return redirect('proveedor')->with('Eliminado','abc');
     }
 
@@ -164,13 +164,14 @@ class Controladorbd extends Controller
     public function index_com()
     {
         $ConsultaComics= DB::table('tb_comics')->get();
-        
-        return view('MostrarComics',compact('ConsultaComics'));
+        $Prov= DB::table('tb_proveedores')->get();
+        return view('MostrarComics',compact('ConsultaComics', 'Prov'));
     }
 
     public function create_com()
     {
-        return view('Comics');
+        $Prov= DB::table('tb_proveedores')->get();
+        return view('Comics', compact('Prov'));
     }
 
     
@@ -186,13 +187,15 @@ class Controladorbd extends Controller
             "PrecioVenta"=> $request->input('txtPrecioVenta'),
             "FechaIngreso"=> $request->input('txtFecha'),
             "id_prov"=> $request->input('txtProveedor'),
-
+            
+            
+            
             "created_at"=> Carbon::now(),
             "updated_at"=> Carbon::now()
         ]);
         $nom = $request->input('txtNombre');
-
-        return redirect('comic')->with('confirmacion','abc')->with('txtNombre', $nom);
+        $Prov= DB::table('tb_proveedores')->get();
+        return redirect('comic', compact('Prov'))->with('confirmacion','abc')->with('txtNombre', $nom);
     }
 
     public function show_com($id_com)
@@ -274,20 +277,20 @@ class Controladorbd extends Controller
 
     public function show_art($id_art)
     {
-        $consultaId= DB::table('tb_articulos')->where('idProo',$id_art)->first();
+        $consultaId= DB::table('tb_articulos')->where('idArticulo',$id_art)->first();
         return view('EliminarArticulo', compact('consultaId'));
     }
 
     public function edit_art($id_art)
     {
-        $consultaId= DB::table('tb_proveedores')->where('idProo',$id_art)->first();
+        $consultaId= DB::table('tb_proveedores')->where('idArticulo',$id_art)->first();
         return view('EditarProveedores', compact('consultaId'));
     }
 
    
     public function update_art(validarArticulo $request, $id_art)
     {
-        DB::table('tb_proveedores')->where('idProo', $id_art)->update([
+        DB::table('tb_proveedores')->where('idArticulo', $id_art)->update([
             "Empresa"=> $request->input('txtEmpresa'),
             "Tipomercancia"=> $request->input('txtMercancia'),
             "Direccion"=> $request->input('txtDireccion'),
@@ -306,7 +309,7 @@ class Controladorbd extends Controller
     
     public function destroy_art($id_art)
     {
-        DB::table('tb_proveedores')->where('idusu', $id_art)->delete();
-        return redirect('proveedor')->with('Eliminado','abc');
+        DB::table('tb_articulos')->where('idArticulo', $id_art)->delete();
+        return redirect('articulo')->with('Eliminado','abc');
     }
 }
