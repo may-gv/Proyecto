@@ -75,9 +75,9 @@ Route::get('usuario/{id_usu}/edit_usu', [Controladorbd::class,'edit_usu'])->name
 //Update
 Route::put('usuario/{id_usu}', [Controladorbd::class,'update_usu'])->name('usuario.update');
 //show
-Route::get('usuario/{id_usu}/show_usu', [Controladorbd::class,'show_usu'])->name('usuario.show');
+Route::get('usuario/{id}/show_usu', [Controladorbd::class,'show_usu'])->name('usuario.show');
 //Destroy
-Route::delete('usuario/{id_usu}', [Controladorbd::class,'destroy_usu'])->name('usuario.destroy');
+Route::delete('usuario/{id}', [Controladorbd::class,'destroy_usu'])->name('usuario.destroy');
 
 
 //----------------------Proveedores--------------------------------------------
