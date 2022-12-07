@@ -161,29 +161,35 @@ class Controladorbd extends Controller
 
     //----------------Comics------------
 
-    public function index_com()
+    public function index_com(Request $request)
     {
-        $ConsultaComics= DB::table('tb_comics')->get();
+        $busqueda=$request->busqueda;
+        $ConsultaComics= DB::table('tb_comics')->where('Nombre','LIKE','%'.$busqueda.'%')->get();
         
-        return view('MostrarComics',compact('ConsultaComics'));
+        
+        return view('MostrarComics',compact('ConsultaComics','busqueda'));
+        
+       
     }
 
     public function create_com()
-    {
-        return view('Comics');
+    {   $ConsultaProvee = DB::table('tb_proveedores')->get();
+        return view('Comics',compact('ConsultaProvee'));
     }
 
     
     public function store_com(ValidadorComic $request)
     {
-        
+        $precio = $request->txtPrecioCompra;
+
+        $precioVenta = $precio+(0.4*$precio);
         DB::table('tb_comics')->insert([
             "Nombre"=> $request->input('txtNombre'),
             "Edicion"=> $request->input('txtEdicion'),
             "Compania"=> $request->input('txtCompania'),
             "Cantidad"=> $request->input('txtCantidad'),
             "PrecioCompra"=> $request->input('txtPrecioCompra'),
-            "PrecioVenta"=> $request->input('txtPrecioVenta'),
+            "PrecioVenta"=> $precioVenta,
             "FechaIngreso"=> $request->input('txtFecha'),
             "id_prov"=> $request->input('txtProveedor'),
 
@@ -197,7 +203,7 @@ class Controladorbd extends Controller
 
     public function show_com($id_com)
     {
-        $consultaId= DB::table('tb_comics')->where('idProo',$id_com)->first();
+        $consultaId= DB::table('tb_comics')->where('idComic',$id_com)->first();
         return view('', compact('consultaId'));
     }
 
@@ -210,7 +216,7 @@ class Controladorbd extends Controller
    
     public function update_com(ValidadorComic $request, $id_com)
     {
-        DB::table('tb_proveedores')->where('idProo', $id_com)->update([
+        DB::table('tb_comics')->where('idProo', $id_com)->update([
             "Empresa"=> $request->input('txtEmpresa'),
             "Tipomercancia"=> $request->input('txtMercancia'),
             "Direccion"=> $request->input('txtDireccion'),
@@ -229,7 +235,7 @@ class Controladorbd extends Controller
     
     public function destroy_com($id_com)
     {
-        DB::table('tb_proveedores')->where('idusu', $id_com)->delete();
+        DB::table('tb_comics')->where('idComic', $id_com)->delete();
         return redirect('proveedor')->with('Eliminado','abc');
     }
 
@@ -253,13 +259,16 @@ class Controladorbd extends Controller
     
     public function store_art(validarArticulo $request)
     {
+        $precio = $request->txtPrecioCompra;
+
+        $precioVenta = $precio+(0.4*$precio);
         DB::table('tb_articulos')->insert([
             "Tipo"=> $request->input('txtTipo'),
             "Marca"=> $request->input('txtMarca'),
             "Descripcion"=> $request->input('txtDescripcion'),
             "Cantidad"=> $request->input('txtCantidad'),
             "PrecioCompra"=> $request->input('txtPrecioCompra'),
-            "PrecioVenta"=> $request->input('txtPrecioVenta'),
+            "PrecioVenta"=> $precioVenta,
             "FechaIngreso"=> $request->input('txtFecha'),
             "id_prov"=> $request->input('txtProveedor'),
             
@@ -280,27 +289,32 @@ class Controladorbd extends Controller
 
     public function edit_art($id_art)
     {
-        $consultaId= DB::table('tb_proveedores')->where('idProo',$id_art)->first();
-        return view('EditarProveedores', compact('consultaId'));
+        $ConsultaProvee = DB::table('tb_proveedores')->get();
+        $consultaId= DB::table('tb_articulos')->where('idArticulo',$id_art)->first();
+        return view('EditarArticulos', compact('consultaId','ConsultaProvee'));
     }
 
    
     public function update_art(validarArticulo $request, $id_art)
     {
-        DB::table('tb_proveedores')->where('idProo', $id_art)->update([
-            "Empresa"=> $request->input('txtEmpresa'),
-            "Tipomercancia"=> $request->input('txtMercancia'),
-            "Direccion"=> $request->input('txtDireccion'),
-            "Pais"=> $request->input('txtPais'),
-            "Contrato"=> $request->input('txtContacto'),
-            "Nofijo"=> $request->input('txtNum_fijo'),
-            "Nocel"=> $request->input('txtNumero_cel'),
-            "Correo"=> $request->input('txtCorreo'),
+        $precio = $request->txtPrecioCompra;
+
+        $precioVenta = $precio+(0.4*$precio);
+
+        DB::table('tb_articulos')->where('idProo', $id_art)->update([
+            "Tipo"=> $request->input('txtTipo'),
+            "Marca"=> $request->input('txtMarca'),
+            "Descripcion"=> $request->input('txtDescripcion'),
+            "Cantidad"=> $request->input('txtCantidad'),
+            "PrecioCompra"=> $request->input('txtPrecioCompra'),
+            "PrecioVenta"=> $precioVenta,
+            "FechaIngreso"=> $request->input('txtFecha'),
+            "id_prov"=> $request->input('txtProveedor'),
 
             "updated_at"=> Carbon::now()
         ]);
-        
-        return redirect('proveedor')->with('Actualizado','abc',);
+        $ConsultaProvee = DB::table('tb_proveedores')->get();
+        return redirect('articulo')->with('Actualizado','abc',compact('ConsultaProvee'));
     }
 
     

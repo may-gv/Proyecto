@@ -29,7 +29,7 @@ class validarArticulo extends FormRequest
             'txtDescripcion' => 'required',
             'txtCantidad' => 'required|numeric',
             'txtPrecioCompra' => 'required|numeric',
-            'txtPrecioVenta' => 'required|numeric',
+            
             'txtFecha' => 'required',
             'txtProveedor' => 'required'
         ];

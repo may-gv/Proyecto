@@ -38,7 +38,7 @@
                   <a class="nav-link active fst-italic fs-3" aria-current="page" href={{route('usuario.index')}}>Usuarios</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active fst-italic fs-3" href="MostrarComics">Comics</a>
+                  <a class="nav-link active fst-italic fs-3" href={{route('comic.index')}}>Comics</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active fst-italic fs-3" href={{route('articulo.index')}}>Articulos</a>

@@ -25,7 +25,7 @@
         
         <div class="card-header fs-2 text-white">
             
-            Editar Usuario
+            Editar Proveedor
           </div>
           
           <img src= {!! asset('css\images\proveedor.png')!!} id="icon">
