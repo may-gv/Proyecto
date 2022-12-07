@@ -51,10 +51,12 @@
   <a href="/Proveedores">
     <button type="submit" class="btn btn-secondary" id="buton">Registrar Provedor</button></a>
 
-    <div class="input-group mb-3 col-md-3">
-      <input type="text" class="form-control text-center" placeholder="Buscar Provedor" aria-label="Recipient's username" aria-describedby="button-addon2" id="in">
-      <button class="btn btn-outline-secondary" type="button" id="buton">Buscar</button>
-    </div>
+    <form action="{{route('proveedor.index')}}" method="GET" class="form-inline my-2-lg-0 float-right" id="fo">
+      <div class="input-group mb-3 col-md-3">
+        <input type="text" name ="busqueda"class="form-control text-center" placeholder="Buscar Proveedor" aria-label="Recipient's username" aria-describedby="button-addon2" id="in">
+        <button class="btn btn-outline-secondary" type="submit" id="buton">Buscar</button>
+      </div>
+    </form>
 <table class=" table text-center text-white" id="hey">
     <thead>
       <tr>
@@ -87,7 +89,11 @@
         <td>{{$proveedor->Nocel}}</td>
         <td>{{$proveedor->Correo}}</td>
         <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
-        <td><img src="css\images\editar.png" id="opciones" alt=""></td>
+        <td><a href={{route('proveedor.edit',$proveedor->idProo)}}>
+          <img src="css\images\editar.png" id="opciones" alt="">
+        </a>
+        </td>
+
         <td>
           <a href="/Pedidos">
           <img src="css\images\pedido.png" id="opciones" alt=""></td>
