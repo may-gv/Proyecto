@@ -73,8 +73,9 @@ class Controladorbd extends Controller
 
             "updated_at"=> Carbon::now()
         ]);
+        $nom = $request->input('txtNombre');
         
-        return redirect('usuario')->with('Actualizado','abc',);
+        return redirect('usuario')->with('Actualizado','abc',)->with('txtNombre', $nom);
     }
 
     
@@ -241,6 +242,7 @@ class Controladorbd extends Controller
         $ConsultaArticulos= DB::table('tb_articulos')->where('Tipo','LIKE','%'.$busqueda.'%')->get();
         
         
+        
         return view('MostrarArticulos',compact('ConsultaArticulos','busqueda'));
     }
 
@@ -280,27 +282,30 @@ class Controladorbd extends Controller
 
     public function edit_art($id_art)
     {
-        $consultaId= DB::table('tb_proveedores')->where('idProo',$id_art)->first();
-        return view('EditarProveedores', compact('consultaId'));
+        $consultaId= DB::table('tb_articulos')->where('idArticulo',$id_art)->first();
+        $ConsultaProvee=DB::table('tb_proveedores')->get();
+
+
+        return view('EditarArticulos', compact('consultaId','ConsultaProvee'));
     }
 
    
     public function update_art(validarArticulo $request, $id_art)
     {
-        DB::table('tb_proveedores')->where('idProo', $id_art)->update([
-            "Empresa"=> $request->input('txtEmpresa'),
-            "Tipomercancia"=> $request->input('txtMercancia'),
-            "Direccion"=> $request->input('txtDireccion'),
-            "Pais"=> $request->input('txtPais'),
-            "Contrato"=> $request->input('txtContacto'),
-            "Nofijo"=> $request->input('txtNum_fijo'),
-            "Nocel"=> $request->input('txtNumero_cel'),
-            "Correo"=> $request->input('txtCorreo'),
+        DB::table('tb_articulos')->where('idArticulo', $id_art)->update([
+            "Tipo"=> $request->input('txtTipo'),
+            "Marca"=> $request->input('txtMarca'),
+            "Descripcion"=> $request->input('txtDescripcion'),
+            "Cantidad"=> $request->input('txtCantidad'),
+            "PrecioCompra"=> $request->input('txtPrecioCompra'),
+            "PrecioVenta"=> $request->input('txtPrecioVenta'),
+            "FechaIngreso"=> $request->input('txtFecha'),
+            "id_prov"=> $request->input('txtProveedor'),
 
             "updated_at"=> Carbon::now()
         ]);
         
-        return redirect('proveedor')->with('Actualizado','abc',);
+        return redirect('articulo')->with('Actualizado','abc',);
     }
 
     

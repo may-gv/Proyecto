@@ -15,6 +15,18 @@
  'success'  ) </script> "!!}
 @endif
 
+@if(session()->has('Actualizado')) 
+<?php
+
+        $nom = session()->get('txtNombre');
+            
+        ?>
+{!! " <script> Swal.fire(
+ 'Eso es todo!',
+ 'Usuario {$nom} Actualizado',
+ 'success'  ) </script> "!!}
+@endif
+
     @if($errors->any())
         @foreach($errors->all() as $error)
         
