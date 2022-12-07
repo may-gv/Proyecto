@@ -66,6 +66,7 @@
 
         </form>
     </div>
+    <a href="{{route('users.pdf')}}">Generar PDF</a>
 </div>
 </div>
 
