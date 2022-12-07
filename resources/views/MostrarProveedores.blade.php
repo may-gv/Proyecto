@@ -88,15 +88,15 @@
         <td>{{$proveedor->Nofijo}}</td>
         <td>{{$proveedor->Nocel}}</td>
         <td>{{$proveedor->Correo}}</td>
-        <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
+        <td><img src={!! asset('css\images\borrar-amigo.png') !!} id="opciones"alt=""></td>
         <td><a href={{route('proveedor.edit',$proveedor->idProo)}}>
-          <img src="css\images\editar.png" id="opciones" alt="">
+          <img src={!! asset('css\images\editar.png') !!} id="opciones" alt="">
         </a>
         </td>
 
         <td>
           <a href="/Pedidos">
-          <img src="css\images\pedido.png" id="opciones" alt=""></td>
+          <img src={!! asset('css\images\pedido.png') !!} id="opciones" alt=""></td>
         
       </tr>
 

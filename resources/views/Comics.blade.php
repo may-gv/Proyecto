@@ -5,7 +5,7 @@
 
 <div class="container text-left" id="conte">
     <a href={{route('comic.index')}}> 
-        <img src="css\images\deshacer.png" id="bu"alt=""></td>
+        <img src={!! asset('css\images\deshacer.png')!!} id="bu"alt=""></td>
     </a>
 </div>
 
@@ -15,11 +15,12 @@
             
         <form class="m-4 col-md-9" id="hey" method="POST"action="{{route('comic.store')}}">
         @csrf
+        
         <div class="card text-center mb-2 fw-bold col-md-12" id="cole">
         <div class="card-header fs-2 text-white">
             Registrar Comics
           </div>
-          <img src= "css\images\comi.png" id="icon">
+          <img src= {!! asset('css\images\comi.png')!!} id="icon">
 
         <div class="card-body col-md-12">
 

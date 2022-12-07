@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet"  href="/css/styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    <title>Comics</title>
-</head>
-<body background="{{asset('css\images\Fondocomics.jpg')}}">
+@extends('plantilla')
+
+
+@section('contenido')
 
     <div class="container text-left" id="conte">
         <a href={{route('usuario.index')}}> 
-            <
+            <img src={!! asset ('css\images\deshacer.png')!!} id="bu"alt="">
         </a>
 
     </div>
@@ -37,6 +27,7 @@
             
             Editar Usuario
           </div>
+          <img src={!! asset('css\images\usuario.png')!!} id="icon">
           
 
         <div class="card-body col-md-12">
@@ -108,9 +99,7 @@
     
     
         
-    </body>
-
-    </html>
+@stop
     
 
 

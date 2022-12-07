@@ -58,10 +58,10 @@
         <td>{{$consulta->Contraseña}}</td>
         <td>{{$consulta->Rol}}</td>
         <td><a >
-          <img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
+          <img src={!!asset('css\images\borrar-amigo.png')!!} id="opciones"alt=""></td>
         <td>
           <a href={{route('usuario.edit',$consulta->idusu)}}>
-          <img src="css\images\editar.png" id="opciones" alt=""></td>
+          <img src={!!asset('css\images\editar.png')!!} id="opciones" alt=""></td>
         
         
       </tr>

@@ -100,7 +100,7 @@ Route::delete('proveedor/{id_pro}', [Controladorbd::class,'destroy_pro'])->name(
 
 //----------------------Comics--------------------------------------------
 //Create
-Route::get('comic/create_art', [Controladorbd::class,'create_com'])->name('comic.create');
+Route::get('comic/create_com', [Controladorbd::class,'create_com'])->name('comic.create');
 //Store
 Route::post('comic', [Controladorbd::class,'store_com'])->name('comic.store');
 //index

@@ -5,7 +5,7 @@
 
 <div class="container text-left" id="conte">
     <a href={{route('articulo.index')}}> 
-        <img src="css\images\deshacer.png" id="bu"alt=""></td>
+        <img src={!! asset('css\images\deshacer.png')!!} id="bu"alt=""></td>
     </a>
 </div>
 
@@ -19,7 +19,7 @@
         <div class="card-header fs-2 text-white">
             Registrar Articulos
           </div>
-          <img src= "css\images\libro.png" id="icon">
+          <img src= {!! asset('css\images\libro.png')!!} id="icon">
 
         <div class="card-body col-md-12">
 
