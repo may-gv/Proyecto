@@ -37,12 +37,20 @@
                 <input type="text" class="form-control" id="input" name="txtEmpresa" placeholder="Empresa" value="{{$consultaId->Empresa}}">
                 <p class="text-primary fst-italic">{{$errors->first('txtEmpresa')}}</p>
             </div>
-
+            
             <div class="mb-3 text-white">
-                
-                <label class="form-label"> Tipo de mercancia </label>
-                <input type="text" class="form-control" id="input" name="txtMercancia" placeholder="Tipo de mercancia" value="{{$consultaId->Tipomercancia}}">
-                <p class="text-primary fst-italic">{{$errors->first('txtMercancia')}}</p>
+                <label class="form-label"> Tipo de Mercancia </label>
+            </div>
+
+            <div class="mb-3 " id="input">
+                <select name="txtMercancia" id="" class="form-control" style="background: #48608583">
+                    <option selected disabled="disabled" style="background: #48608583">Selecciona:</option>
+                    <option value="Comics">Comics</option>
+                    <option value="Articulos">Articulos</option>
+                    
+                    
+                </select>
+            <p class="text-primary fst-italic">{{$errors->first('txtMercancia')}}</p>
             </div>
 
             <div class="mb-3 text-white">

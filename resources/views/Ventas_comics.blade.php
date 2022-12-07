@@ -13,7 +13,7 @@
     @endif
         
 
-        <form class="m-4 col-md-9" id="hey" method="POST" action="Venta_com">
+        <form class="m-4 col-md-9" id="hey" method="POST" action="{{route('articuloventa.store',$consultaId->idArticulo)}}">
             @csrf
 
         <div class="card text-center mb-2 fw-bold col-md-12" id="cole">
@@ -27,36 +27,34 @@
 
                 <div class="mb-3 text-white">
                   
-                    <label class="form-label"> Nombre </label>
-                    <input type="text" class="form-control" id="input" name="txtNombre" placeholder="Nombre" value=" {{ old('txtNombre')}}"disabled>
+                    <label class="form-label"> Tipo </label>
+                    <input type="text" class="form-control" id="input" name="txtNombre" placeholder="Nombre" value="{{$consultaId->Tipo}}" disabled>
                     
                 </div>
 
                 <div class="mb-3 text-white">
-                    <label class="form-label"> Edición </label>
-                    <input type="text" class="form-control" id="input" name="txtEdicion" placeholder="Teléfono" value=" {{ old('txtEdicion')}}" disabled>
+                    <label class="form-label"> Marca </label>
+                    <input type="text" class="form-control" id="input" name="txtEdicion" placeholder="Teléfono" value="{{$consultaId->Tipo}}" disabled>
                     
                 </div>
 
                 <div class="mb-3 text-white">
-                    <label class="form-label"> Compañia </label>
-                    <input type="text" class="form-control" id="input" name="txtCompania" placeholder="Compañia" value=" {{ old('txtCompania')}}" disabled>
+                    <label class="form-label"> Descripción </label>
+                    <input type="text" class="form-control" id="input" name="txtCompania" placeholder="Compañia" value="{{$consultaId->Tipo}}" disabled>
                     
                 </div>
 
                 
 
                 <div class="mb-3 text-white">
-                    <label class="form-label"> Precio Venta </label>
-                    <input type="number" step="any"  class="form-control" id="input" name="txtPrecioVenta" placeholder="Precio Venta" value=" {{ old('txtPrecioVenta')}}" disabled>
+                    <label class="form-label"> Precio venta por pieza </label>
+                    <input type="number" step="any"  class="form-control" id="input" name="txtPrecioVenta" placeholder="Precio Venta" value="{{$consultaId->PrecioCompra}}" disabled>
                     
                 </div>
                 <div class="mb-3 text-white">
                     <label class="form-label"> Cantidad disponible </label>
-                    <input type="number" class="form-control" id="input" name="txtCantidad_disp" placeholder="Cantidad disponible" value=" {{ old('txtCantidad_disp')}}" disabled>
+                    <input type="number" class="form-control" id="input" name="txtCantidad_disp" placeholder="Cantidad disponible" value="{{$consultaId->Cantidad}}" disabled>
                     
-
-
                 </div>
 
                 <div class="mb-3 text-white">
@@ -64,14 +62,10 @@
                     <input type="number" step="any" class="form-control" id="input" name="txtCantidad" placeholder="Cantidad" value=" {{ old('txtCantidad')}}">
                     <p class="text-primary fst-italic">{{$errors->first('txtCantidad')}}</p>
 
+
                 </div>
 
-                <div class="mb-3 text-white">
-                    <label class="form-label"> Total </label>
-                    <input type="number" step="any"  class="form-control" id="input" name="txtTotal" placeholder="Precio Venta" value=" {{ old('txtPrecioVenta')}}" disabled>
-                    
-  
-                </div>
+                
                 
 
                     

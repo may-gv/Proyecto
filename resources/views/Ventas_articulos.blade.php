@@ -1,54 +1,60 @@
 @extends('plantilla')
+
+
 @section('contenido')
 
 
 
-
     <div class="container mt-4 col-md-6" id="contenedor">
+        @if($errors->any())
+        @foreach($errors->all() as $error)
+        
+        @endforeach
+    @endif
+        
 
+        <form class="m-4 col-md-9" id="hey" method="POST" action="{{route('articuloventa.store',$consultaId->idArticulo)}}">
+            @csrf
 
-        <form class="m-4 col-md-9" id="hey" method="post" action ="Venta_Art">
-        @csrf
-            
         <div class="card text-center mb-2 fw-bold col-md-12" id="cole">
+
         <div class="card-header fs-2 text-white">
-            Venta de Articulo
+            Vender Articulo
           </div>
-          <img src= "css\images\libro.png" id="icon">
+          <img src= {!! asset('css\images\comic.png')!!} id="icon">
 
         <div class="card-body col-md-12">
 
                 <div class="mb-3 text-white">
+                  
                     <label class="form-label"> Tipo </label>
-                    <input type="text" class="form-control" id="input" name="txtTipo" placeholder="Tipo" value=" {{ old('txtTipo')}}" disabled>
+                    <input type="text" class="form-control" id="input" name="txtNombre" placeholder="Nombre" value="{{$consultaId->Tipo}}" disabled>
                     
-
-
                 </div>
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Marca </label>
-                    <input type="text" class="form-control" id="input" name="txtMarca" placeholder="Marca" value=" {{ old('txtMarca')}}" disabled>
+                    <input type="text" class="form-control" id="input" name="txtEdicion" placeholder="Teléfono" value="{{$consultaId->Tipo}}" disabled>
                     
-
-                    
-
                 </div>
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Descripción </label>
-                    <textarea type="text" class="form-control" id="input" name="txtDescripcion" placeholder="Descripción" value=" {{ old('txtDescripcion')}}" disabled></textarea>
+                    <input type="text" class="form-control" id="input" name="txtCompania" placeholder="Compañia" value="{{$consultaId->Tipo}}" disabled>
                     
-
-
                 </div>
 
+                
+
+                <div class="mb-3 text-white">
+                    <label class="form-label"> Precio venta por pieza </label>
+                    <input type="number" step="any"  class="form-control" id="input" name="txtPrecioVenta" placeholder="Precio Venta" value="{{$consultaId->PrecioCompra}}" disabled>
+                    
+                </div>
                 <div class="mb-3 text-white">
                     <label class="form-label"> Cantidad disponible </label>
-                    <input type="number" class="form-control" id="input" name="txtCantidad_disp" placeholder="Cantidad disponible" value=" {{ old('txtCantidad_disp')}}" disabled>
+                    <input type="number" class="form-control" id="input" name="txtCantidad_disp" placeholder="Cantidad disponible" value="{{$consultaId->Cantidad}}" disabled>
                     
-
-
                 </div>
 
                 <div class="mb-3 text-white">
@@ -60,36 +66,24 @@
                 </div>
 
                 
+                
 
-                <div class="mb-3 text-white">
-                    <label class="form-label"> Precio Venta </label>
-                    <input type="number" step="any"  class="form-control" id="input" name="txtPrecioVenta" placeholder="Precio Venta" value=" {{ old('txtPrecioVenta')}}" disabled>
                     
-
-                </div>
-
-                <div class="mb-3 text-white">
-                    <label class="form-label"> Total </label>
-                    <input type="number" step="any"  class="form-control" id="input" name="txtTotal" placeholder="Precio Venta" value=" {{ old('txtTotal')}}" disabled>
-                    
-
                 </div>
 
                 
-
-                
-
                 
         <div class="card-footer">
             
             <button type="submit" class="btn btn-secondary" id="buton">Vender</button>
-         
-        </div>
-    
-        
-    
-</form>
 
+       
+    </div>
+</form>
 </div>
 </div>
+
+    
+
+
 @stop

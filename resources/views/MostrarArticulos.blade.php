@@ -76,15 +76,15 @@
           <td><a href=""><img src={!! asset('css\images\borrar-amigo.png')!!} id="opciones"alt=""></td></a>
         <td><a href={{route('articulo.edit',$articulos->idArticulo)}}><img src={!! asset('css\images\editar.png')!!} id="opciones" alt=""></td></a>
         <td>
-        <a href="/Ventas_articulos">
-        <img src="css\images\vendido.png" id="opciones" alt=""></td>
-          
+        <a href={{route('articuloventa.edit',$articulos->idArticulo)}}>
+        <img src={!! asset('css\images\vendido.png')!!} id="opciones" alt=""></td>
+        </a>
         </tr>
         @endforeach
       </tbody>
     </table>
 
-
+ 
 
 
 

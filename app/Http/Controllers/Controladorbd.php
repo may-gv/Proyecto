@@ -323,4 +323,50 @@ class Controladorbd extends Controller
         DB::table('tb_proveedores')->where('idusu', $id_art)->delete();
         return redirect('proveedor')->with('Eliminado','abc');
     }
+    //--------------Ventas articulos--------------------
+    
+    public function index_venart(Request $request)
+    {
+       
+        
+        return view('',compact('ConsultaArticulos','busqueda'));
+    }
+
+    public function create_venart()
+    {
+        
+        
+    }
+
+    public function store_venart(validarArticulo $request)
+    {
+        $precio = $request->txtPrecioCompra;
+
+        $precioVenta = $precio+(0.4*$precio);
+        DB::table('tb_articulos')->insert([
+            "Tipo"=> $request->input('txtTipo'),
+            "Marca"=> $request->input('txtMarca'),
+            "Descripcion"=> $request->input('txtDescripcion'),
+            "Cantidad"=> $request->input('txtCantidad'),
+            "PrecioCompra"=> $request->input('txtPrecioCompra'),
+            "PrecioVenta"=> $precioVenta,
+            "FechaIngreso"=> $request->input('txtFecha'),
+            "id_prov"=> $request->input('txtProveedor'),
+            
+            
+            "created_at"=> Carbon::now(),
+            "updated_at"=> Carbon::now()
+        ]);
+        
+       
+        return redirect('articulo')->with('confirmacion','abc');
+    }
+    public function edit_venart($id_vart)
+    {
+        
+        $consultaId= DB::table('tb_articulos')->where('idArticulo',$id_vart)->first();
+        return view('Ventas_articulos', compact('consultaId'));
+    }
+
+
 }

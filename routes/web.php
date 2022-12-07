@@ -130,5 +130,20 @@ Route::get('articulo/{id_art}/show_com', [Controladorbd::class,'show_art'])->nam
 //Destroy
 Route::delete('articulo/{id_art}', [Controladorbd::class,'destroy_art'])->name('articulo.destroy');
 
+//-------------------Venta articulos-------------------------
+
+//Create
+Route::get('articuloven/create_art', [Controladorbd::class,'create_art'])->name('articulo.create');
+//Store
+Route::post('articuloven', [Controladorbd::class,'store_art'])->name('articuloventa.store');
+//index
+Route::get('articuloven', [Controladorbd::class,'index_art'])->name('articulo.index');
+//Edit
+Route::get('articuloven/{id_vart}/edit_venart', [Controladorbd::class,'edit_venart'])->name('articuloventa.edit');
+//Update
+Route::put('articulo/{id_art}', [Controladorbd::class,'update_art'])->name('articulo.update');
+//show
+Route::get('articulo/{id_art}/show_com', [Controladorbd::class,'show_art'])->name('articulo.show');
+
 
 
