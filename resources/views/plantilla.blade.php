@@ -41,7 +41,7 @@
                   <a class="nav-link active fst-italic fs-3" href="MostrarComics">Comics</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active fst-italic fs-3" href="MostrarArticulos">Articulos</a>
+                  <a class="nav-link active fst-italic fs-3" href={{route('articulo.index')}}>Articulos</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active fst-italic fs-3" href="VentasRealizadas">Ventas</a>
@@ -55,9 +55,9 @@
                   </a>
                   <ul class="dropdown-menu dropdown-menu-dark">
                     <li><a class="dropdown-item fs-4 fst-italic" href="Comics">Comics</a></li>
-                    <li><a class="dropdown-item fs-4 fst-italic" href="Articulos">Articulos</a></li>
+                    <li><a class="dropdown-item fs-4 fst-italic" href={{route('articulo.create')}}>Articulos</a></li>
                     <li><a class="dropdown-item fs-4 fst-italic" href="Usuarios">Usuarios</a></li>
-                    <li><a class="dropdown-item fs-4 fst-italic" href="Proveedores">Provedores</a></li>
+                    <li><a class="dropdown-item fs-4 fst-italic" href="Proveedores">Proveedores</a></li>
                     
                   </ul>
                 </li>

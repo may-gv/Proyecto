@@ -33,11 +33,11 @@ Route::get('Comics', [controladorComic::class, 'showComics']) -> name('Com');
 
 Route::get('Articulos',[controladorComic::class,'showArticulos'])->name('Arti');
 
-Route::post('confirmarA', [controladorComic::class, 'GuardarA'])->name('saveA');
+//Route::post('confirmarA', [controladorComic::class, 'GuardarA'])->name('saveA');
 
 Route::get('Proveedores',[controladorComic::class,'showProveedores'])->name('Provee');
 
-Route::post('confirmarP', [controladorComic::class, 'GuardarP'])->name('saveP');
+//Route::post('confirmarP', [controladorComic::class, 'GuardarP'])->name('saveP');
 
 Route::get('MostrarUsuarios',[controladorComic::class,'showmUsuarios.'])->name('mosUsu');
 
@@ -98,7 +98,7 @@ Route::delete('proveedor/{id_pro}', [Controladorbd::class,'destroy_pro'])->name(
 
 //----------------------Comics--------------------------------------------
 //Create
-Route::get('comic/create_pro', [Controladorbd::class,'create_com'])->name('comic.create');
+Route::get('comic/create_art', [Controladorbd::class,'create_com'])->name('comic.create');
 //Store
 Route::post('comic', [Controladorbd::class,'store_com'])->name('comic.store');
 //index
@@ -111,6 +111,22 @@ Route::put('comic/{id_com}', [Controladorbd::class,'update_com'])->name('comic.u
 Route::get('comic/{id_com}/show_com', [Controladorbd::class,'show_com'])->name('comic.show');
 //Destroy
 Route::delete('comic/{id_com}', [Controladorbd::class,'destroy_com'])->name('comic.destroy');
+
+//----------------------Articulos--------------------------------------------
+//Create
+Route::get('articulo/create_art', [Controladorbd::class,'create_art'])->name('articulo.create');
+//Store
+Route::post('articulo', [Controladorbd::class,'store_art'])->name('articulo.store');
+//index
+Route::get('articulo', [Controladorbd::class,'index_art'])->name('articulo.index');
+//Edit
+Route::get('articulo/{id_art}/edit_com', [Controladorbd::class,'edit_art'])->name('articulo.edit');
+//Update
+Route::put('articulo/{id_art}', [Controladorbd::class,'update_art'])->name('articulo.update');
+//show
+Route::get('articulo/{id_art}/show_com', [Controladorbd::class,'show_art'])->name('articulo.show');
+//Destroy
+Route::delete('articulo/{id_art}', [Controladorbd::class,'destroy_art'])->name('articulo.destroy');
 
 
 

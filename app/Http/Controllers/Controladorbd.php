@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ValidadorUsuario;
 use App\Http\Requests\validarProveedor;
 use App\Http\Requests\ValidadorComic;
+use App\Http\Requests\ValidadorVentaArticulos;
+use App\Http\Requests\validarArticulo;
+
 
 use DB;
 use Carbon\Carbon;
@@ -14,11 +17,12 @@ use Carbon\Carbon;
 class Controladorbd extends Controller
 {
     //---------------Usuarios-------------------------
-    public function index_usu()
+    public function index_usu(Request $request)
     {
-        $ConsultaUsuarios= DB::table('tb_usuarios')->get();
+        $busqueda=$request->busqueda;
+        $ConsultaUsuarios= DB::table('tb_usuarios')->where('nombre','LIKE','%'.$busqueda.'%')->get();
         
-        return view('MostrarUsuarios',compact('ConsultaUsuarios'));
+        return view('MostrarUsuarios',compact('ConsultaUsuarios','busqueda'));
     }
 
     public function create_usu()
@@ -82,11 +86,12 @@ class Controladorbd extends Controller
 
     //----------------Proveedores------------
 
-    public function index_pro()
+    public function index_pro(Request $request)
     {
-        $ConsultaProveedores= DB::table('tb_proveedores')->get();
+        $busqueda=$request->busqueda;
+        $ConsultaProveedores= DB::table('tb_proveedores')->where('Empresa','LIKE','%'.$busqueda.'%')->get();
         
-        return view('MostrarProveedores',compact('ConsultaProveedores'));
+        return view('MostrarProveedores',compact('ConsultaProveedores','busqueda'));
     }
 
     public function create_pro()
@@ -131,7 +136,7 @@ class Controladorbd extends Controller
    
     public function update_pro(validarProveedor $request, $id_pro)
     {
-        DB::table('tb_proveedores')->where('idProo', $id_usu)->update([
+        DB::table('tb_proveedores')->where('idProo', $id_pro)->update([
             "Empresa"=> $request->input('txtEmpresa'),
             "Tipomercancia"=> $request->input('txtMercancia'),
             "Direccion"=> $request->input('txtDireccion'),
@@ -150,7 +155,7 @@ class Controladorbd extends Controller
     
     public function destroy_pro($id_pro)
     {
-        DB::table('tb_proveedores')->where('idusu', $id_usu)->delete();
+        DB::table('tb_proveedores')->where('idusu', $id_pro)->delete();
         return redirect('proveedor')->with('Eliminado','abc');
     }
 
@@ -182,6 +187,9 @@ class Controladorbd extends Controller
             "PrecioVenta"=> $request->input('txtPrecioVenta'),
             "FechaIngreso"=> $request->input('txtFecha'),
             "id_prov"=> $request->input('txtProveedor'),
+            
+            
+            
             "created_at"=> Carbon::now(),
             "updated_at"=> Carbon::now()
         ]);
@@ -218,13 +226,90 @@ class Controladorbd extends Controller
             "updated_at"=> Carbon::now()
         ]);
         
-        return redirect('proveedor')->with('Actualizado','abc',);
+        return redirect('comic')->with('Actualizado','abc',);
     }
 
     
     public function destroy_com($id_com)
     {
         DB::table('tb_proveedores')->where('idusu', $id_com)->delete();
+        return redirect('proveedor')->with('Eliminado','abc');
+    }
+
+    //----------------Articulos------------
+
+    public function index_art(Request $request)
+    {
+        $busqueda=$request->busqueda;
+        $ConsultaArticulos= DB::table('tb_articulos')->where('Tipo','LIKE','%'.$busqueda.'%')->get();
+        
+        
+        return view('MostrarArticulos',compact('ConsultaArticulos','busqueda'));
+    }
+
+    public function create_art()
+    {
+        $ConsultaProvee = DB::table('tb_proveedores')->get();
+        return view('Articulos',compact('ConsultaProvee'));
+    }
+
+    
+    public function store_art(validarArticulo $request)
+    {
+        DB::table('tb_articulos')->insert([
+            "Tipo"=> $request->input('txtTipo'),
+            "Marca"=> $request->input('txtMarca'),
+            "Descripcion"=> $request->input('txtDescripcion'),
+            "Cantidad"=> $request->input('txtCantidad'),
+            "PrecioCompra"=> $request->input('txtPrecioCompra'),
+            "PrecioVenta"=> $request->input('txtPrecioVenta'),
+            "FechaIngreso"=> $request->input('txtFecha'),
+            "id_prov"=> $request->input('txtProveedor'),
+            
+            
+            "created_at"=> Carbon::now(),
+            "updated_at"=> Carbon::now()
+        ]);
+        
+       
+        return redirect('articulo')->with('confirmacion','abc');
+    }
+
+    public function show_art($id_art)
+    {
+        $consultaId= DB::table('tb_articulos')->where('idProo',$id_art)->first();
+        return view('EliminarArticulo', compact('consultaId'));
+    }
+
+    public function edit_art($id_art)
+    {
+        $consultaId= DB::table('tb_proveedores')->where('idProo',$id_art)->first();
+        return view('EditarProveedores', compact('consultaId'));
+    }
+
+   
+    public function update_art(validarArticulo $request, $id_art)
+    {
+        DB::table('tb_proveedores')->where('idProo', $id_art)->update([
+            "Empresa"=> $request->input('txtEmpresa'),
+            "Tipomercancia"=> $request->input('txtMercancia'),
+            "Direccion"=> $request->input('txtDireccion'),
+            "Pais"=> $request->input('txtPais'),
+            "Contrato"=> $request->input('txtContacto'),
+            "Nofijo"=> $request->input('txtNum_fijo'),
+            "Nocel"=> $request->input('txtNumero_cel'),
+            "Correo"=> $request->input('txtCorreo'),
+
+            "updated_at"=> Carbon::now()
+        ]);
+        
+        return redirect('proveedor')->with('Actualizado','abc',);
+    }
+
+    
+    public function destroy_art($id_art)
+    {
+        DB::table('tb_proveedores')->where('idusu', $id_art)->delete();
         return redirect('proveedor')->with('Eliminado','abc');
     }
 }

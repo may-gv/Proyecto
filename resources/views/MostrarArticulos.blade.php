@@ -3,7 +3,7 @@
 
 @section('contenido')
 
-@if(session()->has('Finalizado'))
+@if(session()->has('confirmacion'))
 {!! " <script> Swal.fire(
  'Eso es todo!',
  'Articulo Registrado',
@@ -26,13 +26,15 @@
 
 <div class="container mt-5 col-md-10" id="hey">
     <h1 class=" mt-4 text-center text-white fw-bold">Articulos</h1>
-    <a href="/Articulos">
+    <a href={{route('articulo.create')}}>
       <button type="submit" class="btn btn-secondary" id="buton">Registrar Articulo</button></a>
   
-      <div class="input-group mb-3 col-md-3">
-        <input type="text" class="form-control text-center" placeholder="Buscar Articulo" aria-label="Recipient's username" aria-describedby="button-addon2" id="in">
-        <button class="btn btn-outline-secondary" type="button" id="buton">Buscar</button>
-      </div>
+      <form action="{{route('articulo.index')}}" method="GET" class="form-inline my-2-lg-0 float-right" id="fo">
+        <div class="input-group mb-3 col-md-3">
+          <input type="text" name ="busqueda"class="form-control text-center" placeholder="Buscar Articulo" aria-label="Recipient's username" aria-describedby="button-addon2" id="in">
+          <button class="btn btn-outline-secondary" type="submit" id="buton">Buscar</button>
+        </div>
+      </form>
   <table class=" table text-center text-white" id="hey">
     
       <thead>
@@ -42,9 +44,10 @@
           <th scope="col">Marca</th>
           <th scope="col">Descripción</th>
           <th scope="col">Cantidad</th>
+          <th scope="col">Precio compra</th>
           <th scope="col">Precio venta</th>
           <th scope="col">Fecha ingreso</th>
-          <th scope="col">Proveedor</th>
+          
           <th scope="col">Borrar</th>
           <th scope="col">Editar</th>
           <th scope="col">Vender</th>
@@ -52,15 +55,17 @@
         </tr>
       </thead>
       <tbody>
+        
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>Mark</td>
-          <td>Otto</td>
+          @foreach($ConsultaArticulos as $articulos)
+          <th scope="row">{{$articulos->idArticulo}}</th>
+          <td>{{$articulos->Tipo}}</td>
+          <td>{{$articulos->Marca}}</td>
+          <td>{{$articulos->Descripcion}}</td>
+          <td>{{$articulos->Cantidad}}</td>
+          <td>{{$articulos->PrecioCompra}}</td>
+          <td>{{$articulos->PrecioVenta}}</td>
+          <td>{{$articulos->FechaIngreso}}</td>
           <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
         <td><img src="css\images\editar.png" id="opciones" alt=""></td>
         <td>
@@ -68,37 +73,7 @@
         <img src="css\images\vendido.png" id="opciones" alt=""></td>
           
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
-        <td><img src="css\images\editar.png" id="opciones" alt=""></td>
-        <td>
-        <a href="/Ventas_articulos">
-        <img src="css\images\vendido.png" id="opciones" alt=""></td>
-          
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
-          <td><img src="css\images\editar.png" id="opciones" alt=""></td>
-          <td>
-          <a href="/Ventas_articulos">
-          <img src="css\images\vendido.png" id="opciones" alt=""></td>
-        </tr>
+        @endforeach
       </tbody>
     </table>
 

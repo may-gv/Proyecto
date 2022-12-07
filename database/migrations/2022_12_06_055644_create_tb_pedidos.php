@@ -15,10 +15,18 @@ return new class extends Migration
     {
         Schema::create('tb_pedidos', function (Blueprint $table) {
             $table->id('idPed');
+            $table->unsignedBigInteger('id_usu');
+            $table->unsignedBigInteger('id_pro');
             $table->string('Tipopedido');
             $table->integer('Cantidadcomi');
             $table->integer('Cantidadpedi');
             $table->timestamps();
+            $table->foreign('id_usu')->references('idusu')->on('tb_usuarios')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+            $table->foreign('id_pro')->references('idProo')->on('tb_proveedores')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 

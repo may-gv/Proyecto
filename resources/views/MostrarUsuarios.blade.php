@@ -20,11 +20,12 @@
   <h1 class=" mt-4 text-left text-white text-center fw-bold">Usuarios</h1>
   <a href="/Usuarios">
     <button type="submit" class="btn btn-secondary" id="buton">Registrar Usuario</button></a>
-
+    <form action="{{route('usuario.index')}}" method="GET" class="form-inline my-2-lg-0 float-right" id="fo">
     <div class="input-group mb-3 col-md-3">
-      <input type="text" class="form-control text-center" placeholder="Buscar Usuario" aria-label="Recipient's username" aria-describedby="button-addon2" id="in">
-      <button class="btn btn-outline-secondary" type="button" id="buton">Buscar</button>
+      <input type="text" name ="busqueda"class="form-control text-center" placeholder="Buscar Usuario" aria-label="Recipient's username" aria-describedby="button-addon2" id="in">
+      <button class="btn btn-outline-secondary" type="submit" id="buton">Buscar</button>
     </div>
+  </form>
 
 <table class=" table text-center text-white mt-2" id="hey">
     <thead>
@@ -51,10 +52,10 @@
         <td>{{$consulta->Usuario}}</td>
         <td>{{$consulta->Contraseña}}</td>
         <td>{{$consulta->Rol}}</td>
-        <td><a href="#">
+        <td><a href="{{route('usuario.edit',$consulta->idusu)}}">
           <img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
         <td>
-          <a href="{{route('usuario.edit',$consulta->idusu)}}">
+          <a href={{route('usuario.edit',$consulta->idusu)}}>
           <img src="css\images\editar.png" id="opciones" alt=""></td>
         
         

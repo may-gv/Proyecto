@@ -32,7 +32,7 @@
 <div class="container mt-5 col-md-10 " id="hey">
   <h1 class=" mt-4 text-center text-white fw-bold">Comics</h1>
 
-  <a href="Comics">
+  <a href="/Comics">
     <button type="submit" class="btn btn-secondary" id="buton">Registrar</button>
     </a>
 <table class=" table text-center mt-2 text-white" id="hey">
