@@ -32,7 +32,7 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link active fst-italic fs-3" aria-current="page" href="inicio">Inicio</a>
+                  <a class="nav-link active fst-italic fs-3" aria-current="page" href="{{route('in')}}">Inicio</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active fst-italic fs-3" aria-current="page" href={{route('usuario.index')}}>Usuarios</a>
@@ -44,7 +44,7 @@
                   <a class="nav-link active fst-italic fs-3" href={{route('articulo.index')}}>Articulos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active fst-italic fs-3" href="VentasRealizadas">Ventas</a>
+                  <a class="nav-link active fst-italic fs-3" href="{{route('mosVentas')}}">Ventas</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active fst-italic fs-3" aria-current="page" href={{route('proveedor.index')}}>Proveedores</a>
