@@ -15,11 +15,26 @@
  'success'  ) </script> "!!}
 @endif
 
+<<<<<<<<< Temporary merge branch 1
+=========
+@if(session()->has('Actualizado')) 
+<?php
+
+        $nom = session()->get('txtNombre');
+            
+        ?>
+{!! " <script> Swal.fire(
+ 'Eso es todo!',
+ 'Usuario {$nom} Actualizado',
+ 'success'  ) </script> "!!}
+@endif
+
     @if($errors->any())
         @foreach($errors->all() as $error)
         
         @endforeach
     @endif
+>>>>>>>>> Temporary merge branch 2
 
 <div class="container mt-5 col-md-10" id="hey">
   <h1 class=" mt-4 text-left text-white text-center fw-bold">Usuarios</h1>
