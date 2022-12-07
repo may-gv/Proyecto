@@ -159,13 +159,14 @@ class Controladorbd extends Controller
     public function index_com()
     {
         $ConsultaComics= DB::table('tb_comics')->get();
-        
-        return view('MostrarComics',compact('ConsultaComics'));
+        $Prov= DB::table('tb_proveedores')->get();
+        return view('MostrarComics',compact('ConsultaComics', 'Prov'));
     }
 
     public function create_com()
     {
-        return view('Comics');
+        $Prov= DB::table('tb_proveedores')->get();
+        return view('Comics', compact('Prov'));
     }
 
     
@@ -181,15 +182,12 @@ class Controladorbd extends Controller
             "PrecioVenta"=> $request->input('txtPrecioVenta'),
             "FechaIngreso"=> $request->input('txtFecha'),
             "id_prov"=> $request->input('txtProveedor'),
-            
-            
-            
             "created_at"=> Carbon::now(),
             "updated_at"=> Carbon::now()
         ]);
         $nom = $request->input('txtNombre');
-
-        return redirect('comic')->with('confirmacion','abc')->with('txtNombre', $nom);
+        $Prov= DB::table('tb_proveedores')->get();
+        return redirect('comic', compact('Prov'))->with('confirmacion','abc')->with('txtNombre', $nom);
     }
 
     public function show_com($id_com)

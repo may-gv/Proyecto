@@ -74,9 +74,10 @@
                 <div class="mb-3 " id="input">
                     <select name="txtProveedor" id="" class="form-control" style="background: #48608583" value=" {{ old('txtRol')}}" >
                         <option value="" style="background: #48608583" value=" {{ old('txtRol')}}">Selecciona</option>
-                        <option value="1">One</option>
-                        <option value="1">Two</option>
-                        <option value="1">Three</option>
+                        
+                        @foreach ($Prov as $pr)
+                        <option value="{{$pr->idProo}}">{{$pr->Empresa}}</option>
+                        @endforeach
                         
                     </select>
                 <p class="text-primary fst-italic">{{$errors->first('txtProveedor')}}</p>
