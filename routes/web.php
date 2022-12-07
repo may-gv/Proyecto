@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 /* Impostamos el Controlador */
 use App\Http\Controllers\controladorComic;
 use App\Http\Controllers\Controladorbd;
-
+use App\Http\Controllers\UserController;
 
 
 /* Creamos las vistas */
@@ -128,5 +128,5 @@ Route::get('articulo/{id_art}/show_com', [Controladorbd::class,'show_art'])->nam
 //Destroy
 Route::delete('articulo/{id_art}', [Controladorbd::class,'destroy_art'])->name('articulo.destroy');
 
-
-
+//PDF
+Route::get('user-list-pdf', [UserController::class, 'exportPdf'])->name('users.pdf');
