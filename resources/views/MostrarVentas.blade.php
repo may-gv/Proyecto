@@ -30,14 +30,17 @@
   
     
     
-  <div class="container col-md-6" id="">
-    <form action="{{route('articuloventa.index')}}" method="GET" class="form-inline my-2-lg-0 float-right" id="fo">
+  
+  <form action="{{route('articuloventa.index')}}" method="GET" class="form-inline my-2-lg-0 float-right" id="fo">
       <div class="input-group mb-3 col-md-3">
+        
         <input type="text" name ="busqueda"class="form-control text-center" placeholder="Buscar Articulo vendido" aria-label="Recipient's username" aria-describedby="button-addon2" id="in">
         <button class="btn btn-outline-secondary" type="submit" id="buton">Buscar</button>
+      
       </div>
-    </div>
     </form>
+    
+
     <form action="{{route('articuloventa.index')}}" method="GET" class="" id="fo">
       <div class="input-group mb-3 col-md-3">
         <input type="text" name ="bus"class="form-control text-center" placeholder="Buscar Comic vendido" aria-label="Recipient's username" aria-describedby="button-addon2" id="in">
