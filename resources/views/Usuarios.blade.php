@@ -5,7 +5,7 @@
 
 <div class="container text-left" id="conte">
     <a href={{route('usuario.index')}}> 
-        <img src="css\images\deshacer.png" id="bu"alt=""></td>
+        <img src="css\images\deshacer.png" id="bu"alt="">
     </a>
 </div>
 
@@ -19,7 +19,7 @@
         <div class="card-header fs-2 text-white">
             Registrar Usuario
           </div>
-          <img src= "css\images\usuario.png" id="icon">
+          <img src={!! asset('css\images\usuario.png')!!} id="icon">
 
         <div class="card-body col-md-12">
 
@@ -65,7 +65,7 @@
                     <label class="form-label"> Rol </label>
                 </div>
                 <div class="mb-3 " id="input">
-                    <select name="Rol" id="" class="form-control" style="background: #48608583" value=" {{old('Rol')}}">
+                    <select name="Rol" id="" class="form-control" style="background: #48608583">
                         <option selected disabled="disabled" style="background: #48608583">Selecciona Rol:</option>
                         <option value="Super Usuario">Super Usuario</option>
                         <option value="Vendedor">Vendedor</option>

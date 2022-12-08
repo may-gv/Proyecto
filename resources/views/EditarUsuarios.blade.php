@@ -1,5 +1,16 @@
 @extends('plantilla')
+
 @section('contenido')
+
+
+
+
+@section('contenido')
+
+    <div class="container text-left" id="conte">
+        <a href={{route('usuario.index')}}> 
+            <img src={!! asset ('css\images\deshacer.png')!!} id="bu"alt="">
+        </a>
 
 
 
@@ -26,6 +37,7 @@
             
             Editar Usuario
           </div>
+          <img src={!! asset('css\images\usuario.png')!!} id="icon">
           
 
         <div class="card-body col-md-12">
@@ -90,6 +102,9 @@
     </form>
 </div>
     
+
+    
+        
 
 @stop
     

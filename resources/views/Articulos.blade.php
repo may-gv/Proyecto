@@ -5,7 +5,7 @@
 
 <div class="container text-left" id="conte">
     <a href={{route('articulo.index')}}> 
-        <img src="css\images\deshacer.png" id="bu"alt=""></td>
+        <img src={!! asset('css\images\deshacer.png')!!} id="bu"alt=""></td>
     </a>
 </div>
 
@@ -19,7 +19,7 @@
         <div class="card-header fs-2 text-white">
             Registrar Articulos
           </div>
-          <img src= "css\images\libro.png" id="icon">
+          <img src= {!! asset('css\images\libro.png')!!} id="icon">
 
         <div class="card-body col-md-12">
 
@@ -62,13 +62,6 @@
                     <input type="text" step="any" class="form-control" id="input" name="txtPrecioCompra" placeholder="Precio compra" value=" {{ old('txtPrecioCompra')}}">
                     <p class="text-primary fst-italic">{{$errors->first('txtPrecioCompra')}}</p>
 
-
-                </div>
-
-                <div class="mb-3 text-white">
-                    <label class="form-label"> Precio Venta </label>
-                    <input type="text" step="any"  class="form-control" id="input" name="txtPrecioVenta" placeholder="Precio Venta" value=" {{ old('txtPrecioVenta')}}" >
-                    <p class="text-primary fst-italic">{{$errors->first('txtPrecioVenta')}}</p>
 
                 </div>
 

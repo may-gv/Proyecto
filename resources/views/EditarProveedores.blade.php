@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet"  href="/css/styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    <title>Comics</title>
-</head>
-<body background="{{asset('css\images\Fondocomics.jpg')}}">
+@extends('plantilla')
+
+
+@section('contenido')
 
     <div class="container text-left" id="conte">
         <a href={{route('usuario.index')}}> 
@@ -35,10 +25,10 @@
         
         <div class="card-header fs-2 text-white">
             
-            Editar Usuario
+            Editar Proveedor
           </div>
           
-
+          <img src= {!! asset('css\images\proveedor.png')!!} id="icon">
         <div class="card-body col-md-12">
 
             <div class="mb-3 text-white">
@@ -47,12 +37,20 @@
                 <input type="text" class="form-control" id="input" name="txtEmpresa" placeholder="Empresa" value="{{$consultaId->Empresa}}">
                 <p class="text-primary fst-italic">{{$errors->first('txtEmpresa')}}</p>
             </div>
-
+            
             <div class="mb-3 text-white">
-                
-                <label class="form-label"> Tipo de mercancia </label>
-                <input type="text" class="form-control" id="input" name="txtMercancia" placeholder="Tipo de mercancia" value="{{$consultaId->Tipomercancia}}">
-                <p class="text-primary fst-italic">{{$errors->first('txtMercancia')}}</p>
+                <label class="form-label"> Tipo de Mercancia </label>
+            </div>
+
+            <div class="mb-3 " id="input">
+                <select name="txtMercancia" id="" class="form-control" style="background: #48608583">
+                    <option selected disabled="disabled" style="background: #48608583">Selecciona:</option>
+                    <option value="Comics">Comics</option>
+                    <option value="Articulos">Articulos</option>
+                    
+                    
+                </select>
+            <p class="text-primary fst-italic">{{$errors->first('txtMercancia')}}</p>
             </div>
 
             <div class="mb-3 text-white">
@@ -107,12 +105,8 @@
     </div>
     
 </div>
-    
-    
-        
-    </body>
 
-    </html>
+@stop
     
 
 

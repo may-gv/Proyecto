@@ -102,10 +102,10 @@ class controladorComic extends Controller
         return redirect('MostrarUsuarios')->with('confirmacion' , ' Usuario Registrado');
       }
     
-      public function procesarComic(ValidadorComic $req){
+      //public function procesarComic(ValidadorComic $req){
           
-        return redirect('MostrarComics')->with('confirmacion' , ' Comic Registrado');
-      }
+        //return redirect('MostrarComics')->with('Confirmacion' , ' Comic Registrado');
+      //}
 
       public function showVentasCom(){
         return view('Ventas_comics');

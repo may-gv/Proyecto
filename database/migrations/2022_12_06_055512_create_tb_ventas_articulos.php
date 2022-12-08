@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_usu');
             $table->unsignedBigInteger('id_art');
             $table->integer('Cantidad');
+            $table->integer('Total');
             $table->date('Fecha');
             $table->timestamps();
             $table->foreign('id_usu')->references('idusu')->on('tb_usuarios')

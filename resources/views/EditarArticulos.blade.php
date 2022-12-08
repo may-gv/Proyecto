@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,6 +43,35 @@
         <div class="card-body col-md-12">
 
         <div class="mb-3 text-white">
+
+@extends('plantilla')
+
+@section('contenido')
+
+
+<div class="container text-left" id="conte">
+    <a href={{route('articulo.index')}}> 
+        <img src={!! asset('css\images\deshacer.png')!!} id="bu"alt=""></td>
+    </a>
+</div>
+
+    <div class="container mt-4 col-md-6" id="contenedor">
+     
+        
+            
+        <form class="m-4 col-md-9" id="hey" method="post"action="{{route('articulo.update',$consultaId->idArticulo)}}">
+        @csrf
+        {!!method_field('PUT')!!}
+        <div class="card text-center mb-2 fw-bold col-md-12" id="cole">
+        <div class="card-header fs-2 text-white">
+            Editar Articulo
+          </div>
+          <img src= {!! asset('css\images\libro.png')!!} id="icon">
+
+        <div class="card-body col-md-12">
+
+                <div class="mb-3 text-white">
+
                     
                     <label class="form-label"> Tipo </label>
                     <input type="text" class="form-control" id="input" name="txtTipo" placeholder="Tipo" value="{{$consultaId->Tipo}}">
@@ -61,7 +91,11 @@
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Descripción </label>
+
                     <input type="text" class="form-control" id="input" name="txtDescripcion" placeholder="Descripcion" value="{{$consultaId->Descripcion}}">
+
+                    <textarea type="text" class="form-control" id="input" name="txtDescripcion" placeholder="Descripción" >{{$consultaId->Descripcion}}</textarea>
+
                     <p class="text-primary fst-italic">{{$errors->first('txtDescripcion')}}</p>
 
 
@@ -84,6 +118,7 @@
                 </div>
 
                 <div class="mb-3 text-white">
+
                     <label class="form-label"> Precio Venta </label>
                     <input type="text" step="any"  class="form-control" id="input" name="txtPrecioVenta" placeholder="Precio Venta" value="{{$consultaId->PrecioVenta}}" >
                     <p class="text-primary fst-italic">{{$errors->first('txtPrecioVenta')}}</p>
@@ -91,6 +126,7 @@
                 </div>
 
                 <div class="mb-3 text-white">
+
                     <label class="form-label"> Fecha ingreso </label>
                     <input type="date" class="form-control" id="input" name="txtFecha" placeholder="Fecha ingreso " value="{{$consultaId->FechaIngreso}}">
                     <p class="text-primary fst-italic">{{$errors->first('txtFecha')}}</p>
@@ -99,10 +135,17 @@
 
                 <div class="mb-3 text-white">
                     <label class="form-label"> Proveedor </label>
+
                     <select name="txtProveedor" id="" class="form-control" style="background: #48608583" value="{{$consultaId->id_prov}}">
                         
                         
                         <option selected disabled="disabled" value="" style="background: #48608583">Selecciona Proveedor:</option>
+
+                    <select name="txtProveedor" id="" class="form-control" style="background: #48608583" >{{$consultaId->id_prov}}
+                        
+                        
+
+
                         @foreach($ConsultaProvee as $prove)
                         
                             <option value="{{$prove->idProo}}">{{$prove->Empresa}}</option>
@@ -115,6 +158,7 @@
 
                     
                 </div>
+
             
         <div class="card-footer">
             
@@ -134,4 +178,20 @@
     </html>
     
 
+
+
+                
+        <div class="card-footer">
+            
+            <button type="submit" class="btn btn-secondary" id="buton">Editar</button>
+         
+        </div>
+    
+        
+    
+</form>
+
+</div>
+</div>
+@stop
 

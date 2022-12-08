@@ -15,7 +15,7 @@
 
      <nav class="navbar navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-          <img class="izq" src="css\images\comi.png" width="50" height="50" alt="" id="logito" id="logi">
+          <img class="izq" src={!! asset('css\images\comi.png')!!} width="50" height="50" alt="" id="logito" id="logi">
           <a class="navbar-brand fs-2 fw-bold"  href="inicio" id="letras" >Weidoc Comic's
             
           </a>
@@ -38,13 +38,21 @@
                   <a class="nav-link active fst-italic fs-3" aria-current="page" href={{route('usuario.index')}}>Usuarios</a>
                 </li>
                 <li class="nav-item">
+
                   <a class="nav-link active fst-italic fs-3" href="{{route('comic.index')}}">Comics</a>
+
+                  <a class="nav-link active fst-italic fs-3" href={{route('comic.index')}}>Comics</a>
+
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active fst-italic fs-3" href={{route('articulo.index')}}>Articulos</a>
                 </li>
                 <li class="nav-item">
+
                   <a class="nav-link active fst-italic fs-3" href="{{route('mosVentas')}}">Ventas</a>
+
+                  <a class="nav-link active fst-italic fs-3" href={{route('articuloventa.index')}}>Ventas</a>
+
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active fst-italic fs-3" aria-current="page" href={{route('proveedor.index')}}>Proveedores</a>
@@ -54,10 +62,17 @@
                     Registros
                   </a>
                   <ul class="dropdown-menu dropdown-menu-dark">
+
                     <li><a class="dropdown-item fs-4 fst-italic" href="{{route('comic.create')}}">Comics</a></li>
                     <li><a class="dropdown-item fs-4 fst-italic" href={{route('articulo.create')}}>Articulos</a></li>
                     <li><a class="dropdown-item fs-4 fst-italic" href="{{route('usuario.create')}}">Usuarios</a></li>
                     <li><a class="dropdown-item fs-4 fst-italic" href="{{route('proveedor.create')}}">Proveedores</a></li>
+
+                    <li><a class="dropdown-item fs-4 fst-italic" href={{route('comic.create')}}>Comics</a></li>
+                    <li><a class="dropdown-item fs-4 fst-italic" href={{route('articulo.create')}}>Articulos</a></li>
+                    <li><a class="dropdown-item fs-4 fst-italic" href={{route('usuario.create')}}>Usuarios</a></li>
+                    <li><a class="dropdown-item fs-4 fst-italic" href={{route('proveedor.create')}}>Proveedores</a></li>
+
                     
                   </ul>
                 </li>

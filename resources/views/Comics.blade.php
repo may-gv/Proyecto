@@ -5,7 +5,7 @@
 
 <div class="container text-left" id="conte">
     <a href={{route('comic.index')}}> 
-        <img src="css\images\deshacer.png" id="bu"alt=""></td>
+        <img src={!! asset('css\images\deshacer.png')!!} id="bu"alt=""></td>
     </a>
 </div>
 
@@ -13,15 +13,16 @@
      
         
             
-        <form class="m-4 col-md-9" id="hey" method="POST"action="{{route('comic.store')}}">
+        <form class="m-4 col-md-9" id="hey" method="post" action="{{route('comic.store')}}">
         @csrf
         <div class="card text-center mb-2 fw-bold col-md-12" id="cole">
         <div class="card-header fs-2 text-white">
-            Registrar Comics
+            Registrar Comic
           </div>
-          <img src= "css\images\comi.png" id="icon">
+          <img src= {!! asset('css\images\comi.png')!!} id="icon">
 
         <div class="card-body col-md-12">
+
 
             <div class="mb-3 text-white">
                   
@@ -83,8 +84,75 @@
                     
                 </div>
 
-                
-            </div>
+                <div class="mb-3 text-white">
+                    
+                    <label class="form-label"> Nombre </label>
+                    <input type="text" class="form-control" id="input" name="txtNombre" placeholder="Tipo" value=" {{ old('txtNombre')}}">
+                    <p class="text-primary fst-italic">{{$errors->first('txtNombre')}}</p>
+
+
+
+                </div>
+
+                <div class="mb-3 text-white">
+                    <label class="form-label"> Edición </label>
+                    <input type="text" class="form-control" id="input" name="txtEdicion" placeholder="Marca" value=" {{ old('txtEdicion')}}">
+                    <p class="text-primary fst-italic">{{$errors->first('txtEdicion')}}</p>
+
+                    
+
+                </div>
+
+                <div class="mb-3 text-white">
+                    <label class="form-label"> Compañia </label>
+                    <textarea type="text" class="form-control" id="input" name="txtCompania" placeholder="Descripción" >{{ old('txtCompania')}}</textarea>
+                    <p class="text-primary fst-italic">{{$errors->first('txtCompania')}}</p>
+
+
+                </div>
+
+                <div class="mb-3 text-white">
+                    <label class="form-label"> Cantidad </label>
+                    <input type="text" step="any" class="form-control" id="input" name="txtCantidad" placeholder="Cantidad" value=" {{ old('txtCantidad')}}">
+                    <p class="text-primary fst-italic">{{$errors->first('txtCantidad')}}</p>
+
+
+                </div>
+
+                <div class="mb-3 text-white">
+                    <label class="form-label"> Precio compra </label>
+                    <input type="text" step="any" class="form-control" id="input" name="txtPrecioCompra" placeholder="Precio compra" value=" {{ old('txtPrecioCompra')}}">
+                    <p class="text-primary fst-italic">{{$errors->first('txtPrecioCompra')}}</p>
+
+
+                </div>
+
+
+                <div class="mb-3 text-white">
+                    <label class="form-label"> Fecha ingreso </label>
+                    <input type="date" class="form-control" id="input" name="txtFecha" placeholder="Fecha ingreso " value="{{old('txtFecha')}}">
+                    <p class="text-primary fst-italic">{{$errors->first('txtFecha')}}</p>
+
+                </div>
+
+                <div class="mb-3 text-white">
+                    <label class="form-label"> Proveedor </label>
+                    <select name="txtProveedor" id="" class="form-control" style="background: #48608583" value=" {{ old('txtProveedor')}}">
+                        
+                        
+                        <option selected disabled="disabled" value="" style="background: #48608583">Selecciona Proveedor:</option>
+                        @foreach($ConsultaProvee as $prove)
+                        
+                            <option value="{{$prove->idProo}}">{{$prove->Empresa}}</option>
+                        
+                        @endforeach
+                        
+                    </select>
+                    
+                    <p class="text-primary fst-italic">{{$errors->first('txtProveedor')}}</p>
+
+                    
+                </div>
                 
         <div class="card-footer">
             

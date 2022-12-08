@@ -12,6 +12,7 @@
 
 @if(session()->has('Actualizado'))
 
+
 {!! " <script> Swal.fire(
  'Eso es todo!',
  'Articulo Actualizado',
@@ -19,11 +20,14 @@
 @endif
 
 @if(session()->has('Acaboo'))
+
 {!! " <script> Swal.fire(
  'Eso es todo!',
- 'Articulo Vendido',
+ 'Articulo Actualizado',
  'success'  ) </script> "!!}
 @endif
+
+
 
 @if($errors->any())
      @foreach($errors->all() as $error)
@@ -74,6 +78,7 @@
           <td>{{$articulos->PrecioCompra}}</td>
           <td>{{$articulos->PrecioVenta}}</td>
           <td>{{$articulos->FechaIngreso}}</td>
+
           <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
 
         <td><a href="{{route('articulo.edit',$articulos->idArticulo)}}">
@@ -84,16 +89,20 @@
 
           <td><a href="{{route('articulo.show',$articulos->idArticulo)}}"><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td></a>
         <td><img src="css\images\editar.png" id="opciones" alt=""></td>
+
+          <td><a href=""><img src={!! asset('css\images\borrar-amigo.png')!!} id="opciones"alt=""></td></a>
+        <td><a href={{route('articulo.edit',$articulos->idArticulo)}}><img src={!! asset('css\images\editar.png')!!} id="opciones" alt=""></td></a>
+
         <td>
-        <a href="/Ventas_articulos">
-        <img src="css\images\vendido.png" id="opciones" alt=""></td>
-          
+        <a href={{route('articuloventa.edit',$articulos->idArticulo)}}>
+        <img src={!! asset('css\images\vendido.png')!!} id="opciones" alt=""></td>
+        </a>
         </tr>
         @endforeach
       </tbody>
     </table>
 
-
+ 
 
 
 

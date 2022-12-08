@@ -98,7 +98,7 @@ Route::delete('proveedor/{id_pro}', [Controladorbd::class,'destroy_pro'])->name(
 
 //----------------------Comics--------------------------------------------
 //Create
-Route::get('comic/create_art', [Controladorbd::class,'create_com'])->name('comic.create');
+Route::get('comic/create_com', [Controladorbd::class,'create_com'])->name('comic.create');
 //Store
 Route::post('comic', [Controladorbd::class,'store_com'])->name('comic.store');
 //index
@@ -128,5 +128,32 @@ Route::get('articulo/{id_art}/show_com', [Controladorbd::class,'show_art'])->nam
 //Destroy
 Route::delete('articulo/{id_art}', [Controladorbd::class,'destroy_art'])->name('articulo.destroy');
 
+
 //PDF
 Route::get('user-list-pdf', [UserController::class, 'exportPdf'])->name('users.pdf');
+
+//-------------------Venta articulos-------------------------
+
+
+//Store
+Route::post('articuloven', [Controladorbd::class,'store_venart'])->name('articuloventa.store');
+//index
+Route::get('articuloven', [Controladorbd::class,'index_venart'])->name('articuloventa.index');
+//Edit
+Route::get('articuloven/{id_vart}/edit_venart', [Controladorbd::class,'edit_venart'])->name('articuloventa.edit');
+
+//-------------------Venta Comics-------------------------
+
+//Store
+Route::post('comicven', [Controladorbd::class,'store_vencom'])->name('comicventa.store');
+//index
+Route::get('comicven', [Controladorbd::class,'index_vencom'])->name('comicventa.index');
+//Edit
+Route::get('comicven/{id_vcom}/edit_venart', [Controladorbd::class,'edit_vencom'])->name('comicventa.edit');
+
+
+
+
+
+
+

@@ -27,11 +27,11 @@ class ValidadorComic extends FormRequest
             'txtNombre'=> 'required', 
             'txtEdicion'=>'required',
             'txtCompania'=> 'required', 
-            'txtPrecioCompra'=>'required|numeric',
-            'txtPrecioVenta'=> 'required|numeric', 
+            'txtCantidad'=>'required|numeric',
+            'txtPrecioCompra'=> 'required|numeric', 
+            
             'txtFecha'=> 'required', 
-            'txtCantidad'=> 'required|numeric', 
-            'txtRol'=>'required',
+            'txtProveedor'=>'required',
 
         ];
     }
