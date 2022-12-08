@@ -15,6 +15,14 @@
  'success'  ) </script> "!!}
 @endif
 
+@if(session()->has('Actualizado'))
+
+{!! " <script> Swal.fire(
+ 'Eso es todo!',
+ 'Comic Actualizado',
+ 'success'  ) </script> "!!}
+@endif
+
 @if(session()->has('Acabo')) 
 {!! " <script> Swal.fire(
  'Eso es todo!',
