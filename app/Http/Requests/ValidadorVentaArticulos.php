@@ -25,6 +25,8 @@ class ValidadorVentaArticulos extends FormRequest
     {
         return [
             'txtCantidad'=> 'required | numeric',
+            'txtVendedor'=> 'required',
+            
         ];
     }
 }

@@ -301,7 +301,7 @@ class Controladorbd extends Controller
 
         $precioVenta = $precio+(0.4*$precio);
 
-        DB::table('tb_articulos')->where('idProo', $id_art)->update([
+        DB::table('tb_articulos')->where('idArticulo', $id_art)->update([
             "Tipo"=> $request->input('txtTipo'),
             "Marca"=> $request->input('txtMarca'),
             "Descripcion"=> $request->input('txtDescripcion'),
@@ -326,47 +326,96 @@ class Controladorbd extends Controller
     //--------------Ventas articulos--------------------
     
     public function index_venart(Request $request)
-    {
+    {   
+        
+        $busqueda=$request->busqueda;
+        $ConsultaVentaArt= DB::table('tb_ventas_articulos')->where('id_art','LIKE','%'.$busqueda.'%')->get();
        
         
-        return view('',compact('ConsultaArticulos','busqueda'));
+        return view('MostrarVentas',compact('ConsultaVentaArt','busqueda'));
     }
 
-    public function create_venart()
-    {
-        
-        
-    }
+    
 
-    public function store_venart(validarArticulo $request)
+    public function store_venart(ValidadorVentaArticulos $request )
     {
-        $precio = $request->txtPrecioCompra;
-
-        $precioVenta = $precio+(0.4*$precio);
-        DB::table('tb_articulos')->insert([
-            "Tipo"=> $request->input('txtTipo'),
-            "Marca"=> $request->input('txtMarca'),
-            "Descripcion"=> $request->input('txtDescripcion'),
+        $cantidad = $request->txtCantidad;
+        $precio = $request->txtPrecioVenta;
+        $idArt = $request->txtArticulo;
+        $total = $cantidad*$precio;
+        DB::table('tb_ventas_articulos')->insert([
+            "id_usu"=> $request->input('txtVendedor'),
+            "id_art"=> $request->input('txtArticulo'),
             "Cantidad"=> $request->input('txtCantidad'),
-            "PrecioCompra"=> $request->input('txtPrecioCompra'),
-            "PrecioVenta"=> $precioVenta,
-            "FechaIngreso"=> $request->input('txtFecha'),
-            "id_prov"=> $request->input('txtProveedor'),
-            
-            
+            "Total"=> $total,
+            "Fecha"=> Carbon::now(),
             "created_at"=> Carbon::now(),
             "updated_at"=> Carbon::now()
         ]);
-        
-       
-        return redirect('articulo')->with('confirmacion','abc');
+        $cantidad_disp = $request->txtCantidad_disp;
+        $cant= $request->txtCantidad;
+        $tot = $cantidad_disp-$cant;
+        $id_venart = $request->input('txtArticulo');
+        DB::table('tb_articulos')->where('idArticulo', $id_venart)->update([
+            "Cantidad"=>$tot,
+            "updated_at"=> Carbon::now()
+        ]);
+
+        return redirect('articuloven')->with('con','abc');
     }
     public function edit_venart($id_vart)
     {
-        
+        $ConsultaUsu = DB::table('tb_usuarios')->get();
         $consultaId= DB::table('tb_articulos')->where('idArticulo',$id_vart)->first();
-        return view('Ventas_articulos', compact('consultaId'));
+        return view('Ventas_articulos', compact('consultaId','ConsultaUsu'));
     }
 
+//--------------------------Venta Comics---------------------
+
+public function index_vencom(Request $request)
+{   
+    
+    $busqueda=$request->busqueda;
+    $ConsultaVentaComic= DB::table('tb_ventas_comics')->where('id_com','LIKE','%'.$busqueda.'%')->get();
+   
+    
+    return view('MostrarVentas',compact('ConsultaVentaComic','busqueda'));
+}
+
+
+
+public function edit_vencom($id_vcom)
+{
+    $ConsultaUsu = DB::table('tb_usuarios')->get();
+    $consultaId= DB::table('tb_comics')->where('idComic',$id_com)->first();
+    return view('Ventas_comics', compact('consultaId','ConsultaUsu'));
+}
+
+public function store_vencom(ValidadorVentaComic $request )
+    {
+        $cantidad = $request->txtCantidad;
+        $precio = $request->txtPrecioVenta;
+        $idArt = $request->txtArticulo;
+        $total = $cantidad*$precio;
+        DB::table('tb_ventas_articulos')->insert([
+            "id_usu"=> $request->input('txtVendedor'),
+            "id_com"=> $request->input('txtComic'),
+            "Cantidad"=> $request->input('txtCantidad'),
+            "Total"=> $total,
+            "Fecha"=> Carbon::now(),
+            "created_at"=> Carbon::now(),
+            "updated_at"=> Carbon::now()
+        ]);
+        $cantidad_disp = $request->txtCantidad_disp;
+        $cant= $request->txtCantidad;
+        $tot = $cantidad_disp-$cant;
+        $id_venart = $request->input('txtArticulo');
+        DB::table('tb_articulos')->where('idArticulo', $id_venart)->update([
+            "Cantidad"=>$tot,
+            "updated_at"=> Carbon::now()
+        ]);
+
+        return redirect('comicven')->with('con','abc');
+    }
 
 }

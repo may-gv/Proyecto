@@ -94,7 +94,7 @@
                 
         <div class="card-footer">
             
-            <button type="submit" class="btn btn-secondary" id="buton">Registrar</button>
+            <button type="submit" class="btn btn-secondary" id="buton">Editar</button>
          
         </div>
     

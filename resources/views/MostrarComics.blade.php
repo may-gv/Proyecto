@@ -76,7 +76,7 @@
         <td><img src={!! asset('css\images\borrar-amigo.png')!!} id="opciones"alt=""></td>
         <td><img src={!! asset('css\images\editar.png')!!} id="opciones" alt=""></td>
         <td>
-          <a href="/Ventas_comics">
+          <a href={{route('comicventa.edit',$comics->idComic)}}>
             <img src="css\images\vendido.png" id="opciones" alt=""></td>
         
       </tr>

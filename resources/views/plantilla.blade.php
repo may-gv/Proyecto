@@ -44,7 +44,7 @@
                   <a class="nav-link active fst-italic fs-3" href={{route('articulo.index')}}>Articulos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active fst-italic fs-3" href="VentasRealizadas">Ventas</a>
+                  <a class="nav-link active fst-italic fs-3" href={{route('articuloventa.index')}}>Ventas</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active fst-italic fs-3" aria-current="page" href={{route('proveedor.index')}}>Proveedores</a>
