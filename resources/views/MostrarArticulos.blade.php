@@ -75,8 +75,11 @@
       </thead>
       <tbody>
         
-        <tr>
+    
           @foreach($ConsultaArticulos as $articulos)
+          <tr class="@if($articulos->Cantidad == 0)
+            table-danger
+                    @endif">
           <th scope="row">{{$articulos->idArticulo}}</th>
           <td>{{$articulos->Tipo}}</td>
           <td>{{$articulos->Marca}}</td>
@@ -129,4 +132,3 @@
 
 @stop
 
-<td><a href="{{route('articulo.show',$articulos->idArticulo)}}"><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td></a>

@@ -152,11 +152,11 @@ Route::get('comicven/{id_vcom}/edit_venart', [Controladorbd::class,'edit_vencom'
 
 //---------------------------Pedido-----------------------
 //Store
-Route::post('articuloven', [Controladorbd::class,'store_venart'])->name('articuloventa.store');
+Route::post('pedido', [Controladorbd::class,'store_ped'])->name('pedido.store');
 //index
-Route::get('articuloven', [Controladorbd::class,'index_venart'])->name('articuloventa.index');
-//Edit
-Route::get('articuloven/{id_vart}/edit_venart', [Controladorbd::class,'edit_venart'])->name('articuloventa.edit');
+Route::get('pedido', [Controladorbd::class,'index_ped'])->name('pedido.index');
+//Create
+Route::get('pedido/create_ped', [Controladorbd::class,'create_ped'])->name('pedido.create');
 
 
 

@@ -70,9 +70,12 @@
       </tr>
     </thead>
     <tbody>
-      
+      @foreach($ConsultaComics as $comics)
       <tr>
-        @foreach($ConsultaComics as $comics)
+        <tr class="@if($comics->Cantidad == 0)
+          table-danger
+                  @endif">
+        
         <th scope="row">{{$comics->idComic}}</th>
         <td>{{$comics->Nombre}}</td>
         <td>{{$comics->Edicion}}</td>
