@@ -17,6 +17,21 @@
  'success'  ) </script> "!!}
 @endif
 
+@if(session()->has('cantidadnodisponible'))
+{!! "<script>Swal.fire({
+  icon: 'error',
+  title: 'Error',
+  text: 'Cantidad Incorrecta!',
+})</script> "!!}
+@endif
+
+@if(session()->has('cantidadnovalida'))
+{!! "<script>Swal.fire({
+  icon: 'error',
+  title: 'Error',
+  text: 'Cantidad Incorrecta!',
+})</script> "!!}
+@endif
 
 
 @if($errors->any())

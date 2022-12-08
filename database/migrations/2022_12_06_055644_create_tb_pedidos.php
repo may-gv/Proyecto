@@ -17,9 +17,10 @@ return new class extends Migration
             $table->id('idPed');
             $table->unsignedBigInteger('id_usu');
             $table->unsignedBigInteger('id_pro');
-            $table->string('Tipopedido');
-            $table->integer('Cantidadcomi');
+            
+            
             $table->integer('Cantidadpedi');
+            $table->string('Descripcion');
             $table->timestamps();
             $table->foreign('id_usu')->references('idusu')->on('tb_usuarios')
             ->onUpdate('cascade')

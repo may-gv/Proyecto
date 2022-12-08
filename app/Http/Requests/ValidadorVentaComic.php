@@ -25,8 +25,8 @@ class ValidadorVentaComic extends FormRequest
     {
         return [
             'txtCantidad'=> 'required | numeric',
-            'txtVendedor'=> 'required',
             
+            'txtVendedor'=> 'required',
         ];
     }
 }

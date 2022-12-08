@@ -347,29 +347,44 @@ class Controladorbd extends Controller
 
     public function store_venart(ValidadorVentaArticulos $request )
     {
+        
+        $cantidad_disp = $request->txtCantidad_disp;
         $cantidad = $request->txtCantidad;
         $precio = $request->txtPrecioVenta;
         $idArt = $request->txtArticulo;
         $total = $cantidad*$precio;
-        DB::table('tb_ventas_articulos')->insert([
-            "id_usu"=> $request->input('txtVendedor'),
-            "id_art"=> $request->input('txtArticulo'),
-            "Cantidad"=> $request->input('txtCantidad'),
-            "Total"=> $total,
-            "Fecha"=> Carbon::now(),
-            "created_at"=> Carbon::now(),
-            "updated_at"=> Carbon::now()
-        ]);
-        $cantidad_disp = $request->txtCantidad_disp;
-        $cant= $request->txtCantidad;
-        $tot = $cantidad_disp-$cant;
-        $id_venart = $request->input('txtArticulo');
-        DB::table('tb_articulos')->where('idArticulo', $id_venart)->update([
-            "Cantidad"=>$tot,
-            "updated_at"=> Carbon::now()
-        ]);
+        if( $cantidad > 0){
+            if($cantidad_disp > $cantidad){
+                DB::table('tb_ventas_articulos')->insert([
+                    "id_usu"=> $request->input('txtVendedor'),
+                    "id_art"=> $request->input('txtArticulo'),
+                    "Cantidad"=> $request->input('txtCantidad'),
+                    "Total"=> $total,
+                    "Fecha"=> Carbon::now(),
+                    "created_at"=> Carbon::now(),
+                    "updated_at"=> Carbon::now()
+                ]);
+                $cantidad_disp = $request->txtCantidad_disp;
+                $cant= $request->txtCantidad;
+                $tot = $cantidad_disp-$cant;
+                $id_venart = $request->input('txtArticulo');
+                DB::table('tb_articulos')->where('idArticulo', $id_venart)->update([
+                    "Cantidad"=>$tot,
+                    "updated_at"=> Carbon::now()
+                ]);
+        
+                return redirect('articuloven')->with('con','abc');
+            
+            }else{
+                return redirect('articuloven')->with('cantidadnodisponible', 'abc');
 
-        return redirect('articuloven')->with('con','abc');
+            }
+        }else{
+            return redirect('articuloven')->with('cantidadnovalida', 'abc');
+
+        }
+        
+        
     }
     public function edit_venart($id_vart)
     {
@@ -399,11 +414,14 @@ public function edit_vencom($id_vcom)
 }
 
 public function store_vencom(ValidadorVentaComic $request )
-    {
+    {   
+        $cantidad_disp = $request->txtCantidad_disp;
         $cantidad = $request->txtCantidad;
         $precio = $request->txtPrecioVenta;
         $idArt = $request->txtArticulo;
         $total = $cantidad*$precio;
+        if( $cantidad > 0){
+            if($cantidad_disp > $cantidad){
         DB::table('tb_ventas_comics')->insert([
             "id_usu"=> $request->input('txtVendedor'),
             "id_comic"=> $request->input('txtComic'),
@@ -423,6 +441,40 @@ public function store_vencom(ValidadorVentaComic $request )
         ]);
 
         return redirect('articuloven')->with('co','abc');
+    }else{
+        return redirect('articuloven')->with('cantidadnodisponible', 'abc');
+
     }
+}else{
+    return redirect('articuloven')->with('cantidadnovalida', 'abc');
+
+}
+    }
+
+    //-------------------------------Pedidos--------------------------------------
+    public function create_ped()
+    {
+        return view('Pedidos');
+    }
+
+    
+    public function store_ped(ValidadorUsuario $request)
+    {
+        DB::table('tb_pedidos')->insert([
+            "Nombre"=> $request->input('txtNombre'),
+            "Telefono"=> $request->input('txtTelefono'),
+            "Usuario"=> $request->input('txtUsuario'),
+            "Contraseña"=> $request->input('txtContra'),
+            "Rol"=> $request->input('Rol'),
+            
+            
+            "created_at"=> Carbon::now(),
+            "updated_at"=> Carbon::now()
+        ]);
+        $nom = $request->input('txtNombre');
+
+        return redirect('usuario')->with('confirmacion','abc')->with('txtNombre', $nom);
+    }
+
 
 }
