@@ -285,32 +285,22 @@ class Controladorbd extends Controller
 
     public function edit_art($id_art)
     {
-
+<<<<<<<<< Temporary merge branch 1
+        $consultaId= DB::table('tb_proveedores')->where('idArticulo',$id_art)->first();
+        return view('EditarProveedores', compact('consultaId'));
+=========
         $consultaId= DB::table('tb_articulos')->where('idArticulo',$id_art)->first();
         $ConsultaProvee=DB::table('tb_proveedores')->get();
 
 
         return view('EditarArticulos', compact('consultaId','ConsultaProvee'));
-
-        $consultaId= DB::table('tb_proveedores')->where('idArticulo',$id_art)->first();
-        return view('EditarProveedores', compact('consultaId'));
-
+>>>>>>>>> Temporary merge branch 2
     }
 
    
     public function update_art(validarArticulo $request, $id_art)
     {
-
-        DB::table('tb_articulos')->where('idArticulo', $id_art)->update([
-            "Tipo"=> $request->input('txtTipo'),
-            "Marca"=> $request->input('txtMarca'),
-            "Descripcion"=> $request->input('txtDescripcion'),
-            "Cantidad"=> $request->input('txtCantidad'),
-            "PrecioCompra"=> $request->input('txtPrecioCompra'),
-            "PrecioVenta"=> $request->input('txtPrecioVenta'),
-            "FechaIngreso"=> $request->input('txtFecha'),
-            "id_prov"=> $request->input('txtProveedor'),
-
+<<<<<<<<< Temporary merge branch 1
         DB::table('tb_proveedores')->where('idArticulo', $id_art)->update([
             "Empresa"=> $request->input('txtEmpresa'),
             "Tipomercancia"=> $request->input('txtMercancia'),
@@ -320,7 +310,17 @@ class Controladorbd extends Controller
             "Nofijo"=> $request->input('txtNum_fijo'),
             "Nocel"=> $request->input('txtNumero_cel'),
             "Correo"=> $request->input('txtCorreo'),
-
+=========
+        DB::table('tb_articulos')->where('idArticulo', $id_art)->update([
+            "Tipo"=> $request->input('txtTipo'),
+            "Marca"=> $request->input('txtMarca'),
+            "Descripcion"=> $request->input('txtDescripcion'),
+            "Cantidad"=> $request->input('txtCantidad'),
+            "PrecioCompra"=> $request->input('txtPrecioCompra'),
+            "PrecioVenta"=> $request->input('txtPrecioVenta'),
+            "FechaIngreso"=> $request->input('txtFecha'),
+            "id_prov"=> $request->input('txtProveedor'),
+>>>>>>>>> Temporary merge branch 2
 
             "updated_at"=> Carbon::now()
         ]);

@@ -74,6 +74,11 @@
           <td>{{$articulos->PrecioCompra}}</td>
           <td>{{$articulos->PrecioVenta}}</td>
           <td>{{$articulos->FechaIngreso}}</td>
+<<<<<<<<< Temporary merge branch 1
+
+          <td><a href="{{route('articulo.show',$articulos->idArticulo)}}"><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td></a>
+        <td><img src="css\images\editar.png" id="opciones" alt=""></td>
+=========
           <td><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td>
 
         <td><a href="{{route('articulo.edit',$articulos->idArticulo)}}">
@@ -81,9 +86,7 @@
         </a>
         </td>
 
-
-          <td><a href="{{route('articulo.show',$articulos->idArticulo)}}"><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td></a>
-        <td><img src="css\images\editar.png" id="opciones" alt=""></td>
+>>>>>>>>> Temporary merge branch 2
         <td>
         <a href="/Ventas_articulos">
         <img src="css\images\vendido.png" id="opciones" alt=""></td>

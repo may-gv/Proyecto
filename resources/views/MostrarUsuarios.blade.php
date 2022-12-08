@@ -15,6 +15,8 @@
  'success'  ) </script> "!!}
 @endif
 
+<<<<<<<<< Temporary merge branch 1
+=========
 @if(session()->has('Actualizado')) 
 <?php
 
@@ -32,6 +34,7 @@
         
         @endforeach
     @endif
+>>>>>>>>> Temporary merge branch 2
 
 <div class="container mt-5 col-md-10" id="hey">
   <h1 class=" mt-4 text-left text-white text-center fw-bold">Usuarios</h1>
