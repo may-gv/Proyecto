@@ -225,22 +225,28 @@ class Controladorbd extends Controller
 
     public function edit_com($id_com)
     {
-        $consultaId= DB::table('tb_comics')->where('idProo',$id_com)->first();
-        return view('EditarComic', compact('consultaId'));
+        $consultaId= DB::table('tb_comics')->where('idComic',$id_com)->first();
+        $ConsultaProvee=DB::table('tb_proveedores')->get();      
+
+
+        return view('EditarComics', compact('consultaId','ConsultaProvee'));
     }
 
    
     public function update_com(ValidadorComic $request, $id_com)
     {
-        DB::table('tb_comics')->where('idProo', $id_com)->update([
-            "Empresa"=> $request->input('txtEmpresa'),
-            "Tipomercancia"=> $request->input('txtMercancia'),
-            "Direccion"=> $request->input('txtDireccion'),
-            "Pais"=> $request->input('txtPais'),
-            "Contrato"=> $request->input('txtContacto'),
-            "Nofijo"=> $request->input('txtNum_fijo'),
-            "Nocel"=> $request->input('txtNumero_cel'),
-            "Correo"=> $request->input('txtCorreo'),
+        $precio = $request->txtPrecioCompra;
+
+        $precioVenta = $precio+(0.4*$precio);
+        DB::table('tb_comics')->where('idComic', $id_com)->update([
+            "Nombre"=> $request->input('txtNombre'),
+            "Edicion"=> $request->input('txtEdicion'),
+            "Compania"=> $request->input('txtCompania'),
+            "Cantidad"=> $request->input('txtCantidad'),
+            "PrecioCompra"=> $request->input('txtPrecioCompra'),
+            "PrecioVenta"=> $precioVenta,
+            "FechaIngreso"=> $request->input('txtFecha'),
+            "id_prov"=> $request->input('txtProveedor'),
 
             "updated_at"=> Carbon::now()
         ]);

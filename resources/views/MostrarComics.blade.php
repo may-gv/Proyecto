@@ -15,6 +15,14 @@
  'success'  ) </script> "!!}
 @endif
 
+@if(session()->has('Actualizado'))
+
+{!! " <script> Swal.fire(
+ 'Eso es todo!',
+ 'Comic Actualizado',
+ 'success'  ) </script> "!!}
+@endif
+
 @if(session()->has('Acabo')) 
 {!! " <script> Swal.fire(
  'Eso es todo!',
@@ -74,7 +82,7 @@
         <td>{{$comics->PrecioVenta}}</td>
         <td>{{$comics->FechaIngreso}}</td>
         <td><img src={!! asset('css\images\borrar-amigo.png')!!} id="opciones"alt=""></td>
-        <td><img src={!! asset('css\images\editar.png')!!} id="opciones" alt=""></td>
+        <td><a href={{route('comic.edit',$comics->idComic)}}><img src={!! asset('css\images\editar.png')!!} id="opciones" alt=""></td></a>
         <td>
           <a href={{route('comicventa.edit',$comics->idComic)}}>
             <img src="css\images\vendido.png" id="opciones" alt=""></td>

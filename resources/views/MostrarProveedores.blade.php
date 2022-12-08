@@ -23,6 +23,14 @@
  'success'  ) </script> "!!}
 @endif
 
+@if(session()->has('Eliminado'))
+
+{!! "<script>Swal.fire({
+  icon: 'error',
+  title: 'Eliminado',
+  text: 'Proveedor Eliminado!',
+})</script> "!!}
+@endif
 
 
 @if($errors->any())
@@ -90,11 +98,15 @@
         <td>{{$proveedor->Correo}}</td>
 
 
+
         <td><a href={{route('proveedor.show',$proveedor->idProo)}}>
           <img src="css\images\borrar-amigo.png" id="opciones"alt=""> </a></td>
 
 
         <td><img src={!! asset('css\images\borrar-amigo.png') !!} id="opciones"alt=""></td>
+
+
+        <td><a href={{route('proveedor.show',$proveedor->idProo)}}><img src={!! asset('css\images\borrar-amigo.png') !!} id="opciones"alt=""></td></a>
 
         <td><a href={{route('proveedor.edit',$proveedor->idProo)}}>
           <img src={!! asset('css\images\editar.png') !!} id="opciones" alt="">

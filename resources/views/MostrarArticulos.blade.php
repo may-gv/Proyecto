@@ -27,6 +27,13 @@
  'success'  ) </script> "!!}
 @endif
 
+@if(session()->has('Eliminado'))
+{!! "<script>Swal.fire({
+  icon: 'error',
+  title: 'Eliminado',
+  text: 'Articulo Eliminado!',
+})</script> "!!}
+@endif
 
 
 @if($errors->any())
@@ -80,6 +87,7 @@
           <td>{{$articulos->FechaIngreso}}</td>
 
 
+
           <td><a href="{{route('articulo.show',$articulos->idArticulo)}}"><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td></a>
         <td><img src="css\images\editar.png" id="opciones" alt=""></td>
 
@@ -97,6 +105,9 @@
         <td><img src="css\images\editar.png" id="opciones" alt=""></td>
 
           <td><a href=""><img src={!! asset('css\images\borrar-amigo.png')!!} id="opciones"alt=""></td></a>
+
+          <td><a href={{route('articulo.show',$articulos->idArticulo)}}><img src={!! asset('css\images\borrar-amigo.png')!!} id="opciones"alt=""></td></a>
+
         <td><a href={{route('articulo.edit',$articulos->idArticulo)}}><img src={!! asset('css\images\editar.png')!!} id="opciones" alt=""></td></a>
 
 
@@ -117,3 +128,5 @@
 </div>
 
 @stop
+
+<td><a href="{{route('articulo.show',$articulos->idArticulo)}}"><img src="css\images\borrar-amigo.png" id="opciones"alt=""></td></a>
