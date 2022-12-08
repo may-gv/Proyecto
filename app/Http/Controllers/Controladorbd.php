@@ -125,7 +125,7 @@ class Controladorbd extends Controller
     public function show_pro($id_pro)
     {
         $consultaId= DB::table('tb_proveedores')->where('idProo',$id_pro)->first();
-        return view('', compact('consultaId'));
+        return view('EliminarProo', compact('consultaId'));
     }
 
     public function edit_pro($id_pro)
@@ -156,7 +156,7 @@ class Controladorbd extends Controller
     
     public function destroy_pro($id_pro)
     {
-        DB::table('tb_proveedores')->where('idusu', $id_pro)->delete();
+        DB::table('tb_proveedores')->where('idProo', $id_pro)->delete();
         return redirect('proveedor')->with('Eliminado','abc');
     }
 
@@ -210,22 +210,28 @@ class Controladorbd extends Controller
 
     public function edit_com($id_com)
     {
-        $consultaId= DB::table('tb_comics')->where('idProo',$id_com)->first();
-        return view('EditarComic', compact('consultaId'));
+        $consultaId= DB::table('tb_comics')->where('idComic',$id_com)->first();
+        $ConsultaProvee=DB::table('tb_proveedores')->get();      
+
+
+        return view('EditarComics', compact('consultaId','ConsultaProvee'));
     }
 
    
     public function update_com(ValidadorComic $request, $id_com)
     {
-        DB::table('tb_comics')->where('idProo', $id_com)->update([
-            "Empresa"=> $request->input('txtEmpresa'),
-            "Tipomercancia"=> $request->input('txtMercancia'),
-            "Direccion"=> $request->input('txtDireccion'),
-            "Pais"=> $request->input('txtPais'),
-            "Contrato"=> $request->input('txtContacto'),
-            "Nofijo"=> $request->input('txtNum_fijo'),
-            "Nocel"=> $request->input('txtNumero_cel'),
-            "Correo"=> $request->input('txtCorreo'),
+        $precio = $request->txtPrecioCompra;
+
+        $precioVenta = $precio+(0.4*$precio);
+        DB::table('tb_comics')->where('idComic', $id_com)->update([
+            "Nombre"=> $request->input('txtNombre'),
+            "Edicion"=> $request->input('txtEdicion'),
+            "Compania"=> $request->input('txtCompania'),
+            "Cantidad"=> $request->input('txtCantidad'),
+            "PrecioCompra"=> $request->input('txtPrecioCompra'),
+            "PrecioVenta"=> $precioVenta,
+            "FechaIngreso"=> $request->input('txtFecha'),
+            "id_prov"=> $request->input('txtProveedor'),
 
             "updated_at"=> Carbon::now()
         ]);
@@ -284,7 +290,7 @@ class Controladorbd extends Controller
 
     public function show_art($id_art)
     {
-        $consultaId= DB::table('tb_articulos')->where('idProo',$id_art)->first();
+        $consultaId= DB::table('tb_articulos')->where('idArticulo',$id_art)->first();
         return view('EliminarArticulo', compact('consultaId'));
     }
 
@@ -321,8 +327,8 @@ class Controladorbd extends Controller
     
     public function destroy_art($id_art)
     {
-        DB::table('tb_proveedores')->where('idusu', $id_art)->delete();
-        return redirect('proveedor')->with('Eliminado','abc');
+        DB::table('tb_articulos')->where('idArticulo', $id_art)->delete();
+        return redirect('articulo')->with('Eliminado','abc');
     }
     //--------------Ventas articulos--------------------
     

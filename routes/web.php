@@ -144,10 +144,17 @@ Route::get('articuloven/{id_vart}/edit_venart', [Controladorbd::class,'edit_vena
 
 //Store
 Route::post('comicven', [Controladorbd::class,'store_vencom'])->name('comicventa.store');
-//index
-Route::get('comicven', [Controladorbd::class,'index_vencom'])->name('comicventa.index');
+
 //Edit
 Route::get('comicven/{id_vcom}/edit_venart', [Controladorbd::class,'edit_vencom'])->name('comicventa.edit');
+
+//---------------------------Pedido-----------------------
+//Store
+Route::post('articuloven', [Controladorbd::class,'store_venart'])->name('articuloventa.store');
+//index
+Route::get('articuloven', [Controladorbd::class,'index_venart'])->name('articuloventa.index');
+//Edit
+Route::get('articuloven/{id_vart}/edit_venart', [Controladorbd::class,'edit_venart'])->name('articuloventa.edit');
 
 
 
