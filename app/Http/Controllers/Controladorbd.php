@@ -9,6 +9,7 @@ use App\Http\Requests\validarProveedor;
 use App\Http\Requests\ValidadorComic;
 use App\Http\Requests\ValidadorVentaArticulos;
 use App\Http\Requests\validarArticulo;
+use App\Http\Requests\ValidadorVentaComic;
 
 
 use DB;
@@ -327,12 +328,13 @@ class Controladorbd extends Controller
     
     public function index_venart(Request $request)
     {   
-        
+        $bus=$request->bus;
+        $ConsultaVentaComic= DB::table('tb_ventas_comics')->where('id_comic','LIKE','%'.$bus.'%')->get();
         $busqueda=$request->busqueda;
         $ConsultaVentaArt= DB::table('tb_ventas_articulos')->where('id_art','LIKE','%'.$busqueda.'%')->get();
        
         
-        return view('MostrarVentas',compact('ConsultaVentaArt','busqueda'));
+        return view('MostrarVentas',compact('ConsultaVentaArt','busqueda','ConsultaVentaComic','bus'));
     }
 
     
@@ -375,11 +377,10 @@ class Controladorbd extends Controller
 public function index_vencom(Request $request)
 {   
     
-    $busqueda=$request->busqueda;
-    $ConsultaVentaComic= DB::table('tb_ventas_comics')->where('id_com','LIKE','%'.$busqueda.'%')->get();
+    
    
     
-    return view('MostrarVentas',compact('ConsultaVentaComic','busqueda'));
+    
 }
 
 
@@ -387,7 +388,7 @@ public function index_vencom(Request $request)
 public function edit_vencom($id_vcom)
 {
     $ConsultaUsu = DB::table('tb_usuarios')->get();
-    $consultaId= DB::table('tb_comics')->where('idComic',$id_com)->first();
+    $consultaId= DB::table('tb_comics')->where('idComic',$id_vcom)->first();
     return view('Ventas_comics', compact('consultaId','ConsultaUsu'));
 }
 
@@ -397,9 +398,9 @@ public function store_vencom(ValidadorVentaComic $request )
         $precio = $request->txtPrecioVenta;
         $idArt = $request->txtArticulo;
         $total = $cantidad*$precio;
-        DB::table('tb_ventas_articulos')->insert([
+        DB::table('tb_ventas_comics')->insert([
             "id_usu"=> $request->input('txtVendedor'),
-            "id_com"=> $request->input('txtComic'),
+            "id_comic"=> $request->input('txtComic'),
             "Cantidad"=> $request->input('txtCantidad'),
             "Total"=> $total,
             "Fecha"=> Carbon::now(),
@@ -409,13 +410,13 @@ public function store_vencom(ValidadorVentaComic $request )
         $cantidad_disp = $request->txtCantidad_disp;
         $cant= $request->txtCantidad;
         $tot = $cantidad_disp-$cant;
-        $id_venart = $request->input('txtArticulo');
-        DB::table('tb_articulos')->where('idArticulo', $id_venart)->update([
+        $id_venacom = $request->input('txtComic');
+        DB::table('tb_comics')->where('idComic', $id_venacom)->update([
             "Cantidad"=>$tot,
             "updated_at"=> Carbon::now()
         ]);
 
-        return redirect('comicven')->with('con','abc');
+        return redirect('articuloven')->with('co','abc');
     }
 
 }
