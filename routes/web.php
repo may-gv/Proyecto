@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 /* Impostamos el Controlador */
 use App\Http\Controllers\controladorComic;
 use App\Http\Controllers\Controladorbd;
+use App\Http\Controllers\UserController;
 
 
 
@@ -154,8 +155,13 @@ Route::post('pedido', [Controladorbd::class,'store_ped'])->name('pedido.store');
 //index
 Route::get('pedido', [Controladorbd::class,'index_ped'])->name('pedido.index');
 //Create
-Route::get('pedido/create_ped', [Controladorbd::class,'create_ped'])->name('pedido.create');
+Route::get('pedido/{id_ped}/edit_ped', [Controladorbd::class,'edit_ped'])->name('pedido.create');
 
+
+Route::get('user-list-pdf', [UserController::class, 'exportPdf'])->name('users.pdf');
+
+Route::get('tic-list-pdf/{id_ti}', [Controladorbd::class, 'ticketAarticulo'])->name('tic.pdf');
+Route::get('tic-list-pdf/{id_Co}', [Controladorbd::class, 'ticketComic'])->name('Com.pdf');
 
 
 

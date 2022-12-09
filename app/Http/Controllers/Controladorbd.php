@@ -10,6 +10,9 @@ use App\Http\Requests\ValidadorComic;
 use App\Http\Requests\ValidadorVentaArticulos;
 use App\Http\Requests\validarArticulo;
 use App\Http\Requests\ValidadorVentaComic;
+use App\Http\Requests\ValidadorPedido;
+use Barryvdh\DomPDF\Facade\Pdf;
+
 
 
 use DB;
@@ -53,7 +56,7 @@ class Controladorbd extends Controller
     public function show_usu($id_usu)
     {
         $consultaId= DB::table('tb_usuarios')->where('idusu',$id_usu)->first();
-        return view('', compact('consultaId'));
+        return view('EliminarUsu', compact('consultaId'));
     }
 
     public function edit_usu($id_usu)
@@ -205,7 +208,7 @@ class Controladorbd extends Controller
     public function show_com($id_com)
     {
         $consultaId= DB::table('tb_comics')->where('idComic',$id_com)->first();
-        return view('', compact('consultaId'));
+        return view('EliminarComic', compact('consultaId'));
     }
 
     public function edit_com($id_com)
@@ -243,7 +246,7 @@ class Controladorbd extends Controller
     public function destroy_com($id_com)
     {
         DB::table('tb_comics')->where('idComic', $id_com)->delete();
-        return redirect('proveedor')->with('Eliminado','abc');
+        return redirect('comic')->with('Eliminado','abc');
     }
 
     //----------------Articulos------------
@@ -335,10 +338,27 @@ class Controladorbd extends Controller
     public function index_venart(Request $request)
     {   
         $bus=$request->bus;
+
+/*         $consultaventasArticulos = DB::table('tb_ventas_articulos')->get();
+        foreach ($consultaventasArticulos as $articulo) {
+            $articulo->usuario=  DB::table('tb_usuarios')->where('idusu', $consultaventasArticulos->id_usu)->first();
+            $articulo->articulo=  DB::table('tb_articulos')->where('idArticulo', $consultaventasArticulos->id_art)->first();
+        } */
+
+        
         $ConsultaVentaComic= DB::table('tb_ventas_comics')->where('id_comic','LIKE','%'.$bus.'%')->get();
+        foreach ($ConsultaVentaComic as $comic) {
+            $comic->usuario=  DB::table('tb_usuarios')->where('idusu', $comic->id_usu)->first();
+            $comic->producto=  DB::table('tb_comics')->where('idComic', $comic->id_comic)->first();
+        }
+
         $busqueda=$request->busqueda;
         $ConsultaVentaArt= DB::table('tb_ventas_articulos')->where('id_art','LIKE','%'.$busqueda.'%')->get();
-       
+        foreach ($ConsultaVentaArt as $articulo) {
+            $articulo->usuario=  DB::table('tb_usuarios')->where('idusu', $articulo->id_usu)->first();
+            $articulo->producto=  DB::table('tb_articulos')->where('idArticulo', $articulo->id_art)->first();
+        }
+
         
         return view('MostrarVentas',compact('ConsultaVentaArt','busqueda','ConsultaVentaComic','bus'));
     }
@@ -454,18 +474,18 @@ public function store_vencom(ValidadorVentaComic $request )
     //-------------------------------Pedidos--------------------------------------
     public function create_ped()
     {
-        return view('Pedidos');
+        
     }
 
     
-    public function store_ped(ValidadorUsuario $request)
+    public function store_ped(ValidadorPedido $request)
     {
         DB::table('tb_pedidos')->insert([
-            "Nombre"=> $request->input('txtNombre'),
-            "Telefono"=> $request->input('txtTelefono'),
-            "Usuario"=> $request->input('txtUsuario'),
-            "Contraseña"=> $request->input('txtContra'),
-            "Rol"=> $request->input('Rol'),
+            "id_usu"=> $request->input('txtVendedor'),
+            "id_pro"=> $request->input('txtProv'),
+            "Cantidadpedi"=> $request->input('txtCantidad'),
+            "Descripcion"=> $request->input('txtDescripcion'),
+            
             
             
             "created_at"=> Carbon::now(),
@@ -473,8 +493,49 @@ public function store_vencom(ValidadorVentaComic $request )
         ]);
         $nom = $request->input('txtNombre');
 
-        return redirect('usuario')->with('confirmacion','abc')->with('txtNombre', $nom);
+        $pdf = PDF::loadView('pdf.users', compact('request'));
+
+
+        return $pdf->download('user-list.pdf');
+
+        return redirect('user-list-pdf')->with('confirmacion','abc')->with('txtNombre', $nom);
     }
+
+    public function edit_ped($id_ped)
+{
+    $consultaped= DB::table('tb_pedidos')->where('idPed',$id_ped)->first();
+    $ConsultaUsu = DB::table('tb_usuarios')->get();
+    $consultaId= DB::table('tb_proveedores')->where('idProo',$id_ped)->first();
+    return view('Pedidos', compact('consultaId','ConsultaUsu', 'consultaped'));
+}
+
+
+    public function ticketAarticulo($id_ti)
+    {
+        
+          $ConsultaTik= DB::table('tb_ventas_articulos')->where('idVentaArt', $id_ti)->get();
+            foreach ($ConsultaTik as $articulo) {
+                $articulo->usuario=  DB::table('tb_usuarios')->where('idusu', $articulo->id_usu)->first();
+                $articulo->producto=  DB::table('tb_articulos')->where('idArticulo', $articulo->id_art)->first();
+            } 
+
+            $pdf = PDF::loadView('pdf.ticket', compact('ConsultaTik', 'articulo',)); 
+            return $pdf->download('pdf.ticket');
+    }
+
+    public function ticketComic($id_Co)
+    {
+        
+        $ConsultaVentaComic= DB::table('tb_ventas_comics')->where('id_comic', $id_Co)->get();
+        foreach ($ConsultaVentaComic as $comic) {
+            $comic->usuario=  DB::table('tb_usuarios')->where('idusu', $comic->id_usu)->first();
+            $comic->producto=  DB::table('tb_comics')->where('idComic', $comic->id_art)->first();
+        }
+
+            $pdf = PDF::loadView('pdf.ticket', compact('ConsultaVentaComic', 'comic',)); 
+            return $pdf->download('com.ticket');
+    }
+
 
 
 }

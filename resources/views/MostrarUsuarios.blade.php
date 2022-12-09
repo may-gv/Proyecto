@@ -15,6 +15,15 @@
  'success'  ) </script> "!!}
 @endif
 
+@if(session()->has('Eliminado'))
+
+{!! "<script>Swal.fire({
+  icon: 'error',
+  title: 'Eliminado',
+  text: 'Usuario Eliminado!',
+})</script> "!!}
+@endif
+
     @if($errors->any())
         @foreach($errors->all() as $error)
         
@@ -57,8 +66,8 @@
         <td>{{$consulta->Usuario}}</td>
         <td>{{$consulta->Contraseña}}</td>
         <td>{{$consulta->Rol}}</td>
-        <td><a >
-          <img src={!!asset('css\images\borrar-amigo.png')!!} id="opciones"alt=""></td>
+        <td><a href={{route('usuario.show', $consulta->idusu)}}>
+          <img src={!!asset('css\images\borrar-amigo.png')!!} id="opciones"alt=""></td></a>
         <td>
           <a href={{route('usuario.edit',$consulta->idusu)}}>
           <img src={!!asset('css\images\editar.png')!!} id="opciones" alt=""></td>

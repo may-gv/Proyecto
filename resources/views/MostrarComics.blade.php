@@ -29,6 +29,15 @@
  'Venta Realizada',
  'success'  ) </script> "!!}
 @endif
+
+@if(session()->has('Eliminado'))
+
+{!! "<script>Swal.fire({
+  icon: 'error',
+  title: 'Eliminado',
+  text: 'Comic Eliminado!',
+})</script> "!!}
+@endif
  
  @if($errors->any())
       @foreach($errors->all() as $error)
@@ -84,7 +93,7 @@
         <td>{{$comics->PrecioCompra}}</td>
         <td>{{$comics->PrecioVenta}}</td>
         <td>{{$comics->FechaIngreso}}</td>
-        <td><img src={!! asset('css\images\borrar-amigo.png')!!} id="opciones"alt=""></td>
+        <td><a href={{route('comic.show',$comics->idComic )}}> <img src={!! asset('css\images\borrar-amigo.png')!!} id="opciones"alt=""></td></a>
         <td><a href={{route('comic.edit',$comics->idComic)}}><img src={!! asset('css\images\editar.png')!!} id="opciones" alt=""></td></a>
         <td>
           <a href={{route('comicventa.edit',$comics->idComic)}}>

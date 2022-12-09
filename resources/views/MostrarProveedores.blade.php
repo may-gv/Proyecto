@@ -103,9 +103,9 @@
         </td>
 
         <td>
-          <a href="/Pedidos">
+          <a href={{route('pedido.create',$proveedor->idProo)}}>
           <img src={!! asset('css\images\pedido.png') !!} id="opciones" alt=""></td>
-        
+          </a>
       </tr>
 
       @endforeach

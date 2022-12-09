@@ -79,12 +79,13 @@
     </thead>
     <tbody>
      
-      <tr>
+   
         @foreach($ConsultaVentaArt as $ventaArt)
+        <tr>
         <th scope="row">{{$ventaArt->idVentaArt}}</th>
-        <td>{{$ventaArt->id_usu}}</td>
+        <td>{{$ventaArt->usuario->Nombre}}</td>
         <td>Articulos</td>
-        <td>{{$ventaArt->id_art}}</td>
+        <td>{{$ventaArt->producto->Tipo}}</td>
         <td>{{$ventaArt->Cantidad}}</td>
         <td>{{$ventaArt->Total}}</td>
         <td>{{$ventaArt->Fecha}}</td>
@@ -93,7 +94,7 @@
         
         
           <td>
-          <a href="">
+          <a href={{route('tic.pdf',$ventaArt->idVentaArt)}} target="_blank">
           <img src={!! asset('css\images\cuenta.png') !!} id="opciones" alt=""></td>
           
       </tr>
@@ -112,7 +113,7 @@
         
         
           <td>
-          <a href="">
+          <a href={{route('Com.pdf',$ventaArt->idVentaArt)}}>
           <img src={!! asset('css\images\cuenta.png') !!} id="opciones" alt=""></td>
           
       </tr>
